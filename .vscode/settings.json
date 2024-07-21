@@ -1,0 +1,6 @@
+{
+    "luau-lsp.ignoreGlobs": [
+        "**/_Index/**",
+        "src/**"
+    ]
+}
