@@ -21,5 +21,5 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	if universalMove then
 		universalMove.func()
 	end
-	notify:
+	notify:Notify()
 end)
