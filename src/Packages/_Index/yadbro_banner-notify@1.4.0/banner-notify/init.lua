@@ -221,7 +221,8 @@ function module:Notify(props)
 	local player = props.player or nil
 
 	if not initialized then
-		module:InitClient()
+		-- module:InitClient()
+		generateGUI()
 		initialized = true
 	end
 	local ui = players.LocalPlayer.PlayerGui:WaitForChild(GUI__NAME)
