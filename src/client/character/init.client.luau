@@ -9,7 +9,7 @@ local CharacterTBL: combatModule.character = tableModule:waitfor(variables, {"lo
 
 UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- input.UserInputState
-	comb
+	
 	local Move = CharacterTBL.moves[input.KeyCode.Name]	
 	local universalMove = combatModule:getUniversal()[input.KeyCode] or combatModule:getUniversal()[input.UserInputType]
 	-- print(input.KeyCode, input.UserInputType)
