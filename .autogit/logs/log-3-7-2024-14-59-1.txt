@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+Sat Aug 03 2024 14:59:01 GMT-0700 (Pacific Daylight Time)
+------------------------------------------------------
+
+Modified files:
+* src/client/character/init.client.luau
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
