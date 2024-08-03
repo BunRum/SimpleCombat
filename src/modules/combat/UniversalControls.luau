@@ -97,7 +97,6 @@ universalcontrols = {
 			lv.VectorVelocity = localdir * 50
 			humanoid.WalkSpeed = 5
 			lv.Destroying:Connect(function()
-
 				task.delay(0.5, function()
 					humanoid.WalkSpeed = 16
 					self.cooldown = false
