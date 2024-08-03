@@ -22,7 +22,7 @@ local characters: types.character = {
     }
 }
 
-combatModule.util = require()
+combatModule.util = require(script.util)
 
 function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
