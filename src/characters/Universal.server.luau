@@ -8,6 +8,8 @@ local m1Bridge: types.sbridge  = variableModule:set({"bridges", "m1"}, BridgeNet
 local dashBridge = variableModule:set({"bridges", "dash"}, BridgeNet2.ReferenceBridge("dash"))
 local maxM1Combo = 4
 print("whaaat???")
+print("hohohohohohohoho")
+print("differnet")
 m1Bridge:Connect(function(player, content)
     
 end)
