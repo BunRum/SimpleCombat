@@ -6,7 +6,6 @@ local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local combatModule = {}
 local universalcontrols = require(script.UniversalControls)
 
-
 export type character = types.character
 
 local characters: types.character = {
@@ -21,7 +20,9 @@ local characters: types.character = {
             },
         }
     }
-}function combatModule:getUniversal(): typeof(universalcontrols)
+}
+
+function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
 end
 
