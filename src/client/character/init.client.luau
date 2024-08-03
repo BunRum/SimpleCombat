@@ -14,7 +14,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- print(input.KeyCode, input.UserInputType)
 	if Move and Move.cooldown == false then
 		CharacterTBL.bridge:Fire(Move.name)
-		
+		CharacterTBL.bridge:
 		-- CharacterTBL.bridge
 		if Move.animation then
 			Move.animation:Play()
