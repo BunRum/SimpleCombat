@@ -10,6 +10,8 @@ function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
 end
 
+export type character = types.character
+
 local characters: types.character = {
 	newmain = { 
         bridge = BridgeNet2.ReferenceBridge("newmain"),
