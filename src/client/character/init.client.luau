@@ -7,7 +7,6 @@ print(variables)
 -- combatModule.
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, {"local", "character"})
 
-local notify = require(ReplicatedStorage.Packages["banner-notify"])
 UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- input.UserInputState
 	local Move = CharacterTBL.moves[input.KeyCode.Name]	
