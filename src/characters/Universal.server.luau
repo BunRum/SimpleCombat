@@ -7,10 +7,6 @@ local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local m1Bridge: types.sbridge  = variableModule:set({"bridges", "m1"}, BridgeNet2.ReferenceBridge("m1"))
 local dashBridge = variableModule:set({"bridges", "dash"}, BridgeNet2.ReferenceBridge("dash"))
 local maxM1Combo = 4
-print("whaaat???")
-print("hohohohohohohoho")
-print("differnet")
-print("mamamamamam")
 m1Bridge:Connect(function(player, content)
     
 end)
