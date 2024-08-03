@@ -4,7 +4,7 @@ local combatModule = require(ReplicatedStorage.Modules.combat)
 local variables = require(ReplicatedStorage.Modules.variables)
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 print(variables)
-local CharacterTBL: combatModule = tableModule:waitfor(variables, {"local", "character"})
+local CharacterTBL = tableModule:waitfor(variables, {"local", "character"})
 
 local notify = require(ReplicatedStorage.Packages["banner-notify"])
 UserInputService.InputBegan:Connect(function(input: InputObject)
