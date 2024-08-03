@@ -22,6 +22,8 @@ local characters: types.character = {
     }
 }
 
+combatModule.util = require()
+
 function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
 end
