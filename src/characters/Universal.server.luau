@@ -12,5 +12,7 @@ m1Bridge:Connect(function(player, content)
     
 end)
 
-
+dashBridge:Connect(function(player, content)
+    
+end)
 
