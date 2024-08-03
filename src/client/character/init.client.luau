@@ -21,10 +21,5 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	if universalMove then
 		universalMove.func()
 	end
-	notify:Fire(player, {
-		duration = 1,
-		header = "Already voted",
-		icon = "rbxassetid://11326670020",
-		message = "you already voted",
-	})
+	notify:
 end)
