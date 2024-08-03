@@ -2,7 +2,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 
-local maps = variableModule:set("maps", {
+local maps = variableModule:set({ "maps" }, {
 	map1 = {
 		name = "smal",
 		totalVotes = 0,
@@ -17,9 +17,8 @@ local maps = variableModule:set("maps", {
 	},
 })
 -- bit32
-local voteBridge: variableModule.sbridge = variableModule:set("bridges", "vote", BridgeNet2.ReferenceBridge("vote"))
-local notifyBridge: variableModule.sbridge =
-	variableModule:set("bridges", "notify", BridgeNet2.ReferenceBridge("notify"))
+local voteBridge: variableModule.sbridge = variableModule:set({"bridges", "vote"}, BridgeNet2.ReferenceBridge("vote"))
+local notifyBridge: variableModule.sbridge = variableModule:set({ "bridges", "notify" }, BridgeNet2.ReferenceBridge("notify"))
 
 print(variableModule.newvar)
 

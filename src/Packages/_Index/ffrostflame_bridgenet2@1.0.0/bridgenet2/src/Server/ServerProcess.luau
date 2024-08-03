@@ -85,14 +85,14 @@ function ServerProcess.start()
 			end
 		end)
 
-		dataRemoteEvent.OnServerEvent:Connect(function(plr, tbl)
+		dataRemoteEvent.OnServerEvent:Connect(function(plr, tableModule)
 			-- Do typechecking before inserting it into the queue- minimize errors in the queue.
-			if typeof(tbl) ~= "table" then -- Invalid packet
+			if typeof(tableModule) ~= "table" then -- Invalid packet
 				HandleInvalidPlayer(plr)
 				return
 			end
 
-			table.insert(inboundQueue[plr], tbl)
+			table.insert(inboundQueue[plr], tableModule)
 		end)
 
 		local sendStructure: { [Player]: { [Types.Identifier]: { Types.Content } } } = {}

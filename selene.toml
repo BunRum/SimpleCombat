@@ -1,1 +1,5 @@
 std = "roblox"
+
+[rules]
+shadowing = "allow"
+parse_error = "allow"

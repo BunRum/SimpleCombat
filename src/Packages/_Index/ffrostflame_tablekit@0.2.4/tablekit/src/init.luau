@@ -175,25 +175,25 @@ end
 	@return table
 ]=]
 function TableKit.Reconcile(original: { [unknown]: unknown }, reconcile: { [unknown]: any })
-	local tbl = table.clone(original)
+	local tableModule = table.clone(original)
 
 	for key, value in reconcile do
-		if tbl[key] == nil then
+		if tableModule[key] == nil then
 			if typeof(value) == "table" then
-				tbl[key] = TableKit.DeepCopy(value)
+				tableModule[key] = TableKit.DeepCopy(value)
 			else
-				tbl[key] = value
+				tableModule[key] = value
 			end
 		elseif typeof(reconcile[key]) == "table" then
 			if typeof(value) == "table" then
-				tbl[key] = TableKit.Reconcile(value, reconcile[key])
+				tableModule[key] = TableKit.Reconcile(value, reconcile[key])
 			else
-				tbl[key] = TableKit.DeepCopy(reconcile[key])
+				tableModule[key] = TableKit.DeepCopy(reconcile[key])
 			end
 		end
 	end
 
-	return tbl
+	return tableModule
 end
 
 --[=[
@@ -358,15 +358,15 @@ end
 	@return { [number]: unknown }
 ]=]
 function TableKit.Filter<T>(arr: { [number]: T }, callback: (value: T) -> boolean)
-	local tbl = {}
+	local tableModule = {}
 
 	for _, value in arr do
 		if callback(value) then
-			table.insert(tbl, value)
+			table.insert(tableModule, value)
 		end
 	end
 
-	return tbl
+	return tableModule
 end
 
 --[=[
@@ -380,12 +380,12 @@ end
 	```
 	
 	@within TableKit
-	@param tbl table
+	@param tableModule table
 	@param callback (value) -> boolean
 	@return boolean
 ]=]
-function TableKit.Some(tbl: { [unknown]: unknown }, callback: (value: unknown) -> boolean): boolean
-	for _, value in tbl do
+function TableKit.Some(tableModule: { [unknown]: unknown }, callback: (value: unknown) -> boolean): boolean
+	for _, value in tableModule do
 		if callback(value) == true then
 			return true
 		end
@@ -405,11 +405,11 @@ end
 	```
 	
 	@within TableKit
-	@param tbl table
+	@param tableModule table
 	@return boolean
 ]=]
-function TableKit.IsFlat(tbl: { [unknown]: unknown }): boolean
-	for _, v in tbl do
+function TableKit.IsFlat(tableModule: { [unknown]: unknown }): boolean
+	for _, v in tableModule do
 		if typeof(v) == "table" then
 			return false
 		end
@@ -430,12 +430,12 @@ end
 	```
 	
 	@within TableKit
-	@param tbl table
+	@param tableModule table
 	@param callback (value) -> boolean
 	@return boolean
 ]=]
-function TableKit.Every(tbl: { [unknown]: unknown }, callback: (unknown) -> boolean): (boolean, unknown?)
-	for key, value in tbl do
+function TableKit.Every(tableModule: { [unknown]: unknown }, callback: (unknown) -> boolean): (boolean, unknown?)
+	for key, value in tableModule do
 		if not callback(value) then
 			return false, key
 		end
@@ -476,12 +476,12 @@ end
 	```
 	
 	@within TableKit
-	@param tbl table
+	@param tableModule table
 	@param value unknown
 	@return boolean
 ]=]
-function TableKit.HasValue(tbl: { [unknown]: unknown }, value: unknown): boolean
-	for _, v in tbl do
+function TableKit.HasValue(tableModule: { [unknown]: unknown }, value: unknown): boolean
+	for _, v in tableModule do
 		if v == value then
 			return true
 		end
