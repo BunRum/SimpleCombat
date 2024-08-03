@@ -85,7 +85,7 @@ universalcontrols = {
 			local lvdata = {
 				className = "LinearVelocity",
 				Parent = humanoidrootpart,
-				lifetime = 0.35,
+				lifetime = 0.25,
 				find = true,
 			}
 			local lv: LinearVelocity = object.new(lvdata)
