@@ -206,12 +206,6 @@ end
 
 local initialized = false
 
-function module:InitClient()
-	assert(runService:IsClient(), "Please running this method on client side!")
-	-- wait(0.5)
-	generateGUI()
-end
-
 function module:Notify(props)
 	local header = props.header
 	local description = props.message
