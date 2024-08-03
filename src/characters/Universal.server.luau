@@ -10,6 +10,7 @@ local maxM1Combo = 4
 print("whaaat???")
 print("hohohohohohohoho")
 print("differnet")
+print("mamamamamam")
 m1Bridge:Connect(function(player, content)
     
 end)
