@@ -13,7 +13,6 @@ fn rec(dir string) {
 	for directory in files {
 		if os.is_dir(directory) {
 			combine(files, rec(directory))
-			nigga
 		}
 	}
 }
