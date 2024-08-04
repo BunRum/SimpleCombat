@@ -18,7 +18,7 @@ newmain:Connect(function(player: Player, move: string)
 		end, {
 			visualizeHitbox = true,
 			times = 10,
-			timesInterval = 0.5
+			timesInterval = 0.1
 		})
 	end
 end)
