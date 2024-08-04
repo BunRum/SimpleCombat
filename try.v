@@ -6,7 +6,7 @@ import os
 
 fn main() {
 	for file in rec("./src/characters") {
-		
+		println(file)
 	}
 }
 
