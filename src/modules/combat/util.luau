@@ -19,6 +19,24 @@ function util:cardialConvert(dir)
 	return Vector3.new(newX, 0, newZ)
 end
 
+function characterradius(position, radius, exclude, callback)
+    local op = OverlapParams.new()
+	op.FilterType = Enum.RaycastFilterType.Exclude
+	op.FilterDescendantsInstances = exclude
+	local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
+	local hits = {} -- so we dont repeat the damage again since character have multiple parts
+	for _, part in partsinbound do
+		-- print(part)
+		local ancestorModel = part:FindFirstAncestorOfClass("Model")
+		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
+		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel.Name) == nil then
+			table.insert(hits, ancestorModel.Name)
+			-- ancestorHumanoid:TakeDamage(10)
+			callback(ancestorModel)
+		end
+	end
+end
+
 function util:charactersInRadius(
 	position: Vector3,
 	radius,
@@ -41,21 +59,7 @@ function util:charactersInRadius(
 		part.Anchored = true
 	end
 
-	local op = OverlapParams.new()
-	op.FilterType = Enum.RaycastFilterType.Exclude
-	op.FilterDescendantsInstances = exclude
-	local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
-	local hits = {} -- so we dont repeat the damage again since character have multiple parts
-	for _, part in partsinbound do
-		-- print(part)
-		local ancestorModel = part:FindFirstAncestorOfClass("Model")
-		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
-		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel.Name) == nil then
-			table.insert(hits, ancestorModel.Name)
-			-- ancestorHumanoid:TakeDamage(10)
-			callback(ancestorModel)
-		end
-	end
+
 end
 
 return util
