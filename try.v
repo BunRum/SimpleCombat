@@ -14,7 +14,7 @@ fn main() {
 	}
 }
 fn print(... string) {
-	println()
+	println("${...}")
 }
 fn combine(mut tbl1 []string, tbl2 []string) {
 	for variable in tbl2 {
