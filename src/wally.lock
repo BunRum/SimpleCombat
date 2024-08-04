@@ -5,12 +5,17 @@ registry = "test"
 [[package]]
 name = "adamv/simplecombat"
 version = "0.1.0"
-dependencies = [["BridgeNet2", "ffrostflame/bridgenet2@1.0.0"], ["banner-notify", "yadbro/banner-notify@1.4.0"]]
+dependencies = [["BridgeNet2", "ffrostflame/bridgenet2@1.0.0"], ["ByteNet", "ffrostflame/bytenet@0.4.6"]]
 
 [[package]]
 name = "ffrostflame/bridgenet2"
 version = "1.0.0"
 dependencies = [["RemotePacketSizeCounter", "pysephwasntavailable/remotepacketsizecounter@2.4.1"], ["TableKit", "ffrostflame/tablekit@0.2.4"], ["wallyInstanceManager", "ffrostflame/wally-instance-manager@0.1.0"]]
+
+[[package]]
+name = "ffrostflame/bytenet"
+version = "0.4.6"
+dependencies = []
 
 [[package]]
 name = "ffrostflame/tablekit"
@@ -25,9 +30,4 @@ dependencies = []
 [[package]]
 name = "pysephwasntavailable/remotepacketsizecounter"
 version = "2.4.1"
-dependencies = []
-
-[[package]]
-name = "yadbro/banner-notify"
-version = "1.4.0"
 dependencies = []
