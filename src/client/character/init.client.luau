@@ -5,6 +5,7 @@ local variables = require(ReplicatedStorage.Modules.variables)
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 print(variables)
 -- combatModule.
+
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, {"local", "character"})
 UserInputService:IsKeyDown()
 UserInputService.InputBegan:Connect(function(input: InputObject)
