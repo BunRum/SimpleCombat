@@ -40,6 +40,10 @@ function characterradius(position, radius, exclude, callback, visualizeHitbox)
 	end
 end
 
+function characterbox()
+    
+end
+
 function util:charactersInArea(
 	position: Vector3,
 	areaType: "Box" | "Circle",
