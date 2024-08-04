@@ -56,6 +56,8 @@ function util:charactersInArea(
             -- part.Position = position
             if typeof(position) == "Vector3" then 
                 part.Position = position
+            else
+                part.CFrame = position
             end
             part.CanCollide = false
             part.Transparency = 0.9
