@@ -61,6 +61,8 @@ function util:charactersInRadius(
             characterradius(position, radius, exclude, callback)
             task.wait(settings.timesInterval or 0)
         end
+    else
+        
     end
 
 end
