@@ -6,7 +6,6 @@ import os
 
 fn main() {
 
-
 	print(rec("./"))
 }
 
