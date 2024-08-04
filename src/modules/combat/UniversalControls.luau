@@ -78,7 +78,6 @@ universalcontrols = {
 			if humanoid.MoveDirection == Vector3.new(0, 0, 0) then -- if standing
 				localdircardial = -Vector3.new(0, 0, 1)
 				localdir = -cardialdir
-				warn("standing")
 			end
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
