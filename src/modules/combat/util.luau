@@ -66,7 +66,7 @@ function util:charactersInRadius(
 	end
 end
 
-function util:ch()
+function util:charactersInArea()
     
 end
 
