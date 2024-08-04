@@ -29,7 +29,7 @@ universalcontrols = {
 			self.cooldown = true
 			-- print("do m1")
 			self.M1Stage += 1
-			-- print(self.M1Stage)
+			print(self.M1Stage)
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
