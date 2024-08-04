@@ -101,7 +101,7 @@ universalcontrols = {
 					self.cooldown = false
 				end)
 			end)
-			log("calc", lv.VectorVelocity * lvdata.lifetime)
+			-- log("calc", lv.VectorVelocity * lvdata.lifetime)
 		end,
 		cooldown = false,
 	},
