@@ -18,6 +18,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		while UserInputService:IsKeyDown(input.KeyCode) do
 			if universalMove then
 				universalMove.func()
+			elseif Move then
 			end
 			task.wait()
 		end
