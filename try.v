@@ -7,7 +7,7 @@ import os
 fn main() {
 	for file in rec("./src/characters") {
 		if os.file_ext(file) == ".luau" {
-
+			
 		}
 	}
 }
