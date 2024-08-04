@@ -68,7 +68,6 @@ function characterbox(position, size: Vector3, exclude, callback, visualizeHitbo
 	op.FilterType = Enum.RaycastFilterType.Exclude
 	op.FilterDescendantsInstances = exclude
     local partsinbound = workspace:GetPartBoundsInBox(CFrame.new(position), size, op)
-	-- local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
 	local hits = {} -- so we dont repeat the damage again since character have multiple parts
 	for _, part in partsinbound do
 		local ancestorModel = part:FindFirstAncestorOfClass("Model")
