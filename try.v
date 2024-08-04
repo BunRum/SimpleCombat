@@ -8,7 +8,7 @@ fn main() {
 	for file in rec("./src/characters") {
 		filename := os.file_name(file)
 		if os.file_ext(file) == ".luau" {
-
+			
 		}
 	}
 }
