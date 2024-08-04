@@ -37,7 +37,6 @@ universalcontrols = {
 			-- if stage (5) plus 1 (6) is greater than maxStages (5)
 			if thisStage + 1 > self.maxStages then
 				M1Cooldown()
-				return
 			else
 				task.delay(0.5, function()
 					if thisStage == self.M1Stage then
