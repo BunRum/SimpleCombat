@@ -24,6 +24,9 @@ function util:charactersInRadius(position: Vector3, radius, exclude: {Instance},
 
     settings = settings or {}
 
+    if settings.visualizeHitbox then
+        
+    end
     local part: Part = object.new({
         className = "Part"
     })
