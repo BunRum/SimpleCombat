@@ -58,7 +58,7 @@ function util:charactersInRadius(
 
     if settings.times ~= nil then
         for i = 1, settings.times, 1 do
-            characterradius(position, radius, exclude, callback)
+            characterradius(position, radius, exclude, callback, settings.visualizeHitbox)
             task.wait(settings.timesInterval or 0)
         end
     else
