@@ -20,7 +20,7 @@ function util:cardialConvert(dir)
     return Vector3.new(newX, 0, newZ)
 end
 
-function util:charactersInRadius(position: Vector3, radius, exclude: {Instance}, callback: (character: types.Character) -> (), visualize: boolean)
+function util:charactersInRadius(position: Vector3, radius, exclude: {Instance}, callback: (character: types.Character) -> (), settings: {})
 
     local part: Part = object.new({
         className = "Part"
