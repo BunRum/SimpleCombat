@@ -16,7 +16,7 @@ newmain:Connect(function(player: Player, move: string)
 		combat.util:charactersInRadius(player.Character:GetPivot():PointToWorldSpace(Vector3.new(0, 0, -50)), 10, {player.Character}, function(Character) 
 			Character.Humanoid:TakeDamage(50)
 		end, {
-			
+		
 		})
 	end
 end)
