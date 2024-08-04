@@ -94,7 +94,7 @@ function util:charactersInArea(
 		if areaType == "Circle" then
             characterradius(position, settings.radius, exclude, callback, settings.visualizeHitbox)
 		else
-            characterbox()
+            characterbox(position, settings.radius, exclude, callback, settings.visualizeHitbox)
 		end
 
 		task.wait(settings.timesInterval or 0)
