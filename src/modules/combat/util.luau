@@ -58,7 +58,9 @@ function util:charactersInRadius(
 	end
 
     if settings.times ~= nil then
-        
+        for i = 1, settings.times, 1 do
+            callback()
+        end
     end
 
 end
