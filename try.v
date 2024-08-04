@@ -5,7 +5,7 @@ import os
 
 
 fn main() {
-	dir :="./src/characters"
+	dir := "./src/characters"
 	for file in rec(dir) {
 		filename := file.after("/").all_before(".")
 		if os.file_ext(file) == ".luau" {
