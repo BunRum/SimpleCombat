@@ -13,7 +13,7 @@ newmain:Connect(function(player: Player, move: string)
 			animation = "anim",
 			looped = false,
 		})
-		combat.util:charactersInRadius(player.Character:GetPivot():towo(Vector3.new(0, 0, -5)), 10, {player.Character}, function(Character) 
+		combat.util:charactersInRadius(player.Character:GetPivot():PointToWorldSpace(Vector3.new(0, 0, -5)), 10, {player.Character}, function(Character) 
 			Character.Humanoid:TakeDamage(50)
 		end, {
 			visualizeHitbox = true,
