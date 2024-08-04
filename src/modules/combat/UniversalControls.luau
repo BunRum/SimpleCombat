@@ -43,8 +43,8 @@ universalcontrols = {
 			task.delay(0.5, function()
 				-- print("self.M1Stage == 0", self.M1Stage == 0)
 				if thisStage == self.M1Stage then
-					print(`thisStage == self.M1Stage ({thisStage == self.M1Stage})`)
-					print("resetting m1stage")
+					-- print(`thisStage == self.M1Stage ({thisStage == self.M1Stage})`)
+					-- print("resetting m1stage")
 					M1Cooldown()
 				end
 			end)
