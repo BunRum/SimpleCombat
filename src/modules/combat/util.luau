@@ -84,7 +84,7 @@ function util:charactersInArea(
 	areaType: "Box" | "Circle",
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
-	settings: { visualizeHitbox: boolean, times: number, timesInterval: number, radius: numbe }
+	settings: { visualizeHitbox: boolean, times: number, timesInterval: number, radius: number, size }
 )
 	settings = settings or {}
 	settings.times = settings.times or 1
@@ -94,7 +94,7 @@ function util:charactersInArea(
 		if areaType == "Circle" then
             characterradius(position, settings.radius, exclude, callback, settings.visualizeHitbox)
 		else
-            characterbox(position, settings.radius, exclude, callback, settings.visualizeHitbox)
+            characterbox(position, settings.size, exclude, callback, settings.visualizeHitbox)
 		end
 
 		task.wait(settings.timesInterval or 0)
