@@ -26,7 +26,6 @@ function characterradius(position, radius, exclude, callback)
 	local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
 	local hits = {} -- so we dont repeat the damage again since character have multiple parts
 	for _, part in partsinbound do
-		-- print(part)
 		local ancestorModel = part:FindFirstAncestorOfClass("Model")
 		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
 		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel.Name) == nil then
