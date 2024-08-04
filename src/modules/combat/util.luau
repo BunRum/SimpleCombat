@@ -51,11 +51,24 @@ function characterradius(position, radius, exclude, callback, visualizeHitbox)
 	end
 end
 
-function characterbox(position, radius, exclude, callback, visualizeHitbox)
+function characterbox(position, size: Vector3, exclude, callback, visualizeHitbox)
+    if visualizeHitbox then
+		local part: Part = object.new({
+			className = "Part",
+		})
+		part.Shape = Enum.PartType.Ball
+		part.Size = size
+		part.Position = position
+		part.CanCollide = false
+		part.Transparency = 0.9
+		part.Color = Color3.new(1, 0.505882, 0.505882)
+		part.Anchored = true
+	end
     local op = OverlapParams.new()
 	op.FilterType = Enum.RaycastFilterType.Exclude
 	op.FilterDescendantsInstances = exclude
-	local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
+    local partsinbound = workspace:GetPartBoundsInBox(CFrame.new(position), size, op)
+	-- local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
 	local hits = {} -- so we dont repeat the damage again since character have multiple parts
 	for _, part in partsinbound do
 		local ancestorModel = part:FindFirstAncestorOfClass("Model")
