@@ -5,7 +5,7 @@ import os
 
 
 fn main() {
-	rec(os.getwd())
+	rec("./src")
 }
 
 fn combine(mut tbl1 []string, tbl2 []string) {
