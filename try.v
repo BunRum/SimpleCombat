@@ -7,10 +7,10 @@ import os
 fn main() {
 	for file in rec("./src/characters") {
 		filename := file.after("/").all_before(".")
-		// if os.file_ext(file) == ".luau" {
-		// 	println(filename)
-		// }
-		println(filename)
+		if os.file_ext(file) == ".luau" {
+			println(filename)
+		}
+		// println(filename)
 	}
 }
 
