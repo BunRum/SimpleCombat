@@ -32,7 +32,6 @@ universalcontrols = {
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
-
 			-- if stage (5) plus 1 (6) is greater than maxStages (5)
 			if thisStage + 1 > self.maxStages then
 				M1Cooldown()
