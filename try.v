@@ -5,7 +5,7 @@ import os
 
 
 fn main() {
-	rec("./src/characters")
+	
 }
 
 fn combine(mut tbl1 []string, tbl2 []string) {
