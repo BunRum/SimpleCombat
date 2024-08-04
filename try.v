@@ -20,5 +20,4 @@ fn rec(dir string) {
 
 fn main() {
 	print(rec("./"))
-	// os.glob()
 }
