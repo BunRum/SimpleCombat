@@ -19,7 +19,7 @@ function util:cardialConvert(dir)
 	return Vector3.new(newX, 0, newZ)
 end
 
-function characterradius(position, radius, exclude, callback, visua)
+function characterradius(position, radius, exclude, callback)
     local op = OverlapParams.new()
 	op.FilterType = Enum.RaycastFilterType.Exclude
 	op.FilterDescendantsInstances = exclude
