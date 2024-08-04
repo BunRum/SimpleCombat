@@ -9,14 +9,11 @@ fn main() {
 		filename := file.after("/").all_before(".")
 		if os.file_ext(file) == ".luau" {
 			println(filename)
-			print("mariooo", "river")
 		}
 		// println(filename)
 	}
 }
-fn print(... string) {
-	println("${...}")
-}
+
 fn combine(mut tbl1 []string, tbl2 []string) {
 	for variable in tbl2 {
 		tbl1.insert(tbl1.len, variable)
