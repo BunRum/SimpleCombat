@@ -17,7 +17,7 @@ fn combine(tbl1 []any, tbl2 []any) {
 
 fn rec(dir string) ![]string  {
 	files := os.ls(dir) or {[]}
-	for directory in files {
+	for directory str in files {
 		if os.is_dir(directory) {
 			combine(files, rec(directory))
 		}
