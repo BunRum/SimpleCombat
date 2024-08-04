@@ -20,6 +20,7 @@ fn rec(dir string) []string  {
 	for directory in files {
 		if os.is_dir(directory) {
 			combine(mut files, rec(directory))
+			print(directory)
 		}
 	}
 	return files
