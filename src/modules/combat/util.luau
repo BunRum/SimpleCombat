@@ -19,6 +19,10 @@ function util:cardialConvert(dir)
 	return Vector3.new(newX, 0, newZ)
 end
 
+function partsinbound()
+    
+end
+
 function characterradius(position, radius, exclude, callback, visualizeHitbox)
 	if visualizeHitbox then
 		local part: Part = object.new({
@@ -62,7 +66,7 @@ function util:charactersInArea(
 		if areaType == "Circle" then
             characterradius(position, settings.radius, exclude, callback, settings.visualizeHitbox)
 		else
-            
+
 		end
 
 		task.wait(settings.timesInterval or 0)
