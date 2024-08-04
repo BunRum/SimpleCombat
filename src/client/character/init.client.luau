@@ -11,6 +11,7 @@ local CharacterTBL: combatModule.character = tableModule:waitfor(variables, { "l
 UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- input.UserInputState
 	-- combatModule.util:
+	print("input")
 	local Move = CharacterTBL.moves[input.KeyCode.Name]
 	local universalMove = combatModule:getUniversal()[input.KeyCode] or combatModule:getUniversal()[input.UserInputType]
 	if Move or universalMove then
