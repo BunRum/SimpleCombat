@@ -55,7 +55,7 @@ function util:charactersInArea(
             part.Size = if areaType == "Circle" then Vector3.new(settings.radius*2, settings.radius*2, settings.radius*2) else settings.size
             -- part.Position = position
             if typeof(position) == "Vector3" then 
-                part.Position = 
+                part.Position = position
             end
             part.CanCollide = false
             part.Transparency = 0.9
