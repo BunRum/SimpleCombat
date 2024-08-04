@@ -68,7 +68,6 @@ function util:charactersInArea(
 		else
             charhits(workspace:GetPartBoundsInBox(position, settings.size, op), callback)
 		end
-
 		task.wait(settings.timesInterval or 0)
 	end
 end
