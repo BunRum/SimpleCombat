@@ -6,7 +6,9 @@ fn rec(dir string) {
 	returnedfiles := []string{}
 	files := os.ls(dir) or {[]}
 	for file in files {
-		
+		if os.is_dir(file) {
+			
+		}
 	}
 }
 
