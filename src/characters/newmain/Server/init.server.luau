@@ -8,12 +8,12 @@ local combat = require(ReplicatedStorage.Modules.combat)
 
 local newmain = BridgeNet2.ServerBridge("newmain")
 -- script.
-newmain:Connect(function(player, move: string)
+newmain:Connect(function(player: Player, move: string)
 	if move == "One" then
 		effects:sendAll({
 			animation = "anim",
 			looped = false,
 		})
-		combat.util:charactersInRadius()
+		combat.util:charactersInRadius(player)
 	end
 end)
