@@ -15,7 +15,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	local universalMove = combatModule:getUniversal()[input.KeyCode] or combatModule:getUniversal()[input.UserInputType]
 	if Move or universalMove then
 		while UserInputService:IsKeyDown(input.KeyCode) do
-			pr
+			print("key dfown")
 			if universalMove then
 				universalMove.func()
 			elseif Move then
