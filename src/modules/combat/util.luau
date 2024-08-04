@@ -67,13 +67,24 @@ function util:charactersInRadius(
 end
 
 function util:charactersInArea(
-    position: Vector3,
+	position: Vector3,
 	areaType: "Box" | "Circle",
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
-	settings: { visualizeHitbox: boolean, times: number, timesInterval: number }
+	settings: { visualizeHitbox: boolean, times: number, timesInterval: number, radius: numbe }
 )
-    
+	settings = settings or {}
+	settings.times = settings.times or 1
+	settings.timesInterval = settings.timesInterval or 0
+
+	for i = 1, settings.times, 1 do
+		if areaType == "Circle" then
+            characterradius(position, radius, exclude, callback, settings.visualizeHitbox)
+		else
+		end
+
+		task.wait(settings.timesInterval or 0)
+	end
 end
 
 return util
