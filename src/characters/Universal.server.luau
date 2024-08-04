@@ -15,7 +15,7 @@ m1Bridge:Connect(function(player)
     end, {
         visualizeHitbox = false,
         times = 100,
-        timesInterval = 0.01,
+        timesInterval = 0,
         size = Vector3.new(5, 5, 5)
     })
 end)
