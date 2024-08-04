@@ -2,18 +2,22 @@ module main
 import os
 // import fs
 
+fn combine(tbl1 [], tbl2 []) {
+	for variable in tbl2 {
+		tbl1.insert(tbl1.len, variable)
+	}
+}
+
 fn rec(dir string) {
-	returnedfiles := []string{}
 	files := os.ls(dir) or {[]}
-	for file in files {
-		if os.is_dir(file) {
-			
+	for directory in files {
+		if os.is_dir(directory) {
+			combine(files, rec(directory))
 		}
 	}
 }
 
 fn main() {
-	files := os.glob() or {[]}
-	print(files)
+	print(rec("./"))
 	// os.glob()
 }
