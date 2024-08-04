@@ -6,8 +6,8 @@ import os
 
 fn main() {
 
-	for {
 		mut savedlen := 0
+	for {
 		if savedlen < rec("./src/characters").len {
 			files := rec("./src/characters")
 			savedlen = files.len
