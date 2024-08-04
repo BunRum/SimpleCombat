@@ -6,11 +6,11 @@ import os
 
 fn main() {
 	for file in rec("./src/characters") {
-		// filename := file.all_before("server")
+		filename := file.all_before("server")
 		// if os.file_ext(file) == ".luau" {
 		// 	println(filename)
 		// }
-		print(file)
+		print(filename)
 	}
 }
 
@@ -24,8 +24,8 @@ fn rec(dir string) []string  {
 	mut files := []string{}
 	// println(files)
 	for directory in os.ls(dir) or {[]} {
-		// name := '${dir}/${directory}'
-		name := directory
+		name := '${dir}/${directory}'
+		// name := directory
 		if os.is_dir(name) {
 			combine(mut files, rec(name))
 		} else {
