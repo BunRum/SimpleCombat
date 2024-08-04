@@ -84,7 +84,7 @@ function util:charactersInArea(
 	areaType: "Box" | "Circle",
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
-	settings: { visualizeHitbox: boolean, times: number, timesInterval: number, radius: number, size }
+	settings: { visualizeHitbox: boolean, times: number, timesInterval: number, radius: number, size: Vector3 }
 )
 	settings = settings or {}
 	settings.times = settings.times or 1
