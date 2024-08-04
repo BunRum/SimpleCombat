@@ -6,5 +6,5 @@ realm = "shared"
 
 [dependencies]
 BridgeNet2 = "ffrostflame/bridgenet2@1.0.0"
-ByteNet = "ffrostflame/ByteNet@o.4.3"
+ByteNet = "ffrostflame/bytenet@o.4.3"
 #banner-notify = "yadbro/banner-notify@1.4.0"
