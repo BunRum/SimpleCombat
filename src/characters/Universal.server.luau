@@ -14,7 +14,7 @@ m1Bridge:Connect(function(player)
         Character.Humanoid:TakeDamage(50)
     end, {
         visualizeHitbox = true,
-        times = 2,
+        times = 100,
         timesInterval = 0.01,
         size = Vector3.new(5, 5, 5)
     })
