@@ -4,5 +4,5 @@ import os
 
 fn main() {
 	os.execute("")
-	
+	os.dir("")
 }
