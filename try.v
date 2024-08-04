@@ -11,7 +11,7 @@ fn main() {
 		if savedlen < rec("./src/characters").len {
 			files := rec("./src/characters")
 			savedlen = files.len
-			for file in rec("./src/characters") {
+			for file in files {
 				directory := file.all_before_last("/")
 				filename := file.after("/").all_before(".")
 				if os.file_ext(file) == ".luau" {
