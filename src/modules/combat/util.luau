@@ -57,7 +57,7 @@ function util:charactersInRadius(
 		part.Anchored = true
 	end
 
-    if settings.times  then
+    if settings.times ~= nil then
         
     end
 
