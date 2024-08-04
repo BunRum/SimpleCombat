@@ -30,6 +30,7 @@ function util:charactersInRadius(position: Vector3, radius, exclude: {Instance},
     part.Position = position
     part.CanCollide = false
     part.Transparency = 0.9
+    part.Color = Color3.new()
     part.Anchored = true
 
     local op = OverlapParams.new()
