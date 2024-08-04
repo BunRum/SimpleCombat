@@ -40,12 +40,12 @@ universalcontrols = {
 				return 
 			else
 				
-			end 
 			task.delay(0.5, function()
 				if thisStage == self.M1Stage then
 					M1Cooldown()
 				end
 			end)
+			end 
 		end,
 		cooldown = false,
 		M1Stage = 0,
