@@ -19,6 +19,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 			if universalMove then
 				universalMove.func()
 			elseif Move then
+				
 			end
 			task.wait()
 		end
