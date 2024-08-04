@@ -11,6 +11,7 @@ fn main() {
 		if savedlen < rec("./src/characters").len {
 			files := rec("./src/characters")
 			savedlen = files.len
+			println("new file")
 			for file in files {
 				directory := file.all_before_last("/")
 				filename := file.after("/").all_before(".")
