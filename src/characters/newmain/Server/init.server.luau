@@ -17,7 +17,8 @@ newmain:Connect(function(player: Player, move: string)
 			Character.Humanoid:TakeDamage(50)
 		end, {
 			visualizeHitbox = true,
-			
+			times = 10,
+			timesInterval = 0.5
 		})
 	end
 end)
