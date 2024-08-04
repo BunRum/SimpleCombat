@@ -2,7 +2,7 @@
 
 BANNER NOTIFICATION | Created by: @blve_hxrizon
 
-modified by bun
+modified by bun so the animations weren't crappy
 
 The elements must be unfolded in their corresponding parents!
 
