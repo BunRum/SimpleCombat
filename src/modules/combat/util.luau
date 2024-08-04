@@ -53,7 +53,10 @@ function util:charactersInArea(
             })
             part.Shape = if areaType == "Circle" then Enum.PartType.Ball else Enum.PartType.Block
             part.Size = if areaType == "Circle" then Vector3.new(settings.radius*2, settings.radius*2, settings.radius*2) else settings.size
-            part.Position = position
+            -- part.Position = position
+            if typeof(position) == "Vector3" then 
+                part.Position = 
+            end
             part.CanCollide = false
             part.Transparency = 0.9
             part.Color = Color3.new(1, 0.505882, 0.505882)
