@@ -43,18 +43,6 @@ function util:charactersInRadius(
 	settings: { visualizeHitbox: boolean, times: number, timesInterval: number }
 )
 	settings = settings or {}
-	if settings.visualizeHitbox then
-		local part: Part = object.new({
-			className = "Part",
-		})
-		part.Shape = Enum.PartType.Ball
-		part.Size = Vector3.new(radius * 2, radius * 2, radius * 2)
-		part.Position = position
-		part.CanCollide = false
-		part.Transparency = 0.9
-		part.Color = Color3.new(1, 0.505882, 0.505882)
-		part.Anchored = true
-	end
 
     if settings.times ~= nil then
         for i = 1, settings.times, 1 do
