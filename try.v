@@ -19,6 +19,7 @@ fn rec(dir string) []string  {
 	mut files := os.ls(dir) or {[]}
 	println(files)
 	for directory in files {
+		name := '${}'
 		if os.is_dir(directory) {
 			combine(mut files, rec(directory))
 			// println(directory)
