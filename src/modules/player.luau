@@ -23,8 +23,6 @@ function playerModule.New(player: Player)
 	return self
 end
 
-export type type = typeof(playerModule)
-
 function playerModule:Play(animation: string)
 	local self: plr = self
 	-- self.plas
