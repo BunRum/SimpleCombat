@@ -3,5 +3,5 @@ import os
 // import fs
 
 fn main() {
-	print(os.dir("./"))
+	print(os.dir)
 }
