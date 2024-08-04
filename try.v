@@ -2,7 +2,7 @@ module main
 import os
 // import fs
 
-fn combine(tbl1 [], tbl2 []) {
+fn combine(tbl1 []any{}, tbl2 []) {
 	for variable in tbl2 {
 		tbl1.insert(tbl1.len, variable)
 	}
