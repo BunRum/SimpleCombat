@@ -14,6 +14,13 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- combatModule.util:
 	local Move = CharacterTBL.moves[input.KeyCode.Name]	
 	local universalMove = combatModule:getUniversal()[input.KeyCode] or combatModule:getUniversal()[input.UserInputType]
+	if Move or universalMove then
+		
+	end
+	while UserInputService:IsKeyDown(Enum.KeyDown.H) do
+		-- your code here
+		task.wait()
+	end
 	-- print(input.KeyCode, input.UserInputType)
 	if Move and Move.cooldown == false then
 		CharacterTBL.bridge:Fire(Move.name)
