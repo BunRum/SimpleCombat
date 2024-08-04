@@ -12,7 +12,6 @@ fn main() {
 			println(filename)
 			os.write_file_array('${directory}/${filename}.meta.json', '{"properties":{"RunContext":"Server"}}'.bytes())!
 		}
-		// println(filename)
 	}
 }
 
