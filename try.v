@@ -4,8 +4,8 @@ import os
 
 fn rec(dir) {
 	returnedFiles := {[]}
-	files := os.glob() or {[]}
-	
+	files := os.ls(dir) or {[]}
+
 }
 
 fn main() {
