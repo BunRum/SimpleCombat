@@ -19,19 +19,14 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 			if universalMove then
 				universalMove.func()
 			elseif Move then
-				
+				CharacterTBL.bridge:Fire(Move.name)
+
+				-- CharacterTBL.bridge
+				if Move.animation then
+					Move.animation:Play()
+				end
 			end
 			task.wait()
 		end
 	end
-	-- print(input.KeyCode, input.UserInputType)
-	if Move and Move.cooldown == false then
-		CharacterTBL.bridge:Fire(Move.name)
-
-		-- CharacterTBL.bridge
-		if Move.animation then
-			Move.animation:Play()
-		end
-	end
-
 end)
