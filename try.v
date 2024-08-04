@@ -22,7 +22,7 @@ fn rec(dir string) []string  {
 		name := '${dir}/${directory}'
 		println(name)
 		if os.is_dir(name) {
-			combine(mut files, rec(directory))
+			combine(mut files, rec(name))
 			// println(directory)
 		}
 	}
