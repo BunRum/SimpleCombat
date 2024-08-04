@@ -46,6 +46,18 @@ function util:charactersInRadius(
 
     if settings.times ~= nil then
         for i = 1, settings.times, 1 do
+            if settings.visualizeHitbox then
+                local part: Part = object.new({
+                    className = "Part",
+                })
+                part.Shape = Enum.PartType.Ball
+                part.Size = Vector3.new(radius * 2, radius * 2, radius * 2)
+                part.Position = position
+                part.CanCollide = false
+                part.Transparency = 0.9
+                part.Color = Color3.new(1, 0.505882, 0.505882)
+                part.Anchored = true
+            end
             characterradius(position, radius, exclude, callback)
             task.wait(settings.timesInterval or 0)
         end
