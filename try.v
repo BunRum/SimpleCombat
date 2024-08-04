@@ -19,7 +19,7 @@ fn rec(dir string) []string  {
 	mut files := os.ls(dir) or {[]}
 	for directory in files {
 		if os.is_dir(directory) {
-			combine(mut&files, rec(directory))
+			combine(mut files, rec(directory))
 		}
 	}
 	return files
