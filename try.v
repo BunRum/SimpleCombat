@@ -1,5 +1,5 @@
 module main
+import os
 
 fn main() {
-	print("how amazing")
 }
