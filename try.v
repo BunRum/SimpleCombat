@@ -5,20 +5,19 @@ import os
 
 
 fn main() {
-	
-	for file in rec("./src/characters") {
+
+	for {
+		mut savedlen := 0
+		if savedlen < rec("./src/characters").len {
+			files := rec("./src/characters")
+			savedlen = files.len
+				for file in rec("./src/characters") {
 		directory := file.all_before_last("/")
 		filename := file.after("/").all_before(".")
 		if os.file_ext(file) == ".luau" {
 			os.write_file_array('${directory}/${filename}.meta.json', '{"properties":{"RunContext":"Server"}}'.bytes())!
 		}
 	}
-	for {
-		mut savedlen := 0
-		if savedlen < rec("./src/characters").len {
-			files := rec("./src/characters")
-			savedlen = files.len
-			
 		}
 	}
 }
