@@ -18,7 +18,7 @@ fn combine(mut tbl1 []string, tbl2 []string) {
 fn rec(dir string) []string  {
 	mut files := os.ls(dir) or {[]}
 	// println(files)
-	for directory in files {
+	for directory in os.ls(dir) or {[]} {
 		name := '${dir}/${directory}'
 		println(name)
 		if os.is_dir(name) {
