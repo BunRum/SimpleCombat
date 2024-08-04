@@ -14,7 +14,7 @@ fn main() {
 				directory := file.all_before_last("/")
 				filename := file.after("/").all_before(".")
 				if os.file_ext(file) == ".luau" {
-					println("new file")
+					// println("new file")
 					os.write_file_array('${directory}/${filename}.meta.json', '{"properties":{"RunContext":"Server"}}'.bytes())!
 				}
 			}
