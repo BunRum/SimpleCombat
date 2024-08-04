@@ -14,6 +14,6 @@ newmain:Connect(function(player: Player, move: string)
 			animation = "anim",
 			looped = false,
 		})
-		combat.util:charactersInRadius(player.chara)
+		combat.util:charactersInRadius(player.Character)
 	end
 end)
