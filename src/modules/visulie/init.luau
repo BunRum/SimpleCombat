@@ -265,7 +265,6 @@ function Visulie._StartPlaying(self: Visulie, destroyOnCompletion: boolean?)
 
 		-->> end of animation
 		if self._Elapsed > self._Data.length then
-			print("ended")
 			-->> rendering the last frame
 			self._Elapsed = self._Data.length
 			self:_Render()
