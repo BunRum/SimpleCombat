@@ -66,7 +66,13 @@ function util:charactersInRadius(
 	end
 end
 
-function util:charactersInArea()
+function util:charactersInArea(
+    position: Vector3,
+	radius,
+	exclude: { Instance },
+	callback: (character: types.Character) -> (),
+	settings: { visualizeHitbox: boolean, times: number, timesInterval: number }
+)
     
 end
 
