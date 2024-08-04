@@ -16,5 +16,6 @@ export type weapon = {
     } }
 }
 export type Character = typeof(playerModule.Player.Character)
+export type playerm = typeof(playerModule)
 
 return types

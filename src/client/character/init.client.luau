@@ -5,9 +5,7 @@ local variables = require(ReplicatedStorage.Modules.variables)
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local types = require(ReplicatedStorage.Modules.types)
-print(variables)
--- combatModule.
-local plr: types = variableModule:get({"local", "plr"})
+local plr: types.playerm = variableModule:get({"local", "plr"})
 
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, {"local", "character"})
 UserInputService:IsKeyDown()
