@@ -4,6 +4,7 @@ local combatModule = require(ReplicatedStorage.Modules.combat)
 local variables = require(ReplicatedStorage.Modules.variables)
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
+local types = require(ReplicatedStorage.Modules.types)
 print(variables)
 -- combatModule.
 local plr: types = variableModule:get({"local", "plr"})
