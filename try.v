@@ -16,7 +16,7 @@ fn main() {
 	for {
 		savedlen := 0
 		if savedlen < rec("./src/characters").len {
-
+			
 		}
 	}
 }
