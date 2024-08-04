@@ -25,7 +25,7 @@ fn rec(dir string) []string  {
 		if os.is_dir(name) {
 			combine(mut files, rec(name))
 		} else {
-			
+			files << directory
 		}
 	}
 	return files
