@@ -20,8 +20,6 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 				universalMove.func()
 			elseif Move then
 				CharacterTBL.bridge:Fire(Move.name)
-
-				-- CharacterTBL.bridge
 				if Move.animation then
 					Move.animation:Play()
 				end
