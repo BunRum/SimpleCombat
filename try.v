@@ -5,7 +5,7 @@ import os
 
 
 fn main() {
-	rec("./")
+	rec(".")
 	// print(rec("./"))
 }
 
