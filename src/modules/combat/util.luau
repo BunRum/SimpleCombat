@@ -24,7 +24,7 @@ function util:charactersInRadius(
 	radius,
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
-	settings: { visualizeHitbox: boolean, times: number,  }
+	settings: { visualizeHitbox: boolean, times: number, timesInterval: number }
 )
 	settings = settings or {}
 
