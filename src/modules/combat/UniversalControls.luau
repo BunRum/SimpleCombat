@@ -33,19 +33,18 @@ universalcontrols = {
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
-		
+
 			-- if stage (5) plus 1 (6) is greater than maxStages (5)
 			if thisStage + 1 > self.maxStages then
 				M1Cooldown()
-				return 
+				return
 			else
-				
-			task.delay(0.5, function()
-				if thisStage == self.M1Stage then
-					M1Cooldown()
-				end
-			end)
-			end 
+				task.delay(0.5, function()
+					if thisStage == self.M1Stage then
+						M1Cooldown()
+					end
+				end)
+			end
 		end,
 		cooldown = false,
 		M1Stage = 0,
@@ -55,7 +54,9 @@ universalcontrols = {
 		bridge = BridgeNet2.ReferenceBridge("dash"),
 		func = function()
 			local self = universalcontrols[Enum.KeyCode.Q]
-			if self.cooldown then return end
+			if self.cooldown then
+				return
+			end
 			self.cooldown = true
 			self.bridge:Fire()
 			local directionTable = {
