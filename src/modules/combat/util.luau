@@ -19,7 +19,7 @@ function util:cardialConvert(dir)
 	return Vector3.new(newX, 0, newZ)
 end
 
-function partsinbound()
+function characters()
     
 end
 
