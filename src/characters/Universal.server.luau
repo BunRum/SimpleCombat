@@ -9,7 +9,7 @@ local m1Bridge: types.sbridge  = variableModule:set({"bridges", "m1"}, BridgeNet
 local dashBridge: types.sbridge = variableModule:set({"bridges", "dash"}, BridgeNet2.ReferenceBridge("dash"))
 local maxM1Combo = 4
 
-m1Bridge:Connect(function(player, content)
+m1Bridge:Connect(function(player)
     combat.util:charactersInArea(player.Character:GetPivot():ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))), "Box", {player.Character}, function(Character) 
         Character.Humanoid:TakeDamage(50)
     end, {
