@@ -40,7 +40,7 @@ function characterradius(position, radius, exclude, callback, visualizeHitbox)
 	end
 end
 
-function characterbox()
+function characterbox(position, radius, exclude, callback, visualizeHitbox)
     
 end
 
