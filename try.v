@@ -3,7 +3,7 @@ import os
 // import fs
 
 fn rec(dir) {
-	
+	f := 
 }
 
 fn main() {
