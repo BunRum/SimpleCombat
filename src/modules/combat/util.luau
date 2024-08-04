@@ -50,7 +50,7 @@ function util:charactersInArea(
         if settings.visualizeHitbox then
             local part: Part = object.new({
                 className = "Part",
-				lifetime = 0.25
+				lifetime = 0.1
             })
             part.Shape = if areaType == "Circle" then Enum.PartType.Ball else Enum.PartType.Block
             part.Size = if areaType == "Circle" then Vector3.new(settings.radius*2, settings.radius*2, settings.radius*2) else settings.size
