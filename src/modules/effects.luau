@@ -21,7 +21,7 @@ end
 -- ]]
 function effects:attach()
     replicator:Connect(function(content)
-        print(content)
+        -- print(content)
         -- Visulie
         local anim = visulie.new(content.animation)
         -- anim.
