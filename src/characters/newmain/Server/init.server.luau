@@ -4,7 +4,7 @@ local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local effects = require(ReplicatedStorage.Modules.effects)
 local combat = require(ReplicatedStorage.Modules.combat)
 local newmain = BridgeNet2.ServerBridge("newmain")
-local types = req
+local types = require(ReplicatedStorage.Modules.types)
 -- script.
 newmain:Connect(function(player: Player, move: string)
 	if move == "One" then
