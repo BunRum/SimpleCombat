@@ -21,12 +21,12 @@ function util:cardialConvert(dir)
 end
 
 function util:charactersInRadius(position: Vector3, radius, exclude: {Instance}, callback: (character: types.Character) -> (), settings: {visualizeHitbox: boolean})
+
+    settings = settings or {}
+
     local part: Part = object.new({
         className = "Part"
     })
-
-    
-
     part.Shape = Enum.PartType.Ball
     part.Size = Vector3.new(radius * 2, radius * 2, radius * 2)
     part.Position = position
