@@ -3,9 +3,7 @@ local log = require(ReplicatedStorage.Modules.log)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local effects = require(ReplicatedStorage.Modules.effects)
 local combat = require(ReplicatedStorage.Modules.combat)
--- local object = require(ReplicatedStorage.Modules.object)
--- local variableModule = require(ReplicatedStorage.Modules.variableModule)
--- types
+
 local newmain = BridgeNet2.ServerBridge("newmain")
 -- script.
 newmain:Connect(function(player: Player, move: string)
