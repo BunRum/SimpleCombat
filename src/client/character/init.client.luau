@@ -6,7 +6,7 @@ local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local types = require(ReplicatedStorage.Modules.types)
 local plr: types.playerm = variableModule:get({"local", "plr"})
-
+plr.Player:GetMouse()
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, {"local", "character"})
 UserInputService:IsKeyDown()
 UserInputService.InputBegan:Connect(function(input: InputObject)
