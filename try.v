@@ -3,8 +3,9 @@ import os
 // import fs
 
 fn rec(dir) {
-	f := {[]}
+	returnedFiles := {[]}
 	files := os.glob() or {[]}
+	
 }
 
 fn main() {
