@@ -22,8 +22,6 @@ fn main() {
 	}
 }
 
-
-
 fn combine(mut tbl1 []string, tbl2 []string) {
 	for variable in tbl2 {
 		tbl1.insert(tbl1.len, variable)
