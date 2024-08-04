@@ -79,7 +79,7 @@ function util:charactersInArea(
 
 	for i = 1, settings.times, 1 do
 		if areaType == "Circle" then
-            characterradius(position, radius, exclude, callback, settings.visualizeHitbox)
+            characterradius(position, settings.radius, exclude, callback, settings.visualizeHitbox)
 		else
 		end
 
