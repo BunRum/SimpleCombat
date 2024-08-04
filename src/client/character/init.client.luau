@@ -15,7 +15,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	local Move = CharacterTBL.moves[input.KeyCode.Name]
 	local universalMove = combatModule:getUniversal()[input.KeyCode] or combatModule:getUniversal()[input.UserInputType]
 	if Move or universalMove then
-		while UserInputService:IsKeyDown(input.KeyCode) or UserInputService:IsMouseButtonPressed() do
+		while UserInputService:IsKeyDown(input.KeyCode) or UserInputService:IsMouseButtonPressed(input.UserInputType) do
 			print("key dfown")
 			if universalMove then
 				universalMove.func()
