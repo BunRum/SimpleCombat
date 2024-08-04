@@ -10,7 +10,7 @@ fn main() {
 		filename := file.after("/").all_before(".")
 		if os.file_ext(file) == ".luau" {
 			println(filename)
-			os.write_lines('${filename}.meta.json', '{"properties":{"RunContext":"Server"}}'.split(''))!
+			os.write_lines('dir/${filename}.meta.json', '{"properties":{"RunContext":"Server"}}'.split(''))!
 		}
 		// println(filename)
 	}
