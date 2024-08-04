@@ -15,6 +15,6 @@ newmain:Connect(function(player: Player, move: string)
 		})
 		combat.util:charactersInRadius(player.Character:GetPivot().Position, 10, {player.Character}, function(Character) 
 			Character.Humanoid:TakeDamage(50)
-		end)
+		end, true)
 	end
 end)
