@@ -5,7 +5,7 @@ import os
 
 
 fn main() {
-	rec(os.getwd())
+	rec(".")
 	// print(rec("./"))
 }
 
