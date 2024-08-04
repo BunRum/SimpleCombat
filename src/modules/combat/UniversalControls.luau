@@ -27,7 +27,6 @@ universalcontrols = {
 				return
 			end
 			self.cooldown = true
-			-- print("do m1")
 			self.M1Stage += 1
 			print(self.M1Stage)
 			self.bridge:Fire()
