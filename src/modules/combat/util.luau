@@ -43,7 +43,7 @@ function util:charactersInRadius(
 	settings: { visualizeHitbox: boolean, times: number, timesInterval: number }
 )
 	settings = settings or {}
-    print(settings)
+    print(settings, settings.times)
 	if settings.visualizeHitbox then
 		local part: Part = object.new({
 			className = "Part",
