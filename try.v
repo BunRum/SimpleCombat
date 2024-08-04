@@ -9,7 +9,7 @@ fn main() {
 	print(rec("./"))
 }
 
-fn combine(mut tbl1, tbl2) {
+fn combine(mut tbl1 [], tbl2 []) {
 	for variable in tbl2 {
 		tbl1.insert(tbl1.len, variable)
 	}
