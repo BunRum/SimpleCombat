@@ -2,6 +2,7 @@ local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local log = require(ReplicatedStorage.Modules.log)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local effects = require(ReplicatedStorage.Modules.effects)
+local combat = require(ReplicatedStorage.Modules.combat)
 -- local object = require(ReplicatedStorage.Modules.object)
 -- local variableModule = require(ReplicatedStorage.Modules.variableModule)
 
@@ -13,6 +14,6 @@ newmain:Connect(function(player, move: string)
 			animation = "anim",
 			looped = false,
 		})
-		
+		combat.util:charactersInRadius()
 	end
 end)
