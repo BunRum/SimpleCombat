@@ -6,7 +6,7 @@ local tableModule = require(ReplicatedStorage.Modules.tableModule)
 print(variables)
 -- combatModule.
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, {"local", "character"})
-
+-- UserInputService.key
 UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- input.UserInputState
 	-- combatModule.util:
