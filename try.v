@@ -10,7 +10,7 @@ fn main() {
 		// if os.file_ext(file) == ".luau" {
 		// 	println(filename)
 		// }
-		print(filename)
+		println(filename)
 	}
 }
 
