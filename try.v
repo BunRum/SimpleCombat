@@ -4,7 +4,6 @@ import os
 
 fn rec(dir) {
 	f := {[]}
-	
 	files := os.glob() or {[]}
 }
 
