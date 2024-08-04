@@ -2,8 +2,8 @@ module main
 import os
 // import fs
 
-fn rec(dir) {
-	returnedFiles := {[]}
+fn rec(dir string) {
+	returnedfiles := []string
 	files := os.ls(dir) or {[]}
 
 }
