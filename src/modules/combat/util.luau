@@ -31,7 +31,6 @@ function characterradius(position, radius, exclude, callback)
 		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
 		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel.Name) == nil then
 			table.insert(hits, ancestorModel.Name)
-			-- ancestorHumanoid:TakeDamage(10)
 			callback(ancestorModel)
 		end
 	end
