@@ -4,7 +4,7 @@ import os
 
 fn rec(dir) {
 	f := {[]}
-	for
+	
 }
 
 fn main() {
