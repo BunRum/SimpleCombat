@@ -5,6 +5,7 @@ import os
 
 
 fn main() {
+	
 	for file in rec("./src/characters") {
 		directory := file.all_before_last("/")
 		filename := file.after("/").all_before(".")
