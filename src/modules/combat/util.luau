@@ -68,7 +68,7 @@ end
 
 function util:charactersInArea(
     position: Vector3,
-	radius,
+	areaType: "Box",
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
 	settings: { visualizeHitbox: boolean, times: number, timesInterval: number }
