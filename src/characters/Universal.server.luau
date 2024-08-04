@@ -16,7 +16,6 @@ m1Bridge:Connect(function(player)
         visualizeHitbox = true,
         size = Vector3.new(5, 5, 5)
     })
-    workspace:Raycast()
 end)
 
 dashBridge:Connect(function(player, content)
