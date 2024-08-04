@@ -14,6 +14,7 @@ newmain:Connect(function(player: Player, move: string)
 		})
 		combat.util:charactersInRadius(player.Character:GetPivot().Position, 10, {player.Character}, function(Character: types.Character) 
 			-- print(Character.)
+			-- Character.
 			-- Character
 		end)
 	end
