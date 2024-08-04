@@ -12,7 +12,7 @@ newmain:Connect(function(player: Player, move: string)
 			animation = "anim",
 			looped = false,
 		})
-		combat.util:charactersInRadius(player.Character:GetPivot().Position, 10, {player.Character}, function(Character: types) 
+		combat.util:charactersInRadius(player.Character:GetPivot().Position, 10, {player.Character}, function(Character: types.Character) 
 			-- print(Character.)
 			-- Character
 		end)
