@@ -14,9 +14,10 @@ fn main() {
 		}
 	}
 	for {
-		savedlen := 0
+		mut savedlen := 0
 		if savedlen < rec("./src/characters").len {
-			
+			files := rec("./src/characters")
+			savedlen = files.len
 		}
 	}
 }
