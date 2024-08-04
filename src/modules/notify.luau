@@ -2,6 +2,8 @@
 
 BANNER NOTIFICATION | Created by: @blve_hxrizon
 
+modified by me 
+
 The elements must be unfolded in their corresponding parents!
 
 !!! DO NOT CHANGE ANY SCRIPTS IF YOU DO NOT KNOW WHAT YOU ARE DOING !!!
