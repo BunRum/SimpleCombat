@@ -5,7 +5,7 @@ local effects = require(ReplicatedStorage.Modules.effects)
 local combat = require(ReplicatedStorage.Modules.combat)
 -- local object = require(ReplicatedStorage.Modules.object)
 -- local variableModule = require(ReplicatedStorage.Modules.variableModule)
-
+-- types
 local newmain = BridgeNet2.ServerBridge("newmain")
 -- script.
 newmain:Connect(function(player: Player, move: string)
@@ -14,7 +14,7 @@ newmain:Connect(function(player: Player, move: string)
 			animation = "anim",
 			looped = false,
 		})
-		combat.util:charactersInRadius(player.Character:GetPivot().Position, 10, {player.Character}, function(Character) 
+		combat.util:charactersInRadius(player.Character:GetPivot().Position, 10, {player.Character}, function(Character: types) 
 			-- print(Character.)
 			-- Character
 		end)
