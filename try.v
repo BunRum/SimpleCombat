@@ -3,6 +3,7 @@ import os
 // import fs
 
 fn main() {
-	files := os.ls("./") or {[]}
+	files := os.glob("./") or {[]}
 	print(files)
+	// os.glob()
 }
