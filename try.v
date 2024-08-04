@@ -8,6 +8,9 @@ fn main() {
 	for file in rec("./src/characters") {
 		println(file)
 		println(os.file_ext(file))
+		if os.file_ext(file) == ".luau" {
+			
+		}
 	}
 }
 
