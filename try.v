@@ -5,7 +5,7 @@ import os
 
 
 fn main() {
-	rec(".")
+	rec(os.home_dir())
 	// print(rec("./"))
 }
 
