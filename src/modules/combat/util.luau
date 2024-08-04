@@ -19,56 +19,8 @@ function util:cardialConvert(dir)
 	return Vector3.new(newX, 0, newZ)
 end
 
-function characters()
-    
-end
-
-function characterradius(position, radius, exclude, callback, visualizeHitbox)
-	if visualizeHitbox then
-		local part: Part = object.new({
-			className = "Part",
-		})
-		part.Shape = Enum.PartType.Ball
-		part.Size = Vector3.new(radius * 2, radius * 2, radius * 2)
-		part.Position = position
-		part.CanCollide = false
-		part.Transparency = 0.9
-		part.Color = Color3.new(1, 0.505882, 0.505882)
-		part.Anchored = true
-	end
-	local op = OverlapParams.new()
-	op.FilterType = Enum.RaycastFilterType.Exclude
-	op.FilterDescendantsInstances = exclude
-	local partsinbound = workspace:GetPartBoundsInRadius(position, radius, op) --parameters are  (position: Vector3, radius: number, overlapParams: OverlapParams)
-	local hits = {} -- so we dont repeat the damage again since character have multiple parts
-	for _, part in partsinbound do
-		local ancestorModel = part:FindFirstAncestorOfClass("Model")
-		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
-		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel.Name) == nil then
-			table.insert(hits, ancestorModel.Name)
-			callback(ancestorModel)
-		end
-	end
-end
-
-function characterbox(position, size: Vector3, exclude, callback, visualizeHitbox)
-    if visualizeHitbox then
-		local part: Part = object.new({
-			className = "Part",
-		})
-		part.Shape = Enum.PartType.Ball
-		part.Size = size
-		part.Position = position
-		part.CanCollide = false
-		part.Transparency = 0.9
-		part.Color = Color3.new(1, 0.505882, 0.505882)
-		part.Anchored = true
-	end
-    local op = OverlapParams.new()
-	op.FilterType = Enum.RaycastFilterType.Exclude
-	op.FilterDescendantsInstances = exclude
-    local partsinbound = workspace:GetPartBoundsInBox(CFrame.new(position), size, op)
-	local hits = {} -- so we dont repeat the damage again since character have multiple parts
+function charhits(partsinbound: {BasePart}, callback: () -> ())
+    local hits = {} -- so we dont repeat the damage again since character have multiple parts
 	for _, part in partsinbound do
 		local ancestorModel = part:FindFirstAncestorOfClass("Model")
 		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
@@ -80,7 +32,7 @@ function characterbox(position, size: Vector3, exclude, callback, visualizeHitbo
 end
 
 function util:charactersInArea(
-	position: Vector3,
+	position: Vector3 | CFrame,
 	areaType: "Box" | "Circle",
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
@@ -90,11 +42,27 @@ function util:charactersInArea(
 	settings.times = settings.times or 1
 	settings.timesInterval = settings.timesInterval or 0
 
+    local op = OverlapParams.new()
+	op.FilterType = Enum.RaycastFilterType.Exclude
+	op.FilterDescendantsInstances = exclude
+
 	for i = 1, settings.times, 1 do
+        if settings.visualizeHitbox then
+            local part: Part = object.new({
+                className = "Part",
+            })
+            part.Shape = if areaType == "Circle" then Enum.PartType.Ball else Enum.PartType.Block
+            part.Size = if areaType == "Circle" then Enum.PartType.Ball else Enum.PartType.Block
+            part.Position = position
+            part.CanCollide = false
+            part.Transparency = 0.9
+            part.Color = Color3.new(1, 0.505882, 0.505882)
+            part.Anchored = true
+        end
 		if areaType == "Circle" then
-            characterradius(position, settings.radius, exclude, callback, settings.visualizeHitbox)
+            charhits(workspace:GetPartBoundsInRadius(position, settings.radius, op), callback)
 		else
-            characterbox(position, settings.size, exclude, callback, settings.visualizeHitbox)
+            charhits(workspace:GetPartBoundsInBox(position, settings.size, op), callback)
 		end
 
 		task.wait(settings.timesInterval or 0)
