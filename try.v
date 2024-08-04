@@ -17,7 +17,7 @@ fn main() {
 				if os.file_ext(file) == ".luau" {
 					os.write_file_array('${directory}/${filename}.meta.json', '{"properties":{"RunContext":"Server"}}'.bytes())!
 				}
-	}
+			}
 		}
 	}
 }
