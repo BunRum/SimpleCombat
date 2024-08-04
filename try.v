@@ -9,7 +9,7 @@ fn main() {
 		filename := file.after("/").all_before(".")
 		if os.file_ext(file) == ".luau" {
 			println(filename)
-			pri
+			print("mariooo", "river")
 		}
 		// println(filename)
 	}
