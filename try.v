@@ -6,7 +6,7 @@ import os
 
 fn main() {
 	for file in rec("./src/characters") {
-		filename := file.all_before(".")
+		filename := file.all_before("server")
 		if os.file_ext(file) == ".luau" {
 			println(filename)
 		}
