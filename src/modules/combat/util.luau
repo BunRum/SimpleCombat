@@ -1,5 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local types = require(ReplicatedStorage.Modules.types)
+local object = require(ReplicatedStorage.Modules.object)
 local util = {}
 -- types
 
@@ -20,8 +21,11 @@ function util:cardialConvert(dir)
 end
 
 function util:charactersInRadius(position: Vector3, radius, exclude: {Instance}, callback: (character: types.Character) -> (), visualize: boolean)
-    
-    local part: Part = Instance.new("Part")
+
+    local part: Part = object.new({
+        className = "Part",
+        
+    })
     part.Shape = Enum.PartType.Ball
     part.Size = Vector3.new(radius * 2, radius * 2, radius * 2)
     part.Position = position
