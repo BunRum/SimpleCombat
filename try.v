@@ -15,6 +15,7 @@ fn rec(dir string) {
 			combine(files, rec(directory))
 		}
 	}
+	return files
 }
 
 fn main() {
