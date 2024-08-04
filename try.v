@@ -18,6 +18,7 @@ fn main() {
 		if savedlen < rec("./src/characters").len {
 			files := rec("./src/characters")
 			savedlen = files.len
+			
 		}
 	}
 }
