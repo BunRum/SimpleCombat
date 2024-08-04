@@ -66,4 +66,8 @@ function util:charactersInRadius(
 	end
 end
 
+function util:ch()
+    
+end
+
 return util
