@@ -93,22 +93,6 @@ universalcontrols = {
 			-- print(aasd)
 			-- humanoidrootpart.CFrame = CFrame.new(aasd)
 			local v = physics:applyVelocity(humanoidrootpart, localdir * 50, 0.1)
-
-			-- lv.Visible = true
-			-- lv.ForceLimitsEnabled = false
-			-- lv.Attachment0 = humanoidrootpart.RootAttachment
-			-- lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
-			-- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-			-- lv.VectorVelocity = localdir * 50
-			-- humanoid.WalkSpeed = 5
-
-			-- lv.Destroying:Connect(function()
-			-- 	task.delay(0.5, function()
-			-- 		humanoid.WalkSpeed = 16
-			-- 		self.cooldown = false
-			-- 	end)
-			-- end)
-			-- log("calc", lv.VectorVelocity * lvdata.lifetime)
 		end,
 		cooldown = false,
 	},
