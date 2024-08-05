@@ -66,7 +66,7 @@ universalcontrols = {
 			}
 			local localPlayer: playerModule.type = tableModule:waitfor(variables, { "local", "plr" })
 			local character = localPlayer.Player.Character
-			local humanoidrootpart = character.HumanoidRootPart
+			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			local humanoid = character.Humanoid
 			local direction = humanoid.MoveDirection
 			local animtoplay
