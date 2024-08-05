@@ -53,10 +53,14 @@ universalcontrols = {
 		bridge = BridgeNet2.ReferenceBridge("dash"),
 		func = function()
 			local self = universalcontrols[Enum.KeyCode.Q]
+			local localPlayer: playerModule.type = tableModule:waitfor(variables, { "local", "plr" })
+			local character = localPlayer.Player.Character
+			local humanoidrootpart: BasePart = character.HumanoidRootPart
+			local humanoid: Humanoid = character.Humanoid
+			local direction = humanoid.MoveDirection
 			if self.cooldown then
 				return
 			end
-			-- self.cooldown = true
 			self.bridge:Fire()
 			local directionTable = {
 				[Vector3.new(1, 0, 0)] = "right",
@@ -64,16 +68,12 @@ universalcontrols = {
 				[-Vector3.new(0, 0, 1)] = "forward",
 				[-Vector3.new(0, 0, -1)] = "back",
 			}
-			local localPlayer: playerModule.type = tableModule:waitfor(variables, { "local", "plr" })
-			local character = localPlayer.Player.Character
-			local humanoidrootpart: BasePart = character.HumanoidRootPart
-			local humanoid: Humanoid = character.Humanoid
-			local direction = humanoid.MoveDirection
 			local animtoplay
 			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
 			local cardialdir = combatUtil:cardialConvert(direction)
 			local localdircardial = combatUtil:cardialConvert(humanoidrootpart.CFrame:VectorToObjectSpace(direction))
 			if humanoid.MoveDirection == Vector3.new(0, 0, 0) then -- if standing
+			return
 				localdircardial = -Vector3.new(0, 0, 1)
 				localdir = -cardialdir
 			end
