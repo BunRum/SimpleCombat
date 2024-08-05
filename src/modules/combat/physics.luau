@@ -20,7 +20,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     lv.Attachment0 = attachment
     lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
     lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-    lv.VectorVelocity = target/timeToReach
+    lv.VectorVelocity = timetor
 
     return lv
 end
