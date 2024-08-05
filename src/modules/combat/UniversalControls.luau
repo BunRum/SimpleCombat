@@ -98,7 +98,9 @@ universalcontrols = {
 		cooldown = false,
 	},
 	[Enum.KeyCode.T] = {
-		
+		func = function()
+			
+		end
 	}
 }
 
