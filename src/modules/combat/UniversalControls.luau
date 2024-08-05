@@ -83,7 +83,7 @@ universalcontrols = {
 			end)
 			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			v.Destroying:Connect(function()
-				dashanim:
+				dashanim:Stop()
 			end)
 			-- self.cooldown = false
 			-- dashanim.
