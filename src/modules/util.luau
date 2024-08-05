@@ -22,4 +22,8 @@ function util:pack(...)
 	return parsedPack
 end
 
+function util:when()
+	
+end
+
 return util
