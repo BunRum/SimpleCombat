@@ -72,11 +72,7 @@ universalcontrols = {
 			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
 			local cardialdir = combatUtil:cardialConvert(direction)
 			local localdircardial = combatUtil:cardialConvert(humanoidrootpart.CFrame:VectorToObjectSpace(direction))
-			if humanoid.MoveDirection == Vector3.new(0, 0, 0) then -- if standing
-				return
-				-- localdircardial = -Vector3.new(0, 0, 1)
-				-- localdir = -cardialdir
-			end
+
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
 			-- local lvdata = {
