@@ -58,7 +58,6 @@ universalcontrols = {
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			local humanoid: Humanoid = character.Humanoid
 			local direction = humanoid.MoveDirection
-			-- local direction = Vector3.new(humanoid.MoveDirection.X, 0, humanoid.MoveDirection.Z)
 			if self.cooldown or direction == Vector3.new(0, 0, 0) then
 				-- return
 			end
@@ -70,24 +69,24 @@ universalcontrols = {
 				[Vector3.new(0, 0, -1)] = "forward",
 				[Vector3.new(0, 0, 1)] = "back",
 			}
-			-- local animtoplay
-			-- local toobjectspace = humanoidrootpart.CFrame:VectorToObjectSpace(direction) -- used for animation
-			local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
-			-- localspace = Vector3.new(localspace.X, 0, localspace.Z)
-			print(localspace)
-			-- local localspace = Vector3.new(0, 0, -10)
-			-- local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
-			-- animtoplay = directionTable[objectspaceCardial]
-			local v = physics:applyVelocity(humanoidrootpart, localspace*10, 0.5)
-			-- local dashanim = localPlayer:Play(`dash {animtoplay}`)
-			-- task.delay(dashanim.Length, function()
-			-- 	dashanim:AdjustSpeed(0)
-			-- 	v:Destroy()
-			-- end)
-			-- v.Destroying:Connect(function()
-			-- 	dashanim:Stop()
-			-- 	self.cooldown = false
-			-- end)
+			local animtoplay
+			local toobjectspace = humanoidrootpart.CFrame:VectorToObjectSpace(direction) -- used for animation
+			-- local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
+			local localspace = Vector3.new(0, 0, -10)
+			local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
+			-- localPlayer:
+
+			animtoplay = directionTable[objectspaceCardial]
+			local v = physics:applyVelocity(humanoidrootpart, localspace)
+			local dashanim = localPlayer:Play(`dash {animtoplay}`)
+			task.delay(dashanim.Length, function()
+				dashanim:AdjustSpeed(0)
+				v:Destroy()
+			end)
+			v.Destroying:Connect(function()
+				dashanim:Stop()
+				self.cooldown = false
+			end)
 			-- self.cooldown = false
 			-- dashanim.
 			-- dashanim.
