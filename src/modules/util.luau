@@ -22,7 +22,7 @@ function util:pack(...)
 	return parsedPack
 end
 
-function util:when()
+function util:when(func)
 	
 end
 
