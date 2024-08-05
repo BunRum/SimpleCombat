@@ -74,7 +74,7 @@ universalcontrols = {
 			local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
 			-- print(direction)
 			print(toobjectspace, localspace)
-			local localdircardial = combatUtil:cardialConvert(direction)
+			local localdircardial = combatUtil:cardialConvert(toobjectspace)
 
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
