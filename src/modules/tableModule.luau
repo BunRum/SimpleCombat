@@ -106,7 +106,6 @@ function tbl:get(tbl: table, arguments: {string})
 			end
 			local firstHigh = high[1]
 			local hangedValues = hang(1, high, value)
-			warn(high)
 			as[firstHigh] = combine(as[firstHigh], hangedValues)
 		end
 	
