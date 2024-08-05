@@ -80,7 +80,7 @@ universalcontrols = {
 			local dashanim = localPlayer:Play(`dash {animtoplay}`)
 			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			-- dashanim.
-			dashanim.
+			-- dashanim.
 			-- dashanim.Length
 			dashanim.Ended:Once(function()
 				self.cooldown = false
