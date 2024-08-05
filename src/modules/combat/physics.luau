@@ -29,7 +29,7 @@ function physics:applyVelocity(obj: BasePart, from: Vector3, studs: number, time
 	-- local distance = (target - startPosition).Magnitude
 	-- local velocity = direction * (distance / (timeToReach or 1))
 
-	lv.VectorVelocity = timeToReach*(from*studs)
+	lv.VectorVelocity = (from*studs)
 
 	return lv
 	-- local aasd = obj.CFrame:PointToWorldSpace(target)
