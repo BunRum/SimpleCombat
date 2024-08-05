@@ -72,7 +72,7 @@ universalcontrols = {
 			local animtoplay
 			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
 			local localdircardial = combatUtil:cardialConvert(localdir)
-			print(localdir)
+			-- print(localdir)
 			print(localdircardial)
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
@@ -88,7 +88,7 @@ universalcontrols = {
 			-- local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir * 10)
 			-- print(aasd)
 			-- humanoidrootpart.CFrame = CFrame.new(aasd)
-			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 1)
+			local v = physics:applyVelocity(humanoidrootpart, localdir*50, 0.1)
 			
 			-- lv.Visible = true
 			-- lv.ForceLimitsEnabled = false
