@@ -3,7 +3,7 @@ local TweenService = game:GetService("TweenService")
 local object = require(ReplicatedStorage.Modules.object)
 local physics = {}
 
-function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: number)
+function physics:applyVelocity(obj: BasePart, from: Vector3, studs: number, timeToReach: number)
 	local attachment: Attachment = object.new({
 		className = "Attachment",
 		name = "velocityattachment",
@@ -24,12 +24,12 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
 	-- lv.VectorVelocity = ((timeToReach or 1)*target)
 
 	-- Calculate the velocity needed to reach the target in the given time
-	local startPosition = obj.Position
-	local direction = (target - startPosition).Unit
-	local distance = (target - startPosition).Magnitude
-	local velocity = direction * (distance / (timeToReach or 1))
+	-- local startPosition = obj.Position
+	-- local direction = (target - startPosition).Unit
+	-- local distance = (target - startPosition).Magnitude
+	-- local velocity = direction * (distance / (timeToReach or 1))
 
-	lv.VectorVelocity = velocity
+	lv.VectorVelocity = (from*studs)
 
 	return lv
 	-- local aasd = obj.CFrame:PointToWorldSpace(target)
