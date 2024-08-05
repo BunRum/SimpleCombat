@@ -18,6 +18,7 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 		else
 			print("found existing obj")
 			id = obj:GetAttribute("id")
+			print(id)
 			if id == nil then
 				object.n += 1
 				id = object.n
