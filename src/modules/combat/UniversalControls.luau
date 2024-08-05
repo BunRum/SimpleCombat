@@ -70,7 +70,7 @@ universalcontrols = {
 				[-Vector3.new(0, 0, -1)] = "back",
 			}
 			local animtoplay
-			local toobjectspace = humanoidrootpart.CFrame:PointToObjectSpace(direction)
+			local toobjectspace = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
 			local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
 			-- print(direction)
 			print(toobjectspace, localspace)
