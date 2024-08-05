@@ -86,7 +86,7 @@ universalcontrols = {
 			-- 	find = true,
 			-- }
 			print(localdir)
-			local lv: LinearVelocity = physics:applyVelocity(humanoidrootpart, localdir*10, 0.25)
+			local lv: LinearVelocity = physics:applyVelocity(humanoidrootpart, localdir*10, 0.1)
 			-- lv.Visible = true
 			-- lv.ForceLimitsEnabled = false
 			-- lv.Attachment0 = humanoidrootpart.RootAttachment
