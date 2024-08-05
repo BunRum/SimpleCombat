@@ -37,7 +37,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	end
 
 	if input.KeyCode == Enum.KeyCode.T then
-		
+		combatModule.physics:applyVelocity(workspace.ChangeCharacter)
 	end
 
 end)

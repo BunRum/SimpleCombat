@@ -23,6 +23,7 @@ local characters: types.character = {
 }
 
 combatModule.util = require(script.util)
+combatModule.physics = require(script.physics)
 
 function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
