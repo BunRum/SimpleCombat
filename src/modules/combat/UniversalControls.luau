@@ -75,7 +75,7 @@ universalcontrols = {
 			local localspace = Vector3.new(0, 0, -10)
 			-- local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
 			-- localPlayer:
-
+			humanoidrootpart:GetVelocityAtPosition()
 			-- animtoplay = directionTable[objectspaceCardial]
 			local v = physics:applyVelocity(humanoidrootpart, localspace)
 			-- local dashanim = localPlayer:Play(`dash {animtoplay}`)
