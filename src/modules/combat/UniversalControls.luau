@@ -78,7 +78,7 @@ universalcontrols = {
 
 			animtoplay = directionTable[objectspaceCardial]
 			local dashanim = localPlayer:Play(`dash {animtoplay}`)
-			-- local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
+			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			-- dashanim.
 			dashanim.Ended:Once(function()
 				self.cooldown = false
