@@ -89,7 +89,9 @@ universalcontrols = {
 			-- print(aasd)
 			-- humanoidrootpart.CFrame = CFrame.new(aasd)
 			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 1)
-			v.Completed:
+			v.Completed:Once(function(playbackState)
+				
+			end)
 			-- lv.Visible = true
 			-- lv.ForceLimitsEnabled = false
 			-- lv.Attachment0 = humanoidrootpart.RootAttachment
