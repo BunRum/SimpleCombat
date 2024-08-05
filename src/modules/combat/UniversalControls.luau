@@ -53,7 +53,7 @@ universalcontrols = {
 		bridge = BridgeNet2.ReferenceBridge("dash"),
 		func = function()
 			local self = universalcontrols[Enum.KeyCode.Q]
-			local localPlayer: playerModule.playerm = tableModule:waitfor(variables, { "local", "plr" })
+			local localPlayer: types = tableModule:waitfor(variables, { "local", "plr" })
 			local character = localPlayer.Player.Character
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			local humanoid: Humanoid = character.Humanoid
@@ -75,7 +75,7 @@ universalcontrols = {
 			local localspace = Vector3.new(0, 0, -50)
 			local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
 			-- localPlayer:
-			
+
 			animtoplay = directionTable[objectspaceCardial]
 			local dashanim = localPlayer:Play(`dash {animtoplay}`)
 			-- dashanim.
