@@ -27,7 +27,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
 	local startPosition = obj.Position
 	local direction = (target - startPosition).Unit
 	local distance = (target - startPosition).Magnitude
-	local velocity = direction * (distance / timeToReach)
+	local velocity = direction * (distance / (timeToReach or 1))
 
 	lv.VectorVelocity = velocity
 
