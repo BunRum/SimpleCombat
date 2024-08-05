@@ -23,11 +23,11 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     -- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
     -- lv.VectorVelocity = timeToReach*target
     -- local aasd = obj.CFrame:PointToWorldSpace(target)
-    local ti = TweenInfo.new(timeToReach)
-    local tween = TweenService:Create(obj, ti, {CFrame = CFrame.new(target)})
-    tween:Play()
+    -- local ti = TweenInfo.new(timeToReach)
+    -- local tween = TweenService:Create(obj, ti, {CFrame = CFrame.new(target)})
+    -- tween:Play()
 
-    return tween
+    -- return tween
     -- return lv
 end
 return physics
