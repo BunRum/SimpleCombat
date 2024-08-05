@@ -19,6 +19,9 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 			print("found existing obj")
 			object.n += 1
 			id = obj:GetAttribute("id")
+			if id == nil then
+				
+			end
 			objects[id].modified = true
 		end
 	end
