@@ -97,6 +97,9 @@ universalcontrols = {
 		end,
 		cooldown = false,
 	},
+	[Enum.KeyCode.T] = {
+		
+	}
 }
 
 return universalcontrols
