@@ -28,6 +28,7 @@ function playerModule:Play(animation: string)
 	-- self.plas
 	local animTrack = animationPlayer.track(self.Player.Character, animation)
 	animTrack:Play()
+	return animTrack
 end
 
 return playerModule
