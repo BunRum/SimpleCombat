@@ -61,7 +61,7 @@ universalcontrols = {
 			if direction == Vector3.new(0, 0, 0) then
 				
 			end
-			if self.cooldown or direction == Vector3.new(0, 0, 0) then
+			if self.cooldown then
 				return
 			end
 			-- self.cooldown = true
