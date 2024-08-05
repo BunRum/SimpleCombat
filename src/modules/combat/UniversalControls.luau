@@ -71,7 +71,8 @@ universalcontrols = {
 			}
 			local animtoplay
 			local toobjectspace = humanoidrootpart.CFrame:VectorToObjectSpace(direction) -- used for animation
-			local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
+			-- local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
+			local localspace = Vector3.new()
 			local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
 
 			animtoplay = directionTable[objectspaceCardial]
