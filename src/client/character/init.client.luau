@@ -43,7 +43,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		local pivotpos = workspace.Dummy:GetPivot().Position
 		workspace.Dummy:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), targetpos))
 
-		combatModule.physics:applyVelocity(workspace.Dummy.HumanoidRootPart, Vector3.new(0, 0, -1))
+		combatModule.physics:applyVelocity(workspace.Dummy.HumanoidRootPart, Vector3.new(0, 0, -1), 5)
 	end
 
 end)
