@@ -80,7 +80,7 @@ universalcontrols = {
 			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			local dashanim = localPlayer:Play(`dash {animtoplay}`)
 			task.delay(dashanim.Length, function()
-				-- dashanim:AdjustSpeed(0)
+				dashanim:AdjustSpeed(0)
 				v:Destroy()
 			end)
 			v.Destroying:Connect(function()
