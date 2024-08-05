@@ -17,10 +17,10 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 			args.find = false
 		else
 			print("found existing obj")
-			object.n += 1
 			id = obj:GetAttribute("id")
 			if id == nil then
-				
+				object.n += 1
+				id = object.n
 			end
 			objects[id].modified = true
 		end
@@ -53,8 +53,6 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 
 	return obj
 end
-
-
 
 local queue = queue.new()
 
