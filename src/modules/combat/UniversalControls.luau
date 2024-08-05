@@ -88,7 +88,7 @@ universalcontrols = {
 			-- local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir * 10)
 			-- print(aasd)
 			-- humanoidrootpart.CFrame = CFrame.new(aasd)
-			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 1)
+			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 0.5)
 			v.Completed:Once(function()
 				
 			end)
