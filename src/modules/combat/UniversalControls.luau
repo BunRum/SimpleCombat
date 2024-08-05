@@ -71,36 +71,14 @@ universalcontrols = {
 			}
 			local animtoplay
 			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
-			-- local cardialdir = combatUtil:cardialConvert(direction)
 			local localdircardial = combatUtil:cardialConvert(humanoidrootpart.CFrame:VectorToObjectSpace(direction))
 
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
-			-- local lvdata = {
-			-- 	className = "LinearVelocity",
-			-- 	Parent = humanoidrootpart,
-			-- 	lifetime = 0.25,
-			-- 	find = true,
-			-- }
 			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 0.5)
 			v.Completed:Once(function()
 				self.cooldown = false
 			end)
-			-- lv.Visible = true
-			-- lv.ForceLimitsEnabled = false
-			-- lv.Attachment0 = humanoidrootpart.RootAttachment
-			-- lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
-			-- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-			-- lv.VectorVelocity = localdir * 50
-			-- humanoid.WalkSpeed = 5
-			
-			-- lv.Destroying:Connect(function()
-			-- 	task.delay(0.5, function()
-			-- 		humanoid.WalkSpeed = 16
-			-- 		self.cooldown = false
-			-- 	end)
-			-- end)
-			-- log("calc", lv.VectorVelocity * lvdata.lifetime)
 		end,
 		cooldown = false,
 	},
