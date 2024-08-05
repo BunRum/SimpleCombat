@@ -191,7 +191,7 @@ function tbl:waitfor(...): any
 		-- warn("we didnt have to wait")
 	end
 
-	warn("got the value")
+	-- warn("got the value")
 	return returnedValue
 end
 
