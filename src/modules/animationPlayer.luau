@@ -15,7 +15,7 @@ function aniamtionPlayer.track(character: Model?, animation: string): AnimationT
         animInstance = loadedanims[animation]
         -- print("kroger")
     else
-        local keyframe = kfsqp:RegisterKeyframeSequence(workspace.ChangeCharacter.AnimSaves[animation])
+        local keyframe = kfsqp:RegisterKeyframeSequence(workspace.Dummy.AnimSaves[animation])
         if keyframe == nil then
             return nil
         end
