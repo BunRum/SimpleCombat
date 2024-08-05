@@ -69,24 +69,24 @@ universalcontrols = {
 				[Vector3.new(0, 0, -1)] = "forward",
 				[Vector3.new(0, 0, 1)] = "back",
 			}
-			local animtoplay
+			-- local animtoplay
 			local toobjectspace = humanoidrootpart.CFrame:VectorToObjectSpace(direction) -- used for animation
 			-- local localspace = humanoidrootpart.CFrame:PointToWorldSpace(direction)
 			local localspace = Vector3.new(0, 0, -10)
-			local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
+			-- local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
 			-- localPlayer:
 
-			animtoplay = directionTable[objectspaceCardial]
+			-- animtoplay = directionTable[objectspaceCardial]
 			local v = physics:applyVelocity(humanoidrootpart, localspace)
-			local dashanim = localPlayer:Play(`dash {animtoplay}`)
-			task.delay(dashanim.Length, function()
-				dashanim:AdjustSpeed(0)
-				v:Destroy()
-			end)
-			v.Destroying:Connect(function()
-				dashanim:Stop()
-				self.cooldown = false
-			end)
+			-- local dashanim = localPlayer:Play(`dash {animtoplay}`)
+			-- task.delay(dashanim.Length, function()
+			-- 	dashanim:AdjustSpeed(0)
+			-- 	v:Destroy()
+			-- end)
+			-- v.Destroying:Connect(function()
+			-- 	dashanim:Stop()
+			-- 	self.cooldown = false
+			-- end)
 			-- self.cooldown = false
 			-- dashanim.
 			-- dashanim.
