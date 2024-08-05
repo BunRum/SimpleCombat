@@ -22,7 +22,7 @@ function util:pack(...)
 	return parsedPack
 end
 
-function util:when(func: () -> any, value: any)
+function util:when(func: () -> any, value: any, callback: () -> ())
 	conn = RunService.Heartbeat:Connect(function()
 		if func() == value then
 			conn:Disconnect()
