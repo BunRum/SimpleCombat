@@ -61,7 +61,7 @@ universalcontrols = {
 			if self.cooldown or direction == Vector3.new(0, 0, 0) then
 				return
 			end
-			self.cooldown = true
+			-- self.cooldown = true
 			self.bridge:Fire()
 			local directionTable = {
 				[Vector3.new(1, 0, 0)] = "right",
