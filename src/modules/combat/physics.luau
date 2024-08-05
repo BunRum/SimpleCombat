@@ -21,7 +21,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
     lv.Attachment0 = attachment
     lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
     lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-    lv.VectorVelocity = target+(target*lifetime)
+    lv.VectorVelocity = (target)+(target*lifetime)
     return lv
     -- local aasd = obj.CFrame:PointToWorldSpace(target)
     -- local ti = TweenInfo.new(timeToReach)
