@@ -23,7 +23,9 @@ function util:pack(...)
 end
 
 function util:when(func, value)
-	
+	RunService.Heartbeat:Connect(function(deltaTime)
+		
+	end)
 end
 
 return util
