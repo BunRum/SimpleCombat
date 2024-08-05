@@ -85,6 +85,7 @@ universalcontrols = {
 			-- 	lifetime = 0.25,
 			-- 	find = true,
 			-- }
+			print(localdir)
 			local lv: LinearVelocity = physics:applyVelocity(humanoidrootpart, localdir, 0.25)
 			-- lv.Visible = true
 			-- lv.ForceLimitsEnabled = false
