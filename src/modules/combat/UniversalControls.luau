@@ -58,9 +58,6 @@ universalcontrols = {
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			local humanoid: Humanoid = character.Humanoid
 			local direction = humanoid.MoveDirection
-			if direction == Vector3.new(0, 0, 0) then
-				
-			end
 			if self.cooldown then
 				return
 			end
@@ -75,6 +72,9 @@ universalcontrols = {
 			local animtoplay
 			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
 			local localdircardial = combatUtil:cardialConvert(localdir)
+			if direction == Vector3.new(0, 0, 0) then
+				
+			end
 			-- print(localdir)
 			print(localdircardial)
 			animtoplay = directionTable[localdircardial]
