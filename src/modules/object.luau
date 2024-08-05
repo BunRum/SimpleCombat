@@ -22,6 +22,7 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 			if id == nil then
 				object.n += 1
 				id = object.n
+				objects[id] = {}
 			end
 			objects[id].modified = true
 		end
