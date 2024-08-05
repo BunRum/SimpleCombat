@@ -13,7 +13,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
 	local lv: LinearVelocity = object.new({
 		className = "LinearVelocity",
 		Parent = obj,
-		lifetime = timeToReach or 1,
+		lifetime = timeToReach,
 		find = true,
 	})
 	-- lv.Visible = true
