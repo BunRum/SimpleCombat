@@ -21,7 +21,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
 	lv.Attachment0 = attachment
 	lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
 	lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-	lv.VectorVelocity = (timeToReach or 1)*target
+	lv.VectorVelocity = timeToReach*target
 
 	-- Calculate the velocity needed to reach the target in the given time
 	-- local startPosition = obj.Position
