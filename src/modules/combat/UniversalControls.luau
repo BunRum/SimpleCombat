@@ -8,7 +8,7 @@ local playerModule = require(ReplicatedStorage.Modules.player)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local physics = require(ReplicatedStorage.Modules.combat.physics)
-local types = require(ReplicatedStorage.Modules.types)
+
 local universalcontrols = {}
 
 function M1Cooldown()
@@ -53,59 +53,37 @@ universalcontrols = {
 		bridge = BridgeNet2.ReferenceBridge("dash"),
 		func = function()
 			local self = universalcontrols[Enum.KeyCode.Q]
-			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
+			local localPlayer: playerModule.type = tableModule:waitfor(variables, { "local", "plr" })
 			local character = localPlayer.Player.Character
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			local humanoid: Humanoid = character.Humanoid
 			local direction = humanoid.MoveDirection
 			if self.cooldown or direction == Vector3.new(0, 0, 0) then
-				-- return
+				return
 			end
 			self.cooldown = true
 			self.bridge:Fire()
 			local directionTable = {
 				[Vector3.new(1, 0, 0)] = "right",
 				[Vector3.new(-1, 0, 0)] = "left",
-				[Vector3.new(0, 0, -1)] = "forward",
-				[Vector3.new(0, 0, 1)] = "back",
+				[-Vector3.new(0, 0, 1)] = "forward",
+				[-Vector3.new(0, 0, -1)] = "back",
 			}
-			-- local animtoplay
-			local toobjectspace = humanoidrootpart.CFrame:VectorToObjectSpace(direction) -- used for animation
-			local localspace = humanoidrootpart.CFrame:PointToObjectSpace(direction)
-			print(localspace)
-			-- local localspace = Vector3.new(0, 0, -10)
-			-- local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
-			-- localPlayer:
+			local animtoplay
+			local toobjectspace = humanoidrootpart.CFrame:PointToObjectSpace(direction)
+			local localdir = humanoidrootpart.CFrame:PointToWorldSpace(direction)
+			-- print(direction)
+			local localdircardial = combatUtil:cardialConvert(direction)
 
-			-- animtoplay = directionTable[objectspaceCardial]
-			local v = physics:applyVelocity(humanoidrootpart, localspace*6, 0.1)
-			-- local dashanim = localPlayer:Play(`dash {animtoplay}`)
-			-- task.delay(dashanim.Length, function()
-			-- 	dashanim:AdjustSpeed(0)
-			-- 	v:Destroy()
-			-- end)
-			-- v.Destroying:Connect(function()
-			-- 	dashanim:Stop()
-			-- 	self.cooldown = false
-			-- end)
-			-- self.cooldown = false
-			-- dashanim.
-			-- dashanim.
-			-- dashanim.Length
-			-- v.Completed:Once(function()
-				
-			-- end)
+			animtoplay = directionTable[localdircardial]
+			localPlayer:Play(`dash {animtoplay}`)
+			local v = physics:applyVelocity(humanoidrootpart, localdir, 0.5)
+			v.Completed:Once(function()
+				self.cooldown = false
+			end)
 		end,
 		cooldown = false,
 	},
-	[Enum.KeyCode.T] = {	
-		func = function()
-			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
-			local character = localPlayer.Player.Character
-			local humanoidrootpart: BasePart = character.HumanoidRootPart
-			humanoidrootpart.CFrame = CFrame.new(humanoidrootpart.CFrame:PointToWorldSpace(Vector3.new(0, 0, -10)))
-		end
-	}
 }
 
 return universalcontrols
