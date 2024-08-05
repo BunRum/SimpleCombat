@@ -36,4 +36,6 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		plr.Player.Character:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), targetpos))
 	end
 
+	if input.KeyCode == 
+
 end)
