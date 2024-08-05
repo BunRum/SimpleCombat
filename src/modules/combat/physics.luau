@@ -22,9 +22,9 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     -- lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
     -- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
     -- lv.VectorVelocity = timeToReach*target
-    local aasd = obj.CFrame:PointToWorldSpace(target)
+    -- local aasd = obj.CFrame:PointToWorldSpace(target)
     local ti = TweenInfo.new(timeToReach)
-    local tween = TweenService:Create(obj, ti, {CFrame = CFrame.new(aasd)})
+    local tween = TweenService:Create(obj, ti, {CFrame = CFrame.new(target)})
     tween:Play()
 
     return tween
