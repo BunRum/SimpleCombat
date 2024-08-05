@@ -7,6 +7,7 @@ local object = require(ReplicatedStorage.Modules.object)
 local playerModule = require(ReplicatedStorage.Modules.player)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
+local physics = require(ReplicatedStorage.Modules.combat.physics)
 
 local universalcontrols = {}
 
@@ -78,26 +79,26 @@ universalcontrols = {
 			end
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
-			local lvdata = {
-				className = "LinearVelocity",
-				Parent = humanoidrootpart,
-				lifetime = 0.25,
-				find = true,
-			}
-			local lv: LinearVelocity = object.new(lvdata)
-			lv.Visible = true
-			lv.ForceLimitsEnabled = false
-			lv.Attachment0 = humanoidrootpart.RootAttachment
-			lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
-			lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-			lv.VectorVelocity = localdir * 50
-			humanoid.WalkSpeed = 5
-			lv.Destroying:Connect(function()
-				task.delay(0.5, function()
-					humanoid.WalkSpeed = 16
-					self.cooldown = false
-				end)
-			end)
+			-- local lvdata = {
+			-- 	className = "LinearVelocity",
+			-- 	Parent = humanoidrootpart,
+			-- 	lifetime = 0.25,
+			-- 	find = true,
+			-- }
+			local lv: LinearVelocity = physics:applyVelocity(humanoidrootpart, localdir, 0.25)
+			-- lv.Visible = true
+			-- lv.ForceLimitsEnabled = false
+			-- lv.Attachment0 = humanoidrootpart.RootAttachment
+			-- lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
+			-- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
+			-- lv.VectorVelocity = localdir * 50
+			-- humanoid.WalkSpeed = 5
+			-- lv.Destroying:Connect(function()
+			-- 	task.delay(0.5, function()
+			-- 		humanoid.WalkSpeed = 16
+			-- 		self.cooldown = false
+			-- 	end)
+			-- end)
 			-- log("calc", lv.VectorVelocity * lvdata.lifetime)
 		end,
 		cooldown = false,
