@@ -77,11 +77,11 @@ universalcontrols = {
 			-- localPlayer:
 
 			animtoplay = directionTable[objectspaceCardial]
+			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			local dashanim = localPlayer:Play(`dash {animtoplay}`)
 			task.delay(dashanim.Length, function()
 				dashanim:AdjustSpeed(0)
 			end)
-			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			v.Destroying:Connect(function()
 				dashanim:Stop()
 				self.cooldown = false
