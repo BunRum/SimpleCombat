@@ -5,6 +5,7 @@ local variables = require(ReplicatedStorage.Modules.variables)
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local types = require(ReplicatedStorage.Modules.types)
+local util = require(ReplicatedStorage.Modules.util)
 local plr: types.playerm = variableModule:waitfor({ "local", "plr" })
 -- plr.Player:GetMouse().
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, { "local", "character" })
@@ -46,6 +47,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		local start = os.clock()
 		combatModule.physics:applyVelocity(workspace.Dummy.HumanoidRootPart, Vector3.new(0, 0, -1), 5)
 
+		util:when()
 
 	end
 
