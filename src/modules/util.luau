@@ -25,7 +25,7 @@ end
 function util:when(func: () -> any, value: any)
 	conn = RunService.Heartbeat:Connect(function()
 		if func() == value then
-			
+			conn:Disconnect()
 		end
 	end)
 end
