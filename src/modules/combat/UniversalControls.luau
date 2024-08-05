@@ -61,7 +61,7 @@ universalcontrols = {
 			if self.cooldown or direction == Vector3.new(0, 0, 0) then
 				return
 			end
-			self.cooldown = true
+			-- self.cooldown = true
 			self.bridge:Fire()
 			local directionTable = {
 				[Vector3.new(1, 0, 0)] = "right",
@@ -70,17 +70,41 @@ universalcontrols = {
 				[-Vector3.new(0, 0, -1)] = "back",
 			}
 			local animtoplay
-			local toobjectspace = humanoidrootpart.CFrame:PointToObjectSpace(direction)
-			local localdir = humanoidrootpart.CFrame:PointToWorldSpace(direction)
-			-- print(direction)
-			local localdircardial = combatUtil:cardialConvert(direction)
+			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
+			local cardialdir = combatUtil:cardialConvert(direction)
+			local localdircardial = combatUtil:cardialConvert(humanoidrootpart.CFrame:VectorToObjectSpace(direction))
 
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
-			local v = physics:applyVelocity(humanoidrootpart, localdir, 0.5)
-			v.Completed:Once(function()
-				self.cooldown = false
-			end)
+			-- local lvdata = {
+			-- 	className = "LinearVelocity",
+			-- 	Parent = humanoidrootpart,
+			-- 	lifetime = 0.25,
+			-- 	find = true,
+			-- }
+			-- print(localdir * 10)
+			-- print(localdir*10, (0.1*localdir*10))
+
+			-- local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir * 10)
+			-- print(aasd)
+			-- humanoidrootpart.CFrame = CFrame.new(aasd)
+			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 1)
+			
+			-- lv.Visible = true
+			-- lv.ForceLimitsEnabled = false
+			-- lv.Attachment0 = humanoidrootpart.RootAttachment
+			-- lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
+			-- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
+			-- lv.VectorVelocity = localdir * 50
+			-- humanoid.WalkSpeed = 5
+			
+			-- lv.Destroying:Connect(function()
+			-- 	task.delay(0.5, function()
+			-- 		humanoid.WalkSpeed = 16
+			-- 		self.cooldown = false
+			-- 	end)
+			-- end)
+			-- log("calc", lv.VectorVelocity * lvdata.lifetime)
 		end,
 		cooldown = false,
 	},
