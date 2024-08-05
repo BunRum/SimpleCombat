@@ -19,7 +19,7 @@ function getLoadedListeners()
 	if #variableModule.loadedListeners == 0 then
 		repeat
 			task.wait()
-			log("waiting for players")
+			-- log("waiting for players")
 		until #variableModule.loadedListeners > 0
 	end
 
