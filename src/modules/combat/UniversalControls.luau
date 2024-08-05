@@ -73,7 +73,7 @@ universalcontrols = {
 			local cardialdir = combatUtil:cardialConvert(direction)
 			local localdircardial = combatUtil:cardialConvert(humanoidrootpart.CFrame:VectorToObjectSpace(direction))
 			if humanoid.MoveDirection == Vector3.new(0, 0, 0) then -- if standing
-			return
+				return
 				-- localdircardial = -Vector3.new(0, 0, 1)
 				-- localdir = -cardialdir
 			end
@@ -85,10 +85,10 @@ universalcontrols = {
 			-- 	lifetime = 0.25,
 			-- 	find = true,
 			-- }
-			print(localdir*10)
+			print(localdir * 10)
 			-- print(localdir*10, (0.1*localdir*10))
 
-			local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir*10)
+			local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir * 10)
 			-- print(aasd)
 			humanoidrootpart.CFrame = CFrame.new(aasd)
 			-- local lv: LinearVelocity = physics:applyVelocity(humanoidrootpart, localdir*10, 0.1)
