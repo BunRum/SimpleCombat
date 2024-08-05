@@ -1,6 +1,6 @@
 local physics = {}
 
-function physics:applyVelocity(obj)
+function physics:applyVelocity(obj: BasePart)
     
 end
 
