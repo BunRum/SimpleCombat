@@ -24,6 +24,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     print(timeToReach*target)
     print(target/timeToReach)
     lv.VectorVelocity = timeToReach*target
+    return lv
     -- local aasd = obj.CFrame:PointToWorldSpace(target)
     -- local ti = TweenInfo.new(timeToReach)
     -- local tween = TweenService:Create(obj, ti, {CFrame = CFrame.new(target)})
