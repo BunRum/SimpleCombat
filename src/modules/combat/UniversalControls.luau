@@ -81,13 +81,10 @@ universalcontrols = {
 			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			wait(dashanim.Length)
 			dashanim:AdjustSpeed(0)
+			self.cooldown = false
 			-- dashanim.
 			-- dashanim.
 			-- dashanim.Length
-			dashanim.Ended:Once(function()
-				self.cooldown = false
-				-- v:Destroy()
-			end)
 			-- v.Completed:Once(function()
 				
 			-- end)
