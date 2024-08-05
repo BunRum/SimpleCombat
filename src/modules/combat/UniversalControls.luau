@@ -99,6 +99,9 @@ universalcontrols = {
 	},
 	[Enum.KeyCode.T] = {
 		func = function()
+			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
+			local character = localPlayer.Player.Character
+			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			
 		end
 	}
