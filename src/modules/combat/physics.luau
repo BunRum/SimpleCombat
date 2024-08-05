@@ -4,18 +4,18 @@ local object = require(ReplicatedStorage.Modules.object)
 local physics = {}
 
 function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: number)
-    -- local attachment: Attachment = object.new({
-    --     className = "Attachment",
-    --     name =  "velocityattachment",
-    --     find = true,
-    --     Parent = obj
-    -- })
-    -- local lv: LinearVelocity = object.new( {
-    --     className = "LinearVelocity",
-    --     Parent = obj,
-    --     lifetime = timeToReach,
-    --     find = true,
-    -- })
+    local attachment: Attachment = object.new({
+        className = "Attachment",
+        name =  "velocityattachment",
+        find = true,
+        Parent = obj
+    })
+    local lv: LinearVelocity = object.new( {
+        className = "LinearVelocity",
+        Parent = obj,
+        lifetime = timeToReach,
+        find = true,
+    })
     -- lv.Visible = true
     -- lv.ForceLimitsEnabled = false
     -- lv.Attachment0 = attachment
