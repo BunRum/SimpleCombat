@@ -97,12 +97,12 @@ universalcontrols = {
 		end,
 		cooldown = false,
 	},
-	[Enum.KeyCode.T] = {
+	[Enum.KeyCode.T] = {	
 		func = function()
 			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			local character = localPlayer.Player.Character
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
-			humanoidrootpart.CFrame = CFrame.new(humanoidrootpart.CFrame:PointToWorldSpace(Vector3.new(0, 0, -1)))
+			humanoidrootpart.CFrame = CFrame.new(humanoidrootpart.CFrame:PointToWorldSpace(Vector3.new(0, 0, -10)))
 		end
 	}
 }
