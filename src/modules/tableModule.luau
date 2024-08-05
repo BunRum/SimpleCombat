@@ -181,14 +181,14 @@ function tbl:waitfor(...): any
 	local timeStart = os.clock()
 	local returnedValue = tbl:get(...)
 	if returnedValue == nil then
-		warn("we have to wait")
+		-- warn("we have to wait")
 		repeat
 			wait()
 			warn("waiting for " , table.pack(...)[2], os.clock() - timeStart)
 		until tbl:get(...) ~= nil
 		returnedValue = tbl:get(...)
 	else
-		warn("we didnt have to wait")
+		-- warn("we didnt have to wait")
 	end
 
 	warn("got the value")
