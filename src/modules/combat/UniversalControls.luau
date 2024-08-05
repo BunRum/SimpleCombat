@@ -90,7 +90,7 @@ universalcontrols = {
 			-- humanoidrootpart.CFrame = CFrame.new(aasd)
 			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 0.5)
 			v.Completed:Once(function()
-				
+				self.cooldown = false
 			end)
 			-- lv.Visible = true
 			-- lv.ForceLimitsEnabled = false
