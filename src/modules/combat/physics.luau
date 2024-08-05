@@ -1,4 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService = game:GetService("TweenService")
 local object = require(ReplicatedStorage.Modules.object)
 local physics = {}
 
@@ -22,6 +23,8 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     -- lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
     -- lv.VectorVelocity = timeToReach*target
 
-    return lv
+    TweenService:Create()
+
+    -- return lv
 end
 return physics
