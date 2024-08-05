@@ -8,7 +8,7 @@ local playerModule = require(ReplicatedStorage.Modules.player)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local physics = require(ReplicatedStorage.Modules.combat.physics)
-
+local types = require(ReplicatedStorage.Modules.types)
 local universalcontrols = {}
 
 function M1Cooldown()
