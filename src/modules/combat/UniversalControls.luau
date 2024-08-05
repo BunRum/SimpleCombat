@@ -58,6 +58,9 @@ universalcontrols = {
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
 			local humanoid: Humanoid = character.Humanoid
 			local direction = humanoid.MoveDirection
+			if direction == Vector3.new(0, 0, 0) then
+				
+			end
 			if self.cooldown or direction == Vector3.new(0, 0, 0) then
 				return
 			end
