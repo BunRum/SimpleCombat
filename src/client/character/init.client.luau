@@ -30,7 +30,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	end
 
 	if input.KeyCode == Enum.KeyCode.G then
-		local test = workspace.test
+		local test = workspace.test.
 		plr.Player.Character:PivotTo(CFrame.new())
 	end
 
