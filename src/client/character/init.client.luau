@@ -48,7 +48,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		combatModule.physics:applyVelocity(workspace.Dummy.HumanoidRootPart, Vector3.new(0, 0, -1), 5)
 
 		util:when(function() return workspace.Dummy.HumanoidRootPart.CFrame.Position.Z end, targetpos.Z, function()
-			
+			print(os.clock())
 		end)
 
 	end
