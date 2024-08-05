@@ -23,7 +23,7 @@ function util:pack(...)
 end
 
 function util:when(func: () -> any, value: any)
-	RunService.Heartbeat:Connect(function()
+	conn = RunService.Heartbeat:Connect(function()
 		if func() == value then
 			
 		end
