@@ -5,7 +5,7 @@ local variables = require(ReplicatedStorage.Modules.variables)
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local types = require(ReplicatedStorage.Modules.types)
--- local plr: types.playerm = variableModule:get({ "local", "plr" })
+local plr: types.playerm = variableModule:get({ "local", "plr" })
 -- plr.Player:GetMouse().
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, { "local", "character" })
 UserInputService.InputBegan:Connect(function(input: InputObject)
@@ -30,7 +30,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	end
 
 	if input.KeyCode == Enum.KeyCode.G then
-		
+		plr.Player.Character:PivotTo()
 	end
 
 end)
