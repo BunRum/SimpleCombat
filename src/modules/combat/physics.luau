@@ -26,6 +26,8 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     local ti = TweenInfo.new(timeToReach)
     local tween = TweenService:Create(obj, ti, {CFrame = CFrame.new(aasd)})
     tween:Play()
+
+    return tween
     -- return lv
 end
 return physics
