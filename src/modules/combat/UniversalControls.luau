@@ -73,7 +73,7 @@ universalcontrols = {
 			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
 			local localdircardial = combatUtil:cardialConvert(localdir)
 			if direction == Vector3.new(0, 0, 0) then
-				
+				localdir = Vector3.new(0, 0, -1)
 			end
 			-- print(localdir)
 			print(localdircardial)
