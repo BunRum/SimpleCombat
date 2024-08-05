@@ -71,7 +71,7 @@ RunService.PreRender:Connect(function()
 		-- print("thats func")
 		currentQueueFunc()
 		if not queue.head then
-			print("queue empty")
+			-- print("queue empty")
 		end
 	end
 end)
