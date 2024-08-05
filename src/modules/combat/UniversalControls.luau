@@ -74,7 +74,7 @@ universalcontrols = {
 			if direction == Vector3.new(0, 0, 0) then
 				localdir = Vector3.new(0, 0, -1)
 			end
-			local localdircardial = combatUtil:cardialConvert(localdir) -- 
+			local localdircardial = combatUtil:cardialConvert(localdir) -- for animation
 
 			-- print(localdir)
 			print(localdircardial)
