@@ -75,6 +75,7 @@ universalcontrols = {
 			local localspace = Vector3.new(0, 0, -50)
 			local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
 			-- localPlayer:
+			
 			animtoplay = directionTable[objectspaceCardial]
 			local dashanim = localPlayer:Play(`dash {animtoplay}`)
 			-- dashanim.
