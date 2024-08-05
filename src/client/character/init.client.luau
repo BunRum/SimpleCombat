@@ -37,7 +37,13 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	end
 
 	if input.KeyCode == Enum.KeyCode.T then
-		combatModule.physics:applyVelocity(workspace.ChangeCharacter)
+
+		local test = workspace.test.Position
+		local targetpos = workspace.target.Position
+		local pivotpos = workspace.Dummy:GetPivot().Position
+		workspace.Dummy:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), targetpos))
+
+		combatModule.physics:applyVelocity(workspace.Dummy.HumanoidRootPart, Vector3.new(0, 0, -1))
 	end
 
 end)
