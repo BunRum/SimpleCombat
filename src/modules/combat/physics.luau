@@ -3,7 +3,7 @@ local TweenService = game:GetService("TweenService")
 local object = require(ReplicatedStorage.Modules.object)
 local physics = {}
 
-function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: number)
+function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
     local attachment: Attachment = object.new({
         className = "Attachment",
         name =  "velocityattachment",
@@ -13,7 +13,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     local lv: LinearVelocity = object.new( {
         className = "LinearVelocity",
         Parent = obj,
-        lifetime = timeToReach,
+        lifetime = lifetime,
         find = true,
     })
     -- lv.Visible = true
@@ -21,9 +21,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, timeToReach: numb
     lv.Attachment0 = attachment
     lv.RelativeTo = Enum.ActuatorRelativeTo.Attachment0
     lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
-    print(timeToReach*target)
-    print(target/timeToReach)
-    lv.VectorVelocity = (timeToReach*target)
+    lv.VectorVelocity = target
     return lv
     -- local aasd = obj.CFrame:PointToWorldSpace(target)
     -- local ti = TweenInfo.new(timeToReach)
