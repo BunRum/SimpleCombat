@@ -70,7 +70,7 @@ universalcontrols = {
 				[-Vector3.new(0, 0, -1)] = "back",
 			}
 			local animtoplay
-			local localdir = humanoidrootpart.CFrame:VectorToObjectSpace(direction)
+			local localdir = humanoidrootpart.CFrame:toworld(direction)
 			local localdircardial = combatUtil:cardialConvert(localdir)
 
 			animtoplay = directionTable[localdircardial]
