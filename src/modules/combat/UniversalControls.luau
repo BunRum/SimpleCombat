@@ -102,7 +102,7 @@ universalcontrols = {
 			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			local character = localPlayer.Player.Character
 			local humanoidrootpart: BasePart = character.HumanoidRootPart
-			humanoidrootpart.CFrame = CFrame.new(humanoidrootpart.CFrame)
+			humanoidrootpart.CFrame = CFrame.new(humanoidrootpart.CFrame:VectorToWorldSpace(Vector3.new()))
 		end
 	}
 }
