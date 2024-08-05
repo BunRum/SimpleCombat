@@ -63,7 +63,7 @@ universalcontrols = {
 				-- localdircardial = -Vector3.new(0, 0, 1)
 				-- localdir = -cardialdir
 			end
-			if self.cooldown then
+			if self.cooldown or direction == Vector3.new(0, 0, 0) then
 				return
 			end
 			self.cooldown = true
