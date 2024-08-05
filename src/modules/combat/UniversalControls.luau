@@ -80,18 +80,7 @@ universalcontrols = {
 			print(localdircardial)
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
-			-- local lvdata = {
-			-- 	className = "LinearVelocity",
-			-- 	Parent = humanoidrootpart,
-			-- 	lifetime = 0.25,
-			-- 	find = true,
-			-- }
-			-- print(localdir * 10)
-			-- print(localdir*10, (0.1*localdir*10))
-
-			-- local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir * 10)
-			-- print(aasd)
-			-- humanoidrootpart.CFrame = CFrame.new(aasd)
+			
 			local v = physics:applyVelocity(humanoidrootpart, localdir * 50, 0.1)
 		end,
 		cooldown = false,
