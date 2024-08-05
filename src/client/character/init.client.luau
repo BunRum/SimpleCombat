@@ -31,8 +31,9 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 
 	if input.KeyCode == Enum.KeyCode.G then
 		local test = workspace.test.Position
+		local targetpos = workspace.target.Position
 		local pivotpos = plr.Player.Character:GetPivot().Position
-		plr.Player.Character:PivotTo(CFrame.new(test.X, pivotpos.Y, test.Z))
+		plr.Player.Character:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), targetpos))
 	end
 
 end)
