@@ -76,7 +76,8 @@ universalcontrols = {
 			local objectspaceCardial = combatUtil:cardialConvert(toobjectspace)
 
 			animtoplay = directionTable[objectspaceCardial]
-			localPlayer:Play(`dash {animtoplay}`)
+			local dashanim = localPlayer:Play(`dash {animtoplay}`)
+			
 			local v = physics:applyVelocity(humanoidrootpart, localspace, 0.5)
 			-- v.Completed:Once(function()
 				self.cooldown = false
