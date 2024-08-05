@@ -22,9 +22,11 @@ function util:pack(...)
 	return parsedPack
 end
 
-function util:when(func, value)
+function util:when(func: () -> any, value: any)
 	RunService.Heartbeat:Connect(function()
-		
+		if func() == value then
+			
+		end
 	end)
 end
 
