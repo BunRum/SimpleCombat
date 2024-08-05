@@ -85,9 +85,9 @@ universalcontrols = {
 			-- 	lifetime = 0.25,
 			-- 	find = true,
 			-- }
-			print(localdir)
+			print(localdir*10)
 			-- print(localdir*10, (0.1*localdir*10))
-			
+
 			-- local aasd = humanoidrootpart.CFrame:PointToWorldSpace(localdir)
 			local lv: LinearVelocity = physics:applyVelocity(humanoidrootpart, localdir*10, 0.1)
 			-- lv.Visible = true
