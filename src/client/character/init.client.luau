@@ -28,4 +28,9 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 			-- task.wait()
 		-- end
 	end
+
+	if input.KeyCode == Enum.KeyCode.G then
+		
+	end
+
 end)
