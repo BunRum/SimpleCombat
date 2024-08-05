@@ -74,13 +74,13 @@ universalcontrols = {
 			if direction == Vector3.new(0, 0, 0) then
 				localdir = Vector3.new(0, 0, -1)
 			end
-			local localdircardial = combatUtil:cardialConvert(localdir)
+			local localdircardial = combatUtil:cardialConvert(localdir) -- 
 
 			-- print(localdir)
 			print(localdircardial)
 			animtoplay = directionTable[localdircardial]
 			localPlayer:Play(`dash {animtoplay}`)
-			
+
 			local v = physics:applyVelocity(humanoidrootpart, localdir * 50, 0.1)
 		end,
 		cooldown = false,
