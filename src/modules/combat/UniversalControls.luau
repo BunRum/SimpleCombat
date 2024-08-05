@@ -89,7 +89,7 @@ universalcontrols = {
 			-- print(aasd)
 			-- humanoidrootpart.CFrame = CFrame.new(aasd)
 			local v = physics:applyVelocity(humanoidrootpart, localdir*10, 1)
-			v.Completed:Once(function(playbackState)
+			v.Completed:Once(function()
 				
 			end)
 			-- lv.Visible = true
