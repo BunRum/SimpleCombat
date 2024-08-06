@@ -1,4 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
 local combatModule = require(ReplicatedStorage.Modules.combat)
 local variables = require(ReplicatedStorage.Modules.variables)
@@ -26,6 +27,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		-- end
 	elseif universalMove then
 		if UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then
+			RunService
 			
 		else
 			universalMove.func()
