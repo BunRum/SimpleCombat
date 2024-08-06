@@ -6,4 +6,4 @@ Combat System
     Stun
     Dodge
     Perfect Block
-    Input buffering -- ()
+    Input buffering -- (example: )
