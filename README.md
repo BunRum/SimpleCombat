@@ -5,7 +5,7 @@ Combat System
     UpperCut
     Stun
     Dodge
-    Perfect Block
+    Block
     Aerials
     Grabs
     Knockback
