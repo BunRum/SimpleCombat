@@ -30,6 +30,8 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 			while UserInputService:IsMouseButtonPressed(input.UserInputType) do
 				universalMove.func()
 			end
+		else
+			universalMove.func()
 		end
 	end
 
