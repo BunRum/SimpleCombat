@@ -10,7 +10,7 @@ local dashBridge: types.sbridge = variableModule:set({"bridges", "dash"}, Bridge
 local maxM1Combo = 4
 
 m1Bridge:Connect(function(player)
-    combat.util:charactersInArea(player.Character:GetPivot():ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))), "Box", {player.Character}, function(Character) 
+    combat.util:charactersInArea(player.Character.HumanoidRootPart:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))), "Box", {player.Character}, function(Character) 
         Character.Humanoid:TakeDamage(10)
     end, {
         visualizeHitbox = true,
