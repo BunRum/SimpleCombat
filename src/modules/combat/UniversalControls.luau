@@ -82,6 +82,7 @@ universalcontrols = {
 			localPlayer:Play(`dash {animtoplay}`)
 
 			local v = physics:applyVelocity(humanoidrootpart, localdir * 50, 0.25)
+			
 		end,
 		cooldown = false,
 	},
