@@ -28,7 +28,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	elseif universalMove then
 		if UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then
 			conn = RunService.Heartbeat:Connect(function()
-				universalMove.func()
+				if UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then  dnd
 				
 			end)
 		else
