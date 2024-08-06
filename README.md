@@ -1,7 +1,7 @@
 # To-Do List
 
 ## Dashing System
-- [x] Implement basic dashing mechanics
+- [x] Implement basic dashing mechanics based on
 
 ## Combat System
 - [ ] Basic M1 Attacks
