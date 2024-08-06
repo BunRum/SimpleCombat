@@ -5,3 +5,4 @@ Combat System
     UpperCut
     Stun
     Dodge
+    Perfect Block
