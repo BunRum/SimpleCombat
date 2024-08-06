@@ -7,4 +7,4 @@ Combat System
     Dodge
     Perfect Block
     Aerials
-    Input buffering -- (example: doing a ground only move while in air)
+    Input buffering -- (example: doing a ground only move while in air close to the ground)
