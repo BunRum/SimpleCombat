@@ -20,6 +20,7 @@
 - When you are doing any move (M1, Special Attack, Uppercut, Blocking, or Dashing/Dodge)
     - [ ] You are stunned
 - [ ] Cannot do Uppercuts while in the air
+- [ ]
 
 ## Input Buffering
 - [ ] Allow execution of ground-only moves if the character is near the ground while airborne.
