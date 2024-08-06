@@ -6,4 +6,5 @@ Combat System
     Stun
     Dodge
     Perfect Block
+    Aerials
     Input buffering -- (example: doing a ground only move while in air)
