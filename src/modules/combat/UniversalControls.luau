@@ -27,9 +27,11 @@ universalcontrols = {
 			if self.cooldown then
 				return
 			end
+
+			local localPlayer: playerModule.type = tableModule:waitfor(variables, { "local", "plr" })
 			self.cooldown = true
 			self.M1Stage += 1
-			
+
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
@@ -81,7 +83,6 @@ universalcontrols = {
 			localPlayer:Play(`dash {animtoplay}`)
 
 			local v = physics:applyVelocity(humanoidrootpart, localdir * 50, 0.25)
-
 		end,
 		cooldown = false,
 	},
