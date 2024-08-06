@@ -29,9 +29,7 @@ universalcontrols = {
 			end
 			self.cooldown = true
 			self.M1Stage += 1
-			print(self.M1Stage)
 			self.bridge:Fire()
-			wait(0.1)
 			self.cooldown = false
 			local thisStage = self.M1Stage
 			-- if stage (5) plus 1 (6) is greater than maxStages (5)
@@ -82,7 +80,7 @@ universalcontrols = {
 			localPlayer:Play(`dash {animtoplay}`)
 
 			local v = physics:applyVelocity(humanoidrootpart, localdir * 50, 0.25)
-			
+
 		end,
 		cooldown = false,
 	},
