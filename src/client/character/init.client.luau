@@ -28,6 +28,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 			end
 			-- task.wait()
 		-- end
+		elseif universalMove then
 	end
 
 	-- if input.KeyCode == Enum.KeyCode.G then
