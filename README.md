@@ -7,5 +7,5 @@ Combat System
     Dodge
     Perfect Block
     Aerials
-    
+    Grab
     Input buffering -- (example: doing a ground only move while in air close to the ground)
