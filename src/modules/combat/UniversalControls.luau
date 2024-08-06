@@ -8,6 +8,7 @@ local playerModule = require(ReplicatedStorage.Modules.player)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local physics = require(ReplicatedStorage.Modules.combat.physics)
+local types = require(ReplicatedStorage.Modules.types)
 
 local universalcontrols = {}
 
@@ -27,11 +28,10 @@ universalcontrols = {
 			if self.cooldown then
 				return
 			end
-
-			local localPlayer: playerModule.type = tableModule:waitfor(variables, { "local", "plr" })
+			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			self.cooldown = true
 			self.M1Stage += 1
-
+			localPlayer:
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
