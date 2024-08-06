@@ -15,20 +15,21 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- print("input")
 	local Move = CharacterTBL.moves[input.KeyCode.Name]
 	local universalMove = combatModule:getUniversal()[input.KeyCode] or combatModule:getUniversal()[input.UserInputType]
-	if Move or universalMove then
+	if Move then
 		-- while UserInputService:IsKeyDown(input.KeyCode) or UserInputService:IsMouseButtonPressed(input.UserInputType) do
-			-- print("key dfown")
-			if universalMove then
-				universalMove.func()
-			elseif Move then
-				CharacterTBL.bridge:Fire(Move.name)
-				if Move.animation then
-					Move.animation:Play()
-				end
+		-- print("key dfown")
+		if universalMove then
+			universalMove.func()
+		elseif Move then
+			CharacterTBL.bridge:Fire(Move.name)
+			if Move.animation then
+				Move.animation:Play()
 			end
-			-- task.wait()
+		end
+		-- task.wait()
 		-- end
-		elseif universalMove then
+	elseif universalMove then
+		
 	end
 
 	-- if input.KeyCode == Enum.KeyCode.G then
@@ -40,7 +41,7 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 
 	-- if input.KeyCode == Enum.KeyCode.T then
 	-- 	local char: Model = workspace.Dummy
-		
+
 	-- 	local test = workspace.test.Position
 	-- 	local targetpos = workspace.target.Position
 	-- 	local pivotpos = char:GetPivot().Position
@@ -54,5 +55,4 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- 	end)
 
 	-- end
-
 end)
