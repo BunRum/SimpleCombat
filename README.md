@@ -13,5 +13,5 @@
 - [ ] Aerial Attacks
 - [ ] Grabs
 - [ ] Knockback
-- [ ] Input Buffering
-    - Example: Allow ground-only moves while in air close to the ground
+## Input Buffering
+- [ ] Allow execution of ground-only moves if the character is near the ground while airborne.
