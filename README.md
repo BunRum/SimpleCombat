@@ -6,6 +6,7 @@ Combat System
     Stun
     Dodge
     Block
+        Perfect Block
     Aerials
     Grabs
     Knockback
