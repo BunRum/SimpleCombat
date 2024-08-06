@@ -31,7 +31,7 @@ universalcontrols = {
 			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			self.cooldown = true
 			self.M1Stage += 1
-			localPlayer:Play(``)
+			localPlayer:Play(`punch {self.M1Stage}`)
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
