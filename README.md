@@ -14,7 +14,7 @@
 - [ ] Grabs
 - [ ] Knockback
 - [ ] Special Attacks
-- [ ] Combos ()
+- [ ] Combos (M1's to special attacks)
 
 ## Input Buffering
 - [ ] Allow execution of ground-only moves if the character is near the ground while airborne.
