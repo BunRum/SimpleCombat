@@ -18,10 +18,10 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	if Move then
 		-- while UserInputService:IsKeyDown(input.KeyCode) or UserInputService:IsMouseButtonPressed(input.UserInputType) do
 		-- print("key dfown")
-			CharacterTBL.bridge:Fire(Move.name)
-			if Move.animation then
-				Move.animation:Play()
-			end
+		CharacterTBL.bridge:Fire(Move.name)
+		if Move.animation then
+			Move.animation:Play()
+		end
 		-- task.wait()
 		-- end
 	elseif universalMove then
