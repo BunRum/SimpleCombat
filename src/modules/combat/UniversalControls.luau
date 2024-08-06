@@ -29,6 +29,7 @@ universalcontrols = {
 			end
 			self.cooldown = true
 			self.M1Stage += 1
+			
 			self.bridge:Fire()
 			self.cooldown = false
 			local thisStage = self.M1Stage
