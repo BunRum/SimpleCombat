@@ -23,7 +23,7 @@ function playerModule.New(player: Player)
 	return self
 end
 
-function playerModule:Play(animation: string)
+function playerModule:Play(animation: string, ...)
 	local self: plr = self
 	-- self.plas
 	local animTrack = animationPlayer.track(self.Player.Character, animation)
