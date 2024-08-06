@@ -17,7 +17,7 @@
 - [ ] Combos (smooth transitions with M1's to special attacks and vice versa)
 
 ## Combat Rules
-- When you are 
+- When you are doing any move ()
 
 ## Input Buffering
 - [ ] Allow execution of ground-only moves if the character is near the ground while airborne.
