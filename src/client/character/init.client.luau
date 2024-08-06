@@ -25,8 +25,8 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		-- task.wait()
 		-- end
 	elseif universalMove then
-		if UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) then
-			while UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == tr do
+		if UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true then
+			while UserInputService:IsMouseButtonPressed(Enum.UserInputType.MouseButton1) == true do
 				universalMove.func()
 			end
 		else
