@@ -30,28 +30,28 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 		-- end
 	end
 
-	if input.KeyCode == Enum.KeyCode.G then
-		local test = workspace.test.Position
-		local targetpos = workspace.target.Position
-		local pivotpos = plr.Player.Character:GetPivot().Position
-		plr.Player.Character:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), targetpos))
-	end
+	-- if input.KeyCode == Enum.KeyCode.G then
+	-- 	local test = workspace.test.Position
+	-- 	local targetpos = workspace.target.Position
+	-- 	local pivotpos = plr.Player.Character:GetPivot().Position
+	-- 	plr.Player.Character:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), targetpos))
+	-- end
 
-	if input.KeyCode == Enum.KeyCode.T then
-		local char: Model = workspace.Dummy
+	-- if input.KeyCode == Enum.KeyCode.T then
+	-- 	local char: Model = workspace.Dummy
 		
-		local test = workspace.test.Position
-		local targetpos = workspace.target.Position
-		local pivotpos = char:GetPivot().Position
-		char:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), Vector3.new(targetpos.X, pivotpos.Y, targetpos.Z)))
+	-- 	local test = workspace.test.Position
+	-- 	local targetpos = workspace.target.Position
+	-- 	local pivotpos = char:GetPivot().Position
+	-- 	char:PivotTo(CFrame.new(Vector3.new(test.X, pivotpos.Y, test.Z), Vector3.new(targetpos.X, pivotpos.Y, targetpos.Z)))
 
-		local start = os.clock()
-		combatModule.physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0, 0, -10), 10000)
+	-- 	local start = os.clock()
+	-- 	combatModule.physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0, 0, -10), 10000)
 
-		util:when(function() return char.HumanoidRootPart.CFrame.Position.Z end, targetpos.Z, function()
-			print(os.clock() - start)
-		end)
+	-- 	util:when(function() return char.HumanoidRootPart.CFrame.Position.Z end, targetpos.Z, function()
+	-- 		print(os.clock() - start)
+	-- 	end)
 
-	end
+	-- end
 
 end)
