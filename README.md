@@ -17,7 +17,7 @@
 - [ ] Combos (smooth transitions with M1's to special attacks and vice versa)
 
 ## Combat Rules
-- When you are doing any move (M1, Special Attack, Uppercut, And Blocking)
+- When you are doing any move (M1, Special Attack, Uppercut, Blocking, Dashing)
 
 ## Input Buffering
 - [ ] Allow execution of ground-only moves if the character is near the ground while airborne.
