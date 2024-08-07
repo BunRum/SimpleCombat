@@ -5,7 +5,7 @@
 
 ## Combat System
 - [ ] Basic M1 Attacks
-- [ ] UpperCut
+-  ] UpperCut
 - [ ] Stun
 - [ ] Dodge
 - [ ] Block
