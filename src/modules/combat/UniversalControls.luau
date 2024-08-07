@@ -108,7 +108,11 @@ universalcontrols = {
 		cooldown = false,
 	},
 	[Enum.UserInputType.MouseButton2] = {
-		bridge = BridgeNet2.ReferenceBridge("uppercut")
+		bridge = BridgeNet2.ReferenceBridge("uppercut"),
+		func = function()
+			
+		end,
+		cooldown = false,
 	}
 }
 
