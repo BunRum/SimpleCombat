@@ -40,7 +40,7 @@ universalcontrols = {
 			-- 	self.cooldown = false
 			anim.KeyframeReached:Once(function(k)
 				-- anim:adjust
-				anim:AdjustWeight(5)
+				anim:AdjustWeight(5, 0.1)
 				anim:AdjustSpeed(0)
 			end)
 			-- anim.KeyframeReached:Once(function(keyframeName)
