@@ -54,6 +54,7 @@ universalcontrols = {
 								M1Cooldown()
 								conn:Disconnect()
 							else
+								anim:Stop(0.5)
 								conn:Disconnect()
 							end
 						else
