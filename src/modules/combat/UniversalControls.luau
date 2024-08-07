@@ -49,7 +49,6 @@ universalcontrols = {
 				else
 					local thisStage = self.M1Stage
 					task.delay(0.5, function()
-						task.wait(0.2)
 						if thisStage == self.M1Stage then
 							M1Cooldown()
 						end
