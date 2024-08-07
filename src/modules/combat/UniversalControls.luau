@@ -108,10 +108,10 @@ universalcontrols = {
 			local localPlayer: types.playerm = variableModule:waitfor({ "local", "plr" })
 			local Character = localPlayer.Player.Character
 			self.bridge:Fire()
-			local lv = physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
-			task.wait(0.5)
-			lv.VectorVelocity = Vector3.new()
-            lv:Destroy()
+			-- local lv = physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
+			-- task.wait(0.5)
+			-- lv.VectorVelocity = Vector3.new()
+            -- lv:Destroy()
 		end,
 		cooldown = false,
 	},
