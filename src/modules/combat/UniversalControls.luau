@@ -42,33 +42,29 @@ universalcontrols = {
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 			else
-				
+				anim.KeyframeReached:Once(function(k)
+					anim:AdjustSpeed(0)
+					local thisStage = self.M1Stage
+					local start = os.clock()
+					RunService.Heartbeat:Connect(function()
+						if (os.clock() - start) >= 2 and thisStage == self.M1Stage then
+							anim:Stop(0.5)
+							M1Cooldown()
+						end
+					end)
+					task.delay(0.5, function()
+						if thisStage == self.M1Stage then
+						end
+					end)
+				end)
 			end
-			anim.KeyframeReached:Once(function(k)
-				anim:AdjustSpeed(0)
-				local thisStage = self.M1Stage
-				local start = os.clock()
-				RunService.Heartbeat:Connect(function()
-					if (os.clock() - start) >= 2 and thisStage == self.M1Stage then
-						anim:Stop(0.5)
-						M1Cooldown()
-					end
-				end)
-				task.delay(0.5, function()
-					if thisStage == self.M1Stage then
-
-					end
-				end)
-			end)
 			-- anim.KeyframeReached:Once(function(keyframeName)
-				
+
 			-- end)
-				-- end)
+			-- end)
 			-- self.cooldown = false
 			anim.Ended:Once(function()
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
-
-
 			end)
 		end,
 		cooldown = false,
