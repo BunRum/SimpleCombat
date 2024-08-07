@@ -59,7 +59,7 @@ function up(mdl)
 end
 
 uppercutBridge:Connect(function(player, content)
-	local inAir = variableModule:var({ player.Name, "uppercut" })
+	local inAir = variableModule:var({ player.Name, "inair" })
 	if inAir:get() == true then
 		return
 	end
@@ -68,9 +68,10 @@ uppercutBridge:Connect(function(player, content)
 		"Box",
 		{ player.Character },
 		function(Character)
-			if inAir:get() == false then
+			if inAir:get() == false or nil then
 				inAir:set(true)
 				up(player.Character)
+				print("go up player")
 			end
 			up(Character)
 		end,
