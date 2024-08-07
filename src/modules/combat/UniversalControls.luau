@@ -35,7 +35,6 @@ universalcontrols = {
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
 			-- print(anim.Length, anim.Length * 0.7)
 			task.delay(anim.Length * 0.85, function()
-				
 				self.cooldown = false
 			end)
 			anim.Ended:Once(function()
