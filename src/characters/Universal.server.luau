@@ -24,7 +24,7 @@ m1Bridge:Connect(function(player)
 		function(Character)
 			Character.Humanoid:TakeDamage(5)
 			if M1Stage:get() == maxM1Stage then
-				-- combat.physics:applyVelocity(Character.HumanoidRootPart, )
+				combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 0, 50), 0.25)
 			end
 		end,
 		{ visualizeHitbox = false, size = Vector3.new(5, 5, 5) }
