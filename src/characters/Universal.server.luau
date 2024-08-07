@@ -10,7 +10,10 @@ local dashBridge: types.sbridge = variableModule:set({ "bridges", "dash" }, Brid
 local uppercutBridge: types.sbridge =
 	variableModule:set({ "bridges", "uppercut" }, BridgeNet2.ReferenceBridge("uppercut"))
 
+local maxM1Stage = 5
+
 m1Bridge:Connect(function(player)
+	local M1Stage = variableModule:get({ player.Name, "M1Stage" })
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
 		"Box",
@@ -30,8 +33,10 @@ dashBridge:Connect(function(player, content)
 end)
 
 uppercutBridge:Connect(function(player, content)
-	local inAir = variableModule:get({player.Name, "uppercut"}) or false
-    if inAir == true then return end
+	local inAir = variableModule:get({ player.Name, "uppercut" }) or false
+	if inAir == true then
+		return
+	end
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
 		"Box",
@@ -39,7 +44,7 @@ uppercutBridge:Connect(function(player, content)
 		function(Character)
 			if inAir == false then
 				task.spawn(function()
-                    variableModule:set({player.Name, "uppercut"}, true)
+					variableModule:set({ player.Name, "uppercut" }, true)
 					local lv: LinearVelocity =
 						combat.physics:applyVelocity(player.Character.HumanoidRootPart, Vector3.new(0, 50, 0))
 					task.wait(0.5)
