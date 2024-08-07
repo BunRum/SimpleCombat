@@ -61,6 +61,7 @@ uppercutBridge:Connect(function(player, content)
 		"Box",
 		{ player.Character },
 		function(Character)
+			
 			local lv = combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
 			task.wait(0.5)
 			lv.VectorVelocity = Vector3.new()
