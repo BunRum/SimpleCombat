@@ -40,6 +40,8 @@ universalcontrols = {
 			-- 	self.cooldown = false
 			anim.KeyframeReached:Once(function(k) 
 				-- print(k)
+				
+				anim:AdjustSpeed(0)
 			end)
 			-- anim.KeyframeReached:Once(function(keyframeName)
 				
@@ -47,7 +49,6 @@ universalcontrols = {
 				-- end)
 			-- self.cooldown = false
 			anim.Ended:Once(function()
-				anim:AdjustSpeed(0)
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
 
 				if self.M1Stage + 1 > self.maxStages then
