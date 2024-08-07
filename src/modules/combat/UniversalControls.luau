@@ -16,7 +16,6 @@ local universalcontrols = {}
 function M1Cooldown()
 	local self = universalcontrols[Enum.UserInputType.MouseButton1]
 	self.M1Stage = 0
-	self.cooldown = true
 	task.wait(2)
 	self.cooldown = false
 end
