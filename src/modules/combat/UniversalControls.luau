@@ -38,7 +38,8 @@ universalcontrols = {
 			-- task.delay(anim.Length * 0.85, function()
 			-- 	if self.cooldown == true then return end
 			-- 	self.cooldown = false
-			-- end)
+			anim.KeyframeReached:
+				-- end)
 			-- self.cooldown = false
 			anim.Ended:Once(function()
 				anim:AdjustSpeed(0)
