@@ -36,9 +36,8 @@ universalcontrols = {
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
-				M1Cooldown()
-
 				localPlayer.Player.Character.Humanoid.WalkSpeed = 16
+				M1Cooldown()
 			else
 				anim.KeyframeReached:Connect(function(k)
 					if k == "cd" then
