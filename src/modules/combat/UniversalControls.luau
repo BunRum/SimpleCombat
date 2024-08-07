@@ -44,7 +44,7 @@ universalcontrols = {
 				local thisStage = self.M1Stage
 				local start = os.clock()
 				RunService.Heartbeat:Connect(function()
-					
+					if start
 				end)
 				task.delay(0.5, function()
 					if thisStage == self.M1Stage then
