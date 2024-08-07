@@ -51,6 +51,13 @@ dashBridge:Connect(function(player, content)
 	task.wait(0.2)
 end)
 
+function up(mdl)
+	local lv = combat.physics:applyVelocity(mdl.HumanoidRootPart, Vector3.new(0, 50, 0))
+	task.wait(0.5)
+	lv.VectorVelocity = Vector3.new()
+	lv:Destroy()
+end
+
 uppercutBridge:Connect(function(player, content)
 	local inAir = variableModule:var({ player.Name, "uppercut" })
 	if inAir:get() == true then
@@ -61,11 +68,11 @@ uppercutBridge:Connect(function(player, content)
 		"Box",
 		{ player.Character },
 		function(Character)
-			
-			local lv = combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
-			task.wait(0.5)
-			lv.VectorVelocity = Vector3.new()
-            lv:Destroy()
+			if inAir:get() == false then
+				inAir:set(true)
+				up(player.Character)
+			end
+			up(Character)
 		end,
 		{
 			visualizeHitbox = true,
