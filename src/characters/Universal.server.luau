@@ -59,8 +59,8 @@ function up(mdl)
 end
 
 uppercutBridge:Connect(function(player, content)
-	local inAir = variableModule:var({ player.Name, "inair" })
-	if inAir:get() == true then
+	local state = variableModule:var({ player.Name, "state" })
+	if state:get() == "air" then
 		return
 	end
 	combat.util:charactersInArea(
@@ -68,8 +68,8 @@ uppercutBridge:Connect(function(player, content)
 		"Box",
 		{ player.Character },
 		function(Character)
-			if inAir:get() == false or nil then
-				inAir:set(true)
+			if state:get() ~= "air" then
+				state:set("air")
 				up(player.Character)
 				print("go up player")
 			end
