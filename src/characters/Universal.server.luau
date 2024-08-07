@@ -13,7 +13,8 @@ local uppercutBridge: types.sbridge =
 local maxM1Stage = 5
 
 m1Bridge:Connect(function(player)
-	local M1Stage = variableModule:get({ player.Name, "M1Stage" })
+	local M1Stage = variableModule:get({ player.Name, "M1Stage" }) or 0
+    variableModule:set({ player.Name, "M1Stage" }, "+=", 1)
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
 		"Box",
