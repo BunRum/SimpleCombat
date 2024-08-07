@@ -10,6 +10,7 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
         find = true,
         Parent = obj
     })
+    print(lifetime)
     local lv: LinearVelocity = object.new( {
         className = "LinearVelocity",
         Parent = obj,
