@@ -35,9 +35,7 @@ universalcontrols = {
 			-- anim.Play()--
 			self.bridge:Fire()
 			-- anim.Ended:Connect(function()
-			task.delay(anim.Length, function()
-				anim:AdjustSpeed(0)
-			end)
+			wait()
 			self.cooldown = false
 			local thisStage = self.M1Stage
 			-- if stage (5) plus 1 (6) is greater than maxStages (5)
