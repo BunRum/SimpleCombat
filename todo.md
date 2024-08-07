@@ -10,7 +10,7 @@
 - [ ] Dodge
 - [ ] Block
     - [ ] Perfect Block
-- [ ] Aerial Attacks
+- [ ] Aerial 
 - [ ] Grabs
 - [ ] Knockback
 - [ ] Special Attacks
