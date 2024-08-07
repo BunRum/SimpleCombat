@@ -110,7 +110,7 @@ universalcontrols = {
 	[Enum.UserInputType.MouseButton2] = {
 		bridge = BridgeNet2.ReferenceBridge("uppercut"),
 		func = function()
-			
+			local self = universalcontrols[Enum.UserInputType.MouseButton2]
 		end,
 		cooldown = false,
 	}
