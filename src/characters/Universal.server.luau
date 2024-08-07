@@ -33,7 +33,8 @@ m1Bridge:Connect(function(player)
     else
 	    local thisStage = M1Stage:get()
 		local start = os.clock()
-        local conn = RunService.Heartbeat:Connect(function()
+        local conn
+        conn = RunService.Heartbeat:Connect(function()
             print((os.clock() - start) > 0.5, M1Stage:get())
             if M1Stage:get() ~= thisStage or (os.clock() - start) > 0.5 then
                 if (os.clock() - start) > 0.5 then
