@@ -39,7 +39,6 @@ universalcontrols = {
 				M1Cooldown()
 			else
 				anim.KeyframeReached:Connect(function(k)
-					print(k)
 					if k == "cd" then
 						self.cooldown = false
 						local thisStage = self.M1Stage
@@ -61,8 +60,6 @@ universalcontrols = {
 								conn:Disconnect()
 							end
 						end)
-					else
-						anim:AdjustSpeed(0)
 					end
 				end)
 			end
