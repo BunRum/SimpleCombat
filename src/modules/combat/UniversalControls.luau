@@ -32,9 +32,7 @@ universalcontrols = {
 			self.cooldown = true
 			self.M1Stage += 1
 			local anim = localPlayer:Play(`punch {self.M1Stage}`)
-			-- anim.Play()--
 			self.bridge:Fire()
-			-- anim.Ended:Connect(function()
 			task.wait(anim.Length)
 			anim:AdjustSpeed(0)
 			self.cooldown = false
