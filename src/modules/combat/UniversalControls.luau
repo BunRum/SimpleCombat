@@ -39,9 +39,11 @@ universalcontrols = {
 			end)
 			anim.Ended:Once(function()
 				anim:AdjustSpeed(0)
-				-- local thisStage = self.M1Stage
+				local thisStage = self.M1Stage
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
-				-- if thisStage + 1 > self.maxStages then
+				if thisStage + 1 > self.maxStages then
+					self.M1Stage = 0
+				end
 				-- 	M1Cooldown()
 				-- else
 				-- 	task.delay(0.5, function()
