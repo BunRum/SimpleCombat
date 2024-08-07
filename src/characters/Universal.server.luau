@@ -25,5 +25,10 @@ dashBridge:Connect(function(player, content)
 end)
 
 uppercutBridge:Connect(function(player, content)
-    
+    combat.util:charactersInArea(player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))), "Box", {player.Character}, function(Character) 
+        Character.Humanoid:TakeDamage(5)
+    end, {
+        visualizeHitbox = false,
+        size = Vector3.new(5, 5, 5)
+    })
 end)
