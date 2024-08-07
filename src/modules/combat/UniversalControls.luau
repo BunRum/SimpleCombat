@@ -1,4 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variables = require(ReplicatedStorage.Modules.variables)
 local log = require(ReplicatedStorage.Modules.log)
@@ -41,6 +42,9 @@ universalcontrols = {
 			anim.KeyframeReached:Once(function(k)
 				anim:AdjustSpeed(0)
 				local thisStage = self.M1Stage
+				RunService.Heartbeat:Connect(function()
+					
+				end)
 				task.delay(0.5, function()
 					if thisStage == self.M1Stage then
 						anim:Stop(0.5)
