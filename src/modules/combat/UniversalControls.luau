@@ -34,7 +34,7 @@ universalcontrols = {
 			self.M1Stage += 1
 
 			self.bridge:Fire()
-			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
+			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 			else
@@ -50,7 +50,8 @@ universalcontrols = {
 							print((os.clock() - start) > 0.5, self.M1Stage)
 							if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
 								if (os.clock() - start) > 0.5 then
-									anim:Stop(0.5)
+									anim:Stop(1)
+									anim:AdjustSpeed(1)
 									self.M1Stage = 0
 									-- M1Cooldown()
 								end
