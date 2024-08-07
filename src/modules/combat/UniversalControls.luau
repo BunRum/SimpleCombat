@@ -16,6 +16,7 @@ local universalcontrols = {}
 function M1Cooldown()
 	local self = universalcontrols[Enum.UserInputType.MouseButton1]
 	self.M1Stage = 0
+	self.cooldown = true
 	task.wait(2)
 	self.cooldown = false
 end
@@ -39,9 +40,7 @@ universalcontrols = {
 			else
 				anim.KeyframeReached:Connect(function(k)
 					print(k)
-					if k == "pause" then
-						anim:AdjustSpeed(0)
-					else
+					if k == "cd" then
 						self.cooldown = false
 						local thisStage = self.M1Stage
 						-- task.wait(0.05)
@@ -60,6 +59,8 @@ universalcontrols = {
 								conn:Disconnect()
 							end
 						end)
+					else
+						anim:AdjustSpeed(0)
 					end
 				end)
 			end
