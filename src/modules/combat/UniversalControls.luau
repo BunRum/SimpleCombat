@@ -39,7 +39,7 @@ universalcontrols = {
 			-- 	if self.cooldown == true then return end
 			-- 	self.cooldown = false
 			-- end)
-			self.cooldown = false
+			-- self.cooldown = false
 			anim.Ended:Once(function()
 				anim:AdjustSpeed(0)
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
