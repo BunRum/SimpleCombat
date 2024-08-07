@@ -44,6 +44,9 @@ universalcontrols = {
 				anim:AdjustSpeed(0)
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
 
+				if self.M1Stage + 1 > self.maxStages then
+					M1Cooldown()
+				end
 				-- 	M1Cooldown()
 				-- else
 				-- 	task.delay(0.5, function()
@@ -53,9 +56,6 @@ universalcontrols = {
 				-- 	end)
 				-- end
 			end)
-			if self.M1Stage + 1 > self.maxStages then
-				M1Cooldown()
-			end
 		end,
 		cooldown = false,
 		M1Stage = 0,
