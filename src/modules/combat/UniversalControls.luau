@@ -39,6 +39,9 @@ universalcontrols = {
 			-- task.delay(anim.Length * 0.85, function()
 			-- 	if self.cooldown == true then return end
 			-- 	self.cooldown = false
+			if self.M1Stage + 1 > self.maxStages then
+				M1Cooldown()
+			end
 			anim.KeyframeReached:Once(function(k)
 				anim:AdjustSpeed(0)
 				local thisStage = self.M1Stage
@@ -63,9 +66,7 @@ universalcontrols = {
 			anim.Ended:Once(function()
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
 
-				if self.M1Stage + 1 > self.maxStages then
-					M1Cooldown()
-				end
+
 			end)
 		end,
 		cooldown = false,
