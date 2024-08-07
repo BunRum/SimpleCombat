@@ -29,10 +29,10 @@ universalcontrols = {
 			if self.cooldown then
 				return
 			end
-			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
+			local localPlayer: types.playerm = variableModule:waitfor({ "local", "plr" })
+			localPlayer.Player.Character.Humanoid.WalkSpeed = 5
 			self.cooldown = true
 			self.M1Stage += 1
-
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
