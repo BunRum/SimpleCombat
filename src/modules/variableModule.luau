@@ -49,4 +49,16 @@ function variableModule:waitfor(...)
 	return tableModule:waitfor(variables, ...)
 end
 
+function variableModule:var(arguments: {string})
+	local f = {}
+	function f:get()
+		return variableModule:get(arguments)
+	end
+	function f:set(...)
+		return variableModule:set(arguments, ...)
+	end
+	
+	return f
+end
+
 return variableModule

@@ -13,11 +13,9 @@ local uppercutBridge: types.sbridge =
 local maxM1Stage = 5
 
 m1Bridge:Connect(function(player)
-	local M1Stage = function()
-		return variableModule:get({ player.Name, "M1Stage" }) or 0
-	end
-	variableModule:set({ player.Name, "M1Stage" }, "+=", 1)
-    print(M1Stage())
+	local M1Stage = variableModule:var({player.Name, "M1Stage"})
+    print(M1Stage:get())
+    -- M1Stage:ma
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
 		"Box",
@@ -30,22 +28,6 @@ m1Bridge:Connect(function(player)
 			size = Vector3.new(5, 5, 5),
 		}
 	)
-	if M1Stage() + 1 > maxM1Stage then
-		variableModule:set({ player.Name, "M1Stage" }, 0)
-    else
-        conn = RunService.Heartbeat:Connect(function()
-            print((os.clock() - start) > 0.5, self.M1Stage)
-            if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
-                if (os.clock() - start) > 0.5 then
-                    anim:AdjustSpeed(1)
-                    task.spawn(M1Cooldown)
-                elseif self.M1Stage ~= thisStage then
-                    anim:Stop(0)
-                end
-                conn:Disconnect()
-            end
-        end)
-	end
 end)
 
 dashBridge:Connect(function(player, content)
