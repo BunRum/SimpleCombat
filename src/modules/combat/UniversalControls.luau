@@ -47,6 +47,7 @@ universalcontrols = {
 				if self.M1Stage + 1 > self.maxStages then
 					M1Cooldown()
 				else
+					task.wait(0.2)
 					
 				end
 				-- 	M1Cooldown()
