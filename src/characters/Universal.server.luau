@@ -83,6 +83,7 @@ uppercutBridge:Connect(function(player, content)
 				up(player.Character)
 				print("go up player")
 			end
+			
 			up(Character)
 		end,
 		{
