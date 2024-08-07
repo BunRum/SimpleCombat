@@ -63,7 +63,7 @@ uppercutBridge:Connect(function(player, content)
 		function(Character)
 			if inAir == false then
 				task.spawn(function()
-					variableModule:set({ player.Name, "uppercut" }, true)
+                    inAir:set(true)
 					local lv= combat.physics:applyVelocity(player.Character.HumanoidRootPart, Vector3.new(0, 50, 0), 6)
 					task.wait(0.5)
 					lv.VectorVelocity = Vector3.new()
