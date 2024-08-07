@@ -49,7 +49,7 @@ universalcontrols = {
 							anim:Stop(0.5)
 							M1Cooldown()
 						else
-							anim:Stop(0.5)
+							anim:Stop()
 						end
 					end)
 				end
