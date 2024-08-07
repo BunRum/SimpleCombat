@@ -45,13 +45,13 @@ universalcontrols = {
 				local start = os.clock()
 				RunService.Heartbeat:Connect(function()
 					if (os.clock() - start) >= 2 then
-						
+						anim:Stop(0.5)
+						M1Cooldown()
 					end
 				end)
 				task.delay(0.5, function()
 					if thisStage == self.M1Stage then
-						anim:Stop(0.5)
-						M1Cooldown()
+
 					end
 				end)
 			end)
