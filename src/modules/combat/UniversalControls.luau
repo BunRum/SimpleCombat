@@ -37,7 +37,7 @@ universalcontrols = {
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 			else
-				anim.KeyframeReached:Once(function(k)
+				anim.KeyframeReached:Connect(function(k)
 					print(k)
 					if k == "pause" then
 						anim:AdjustSpeed(0)
@@ -52,6 +52,7 @@ universalcontrols = {
 							if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
 								if (os.clock() - start) > 0.5 then
 									anim:Stop(0.5)
+									M1Cooldown()
 								end
 								if self.M1Stage ~= thisStage then
 									anim:Stop(0)
