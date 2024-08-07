@@ -42,6 +42,7 @@ universalcontrols = {
 			anim.KeyframeReached:Once(function(k)
 				anim:AdjustSpeed(0)
 				local thisStage = self.M1Stage
+				local start = os.clock()
 				RunService.Heartbeat:Connect(function()
 					
 				end)
