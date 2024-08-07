@@ -41,6 +41,8 @@ universalcontrols = {
 			-- 	self.cooldown = false
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
+			else
+				
 			end
 			anim.KeyframeReached:Once(function(k)
 				anim:AdjustSpeed(0)
