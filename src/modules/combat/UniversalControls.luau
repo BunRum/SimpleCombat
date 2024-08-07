@@ -38,6 +38,7 @@ universalcontrols = {
 			-- 	if self.cooldown == true then return end
 			-- 	self.cooldown = false
 			-- end)
+			self.cooldown = false
 			anim.Ended:Once(function()
 				anim:AdjustSpeed(0)
 				local thisStage = self.M1Stage
