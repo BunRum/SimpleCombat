@@ -46,6 +46,8 @@ universalcontrols = {
 
 				if self.M1Stage + 1 > self.maxStages then
 					M1Cooldown()
+				else
+					
 				end
 				-- 	M1Cooldown()
 				-- else
