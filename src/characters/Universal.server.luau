@@ -14,20 +14,12 @@ local maxM1Stage = 5
 
 m1Bridge:Connect(function(player)
 	local M1Stage = variableModule:var({player.Name, "M1Stage"})
-    print(M1Stage:get())
-    -- M1Stage:ma
-	combat.util:charactersInArea(
-		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
-		"Box",
-		{ player.Character },
-		function(Character)
-			Character.Humanoid:TakeDamage(5)
-		end,
-		{
-			visualizeHitbox = false,
-			size = Vector3.new(5, 5, 5),
-		}
-	)
+    M1Stage:set("+=", 1)
+	combat.util:charactersInArea(player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),"Box",{ player.Character },function(Character)
+		Character.Humanoid:TakeDamage(5)
+	end,{visualizeHitbox = false,size = Vector3.new(5, 5, 5),})
+    if M1Stage:get() + 1 > maxM1Stage
+
 end)
 
 dashBridge:Connect(function(player, content)
