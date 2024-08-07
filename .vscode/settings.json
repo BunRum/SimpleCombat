@@ -3,5 +3,5 @@
         "**/_Index/**",
         "src/**"
     ],
-    "gitdoc.enabled": true
+    "gitdoc.enabled": false
 }
