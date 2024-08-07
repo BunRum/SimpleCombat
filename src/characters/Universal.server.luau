@@ -1,4 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local types = require(ReplicatedStorage.Modules.types)
 local log = require(ReplicatedStorage.Modules.log)
@@ -14,12 +15,33 @@ local maxM1Stage = 5
 
 m1Bridge:Connect(function(player)
 	local M1Stage = variableModule:var({player.Name, "M1Stage"})
+    local cooldown = variableModule:var({player.Name, "M1Cooldown"})
     M1Stage:set("+=", 1)
 	combat.util:charactersInArea(player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),"Box",{ player.Character },function(Character)
 		Character.Humanoid:TakeDamage(5)
 	end,{visualizeHitbox = false,size = Vector3.new(5, 5, 5),})
-    if M1Stage:get() + 1 > maxM1Stage then
+ 
+    function M1Cooldown()
         M1Stage:set(0)
+        cooldown:set(true)
+        task.wait(4)
+        cooldown:set(false)
+    end
+
+    if M1Stage:get() + 1 > maxM1Stage then
+        M1Cooldown()
+    else
+	    local thisStage = M1Stage:get()
+		local start = os.clock()
+        local conn = RunService.Heartbeat:Connect(function()
+            print((os.clock() - start) > 0.5, M1Stage:get())
+            if M1Stage:get() ~= thisStage or (os.clock() - start) > 0.5 then
+                if (os.clock() - start) > 0.5 then
+                    task.spawn(M1Cooldown)
+                end
+                conn:Disconnect()
+            end
+        end)
     end
 
 end)
