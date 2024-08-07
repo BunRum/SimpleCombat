@@ -34,7 +34,7 @@ universalcontrols = {
 			self.M1Stage += 1
 
 			self.bridge:Fire()
-			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 0.25)
+			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 			else
