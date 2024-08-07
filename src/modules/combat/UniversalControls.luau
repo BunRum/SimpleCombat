@@ -45,9 +45,12 @@ universalcontrols = {
 				anim.KeyframeReached:Once(function(k)
 					anim:AdjustSpeed(0)
 					local thisStage = self.M1Stage
+					task.wait(0.1)
+					self.cooldown = false
 					local start = os.clock()
 					local conn: RBXScriptConnection
 					conn = RunService.Heartbeat:Connect(function()
+						
 						if (os.clock() - start) >= 0.5 and thisStage == self.M1Stage then
 							anim:Stop(0.5)
 							M1Cooldown()
