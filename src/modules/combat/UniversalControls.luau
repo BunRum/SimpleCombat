@@ -14,11 +14,13 @@ local types = require(ReplicatedStorage.Modules.types)
 local universalcontrols = {}
 
 function M1Cooldown()
-	local self = universalcontrols[Enum.UserInputType.MouseButton1]
-	self.M1Stage = 0
-	self.cooldown = true
-	task.wait(4)
-	self.cooldown = false
+	task.spawn(function()
+		local self = universalcontrols[Enum.UserInputType.MouseButton1]
+		self.M1Stage = 0
+		self.cooldown = true
+		task.wait(4)
+		self.cooldown = false
+	end)
 end
 
 universalcontrols = {
@@ -36,8 +38,9 @@ universalcontrols = {
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
-				localPlayer.Player.Character.Humanoid.WalkSpeed = 16
 				M1Cooldown()
+				task.wait(0.5)
+				localPlayer.Player.Character.Humanoid.WalkSpeed = 16
 			else
 				anim.KeyframeReached:Connect(function(k)
 					if k == "cd" then
