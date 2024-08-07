@@ -33,14 +33,12 @@ universalcontrols = {
 			self.M1Stage += 1
 
 			self.bridge:Fire()
-			local anim = localPlayer:Play(`punch {self.M1Stage}`)
+			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
 			-- print(anim.Length, anim.Length * 0.7)
 			-- task.delay(anim.Length * 0.85, function()
 			-- 	if self.cooldown == true then return end
 			-- 	self.cooldown = false
 			anim.KeyframeReached:Once(function(k)
-				-- anim:adjust
-				anim:AdjustWeight(5, 0.1)
 				anim:AdjustSpeed(0)
 			end)
 			-- anim.KeyframeReached:Once(function(keyframeName)
