@@ -37,6 +37,8 @@ universalcontrols = {
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
+
+				localPlayer.Player.Character.Humanoid.WalkSpeed = 16
 			else
 				anim.KeyframeReached:Connect(function(k)
 					if k == "cd" then
@@ -50,7 +52,8 @@ universalcontrols = {
 							if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
 								if (os.clock() - start) > 0.5 then
 									anim:AdjustSpeed(1)
-									task.spawn(M1Cooldown)
+									self.M1Stage = 0
+									-- task.spawn(M1Cooldown)
 								elseif self.M1Stage ~= thisStage then
 									anim:Stop(0)
 								end
@@ -111,7 +114,7 @@ universalcontrols = {
 			-- local lv = physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
 			-- task.wait(0.5)
 			-- lv.VectorVelocity = Vector3.new()
-            -- lv:Destroy()
+			-- lv:Destroy()
 		end,
 		cooldown = false,
 	},
