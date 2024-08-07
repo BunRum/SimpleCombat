@@ -35,7 +35,9 @@ universalcontrols = {
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
 			print(anim.Length, anim.Length*.9)
 			-- task.wait(anim.Length * 0.9)
-			anim.Ended:
+			anim.Ended:Once(function()
+				
+			end)
 			-- anim:AdjustSpeed(0)
 			print("slow anim")
 			self.cooldown = false
