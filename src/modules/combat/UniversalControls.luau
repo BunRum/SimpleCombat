@@ -35,25 +35,22 @@ universalcontrols = {
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
 			-- print(anim.Length, anim.Length * 0.7)
 			anim.Ended:Once(function()
-				
+				self.cooldown = false
+				anim:AdjustSpeed(0)
+				print("slow anim")
+				local thisStage = self.M1Stage
+				-- if stage (5) plus 1 (6) is greater than maxStages (5)
+				if thisStage + 1 > self.maxStages then
+					M1Cooldown()
+				else
+					task.delay(0.5, function()
+						if thisStage == self.M1Stage then
+							anim:Stop(0.5)
+							M1Cooldown()
+						end
+					end)
+				end
 			end)
-			-- task.wait(anim.Length * 0.7)
-			self.cooldown = false
-			anim:AdjustSpeed(0)
-			print("slow anim")
-			local thisStage = self.M1Stage
-			-- if stage (5) plus 1 (6) is greater than maxStages (5)
-			if thisStage + 1 > self.maxStages then
-				M1Cooldown()
-			else
-				task.delay(0.5, function()
-					if thisStage == self.M1Stage then
-						anim:Stop(0.5)
-						M1Cooldown()
-					end
-				end)
-			end
-			-- end)
 		end,
 		cooldown = false,
 		M1Stage = 0,
