@@ -35,7 +35,7 @@ function variableModule:set(...): any
 				message = "set",
 				args = tableModule:pack(args),
 			})
-			log("sending to players")
+			-- log("sending to players")
 		end)
 	end
 	return tableModule:set(variables, ...)

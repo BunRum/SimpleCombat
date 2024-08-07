@@ -49,9 +49,9 @@ function Queue:enqueue(func: () -> (), ...): ()
 	self.lastNode = newNode
 	while self.currentNode ~= newNode do
 		task.wait()
-		print("waiting for node")
+		-- print("waiting for node")
 	end
-	print("currentnode = this node")
+	-- print("currentnode = this node")
 	return self.currentNode.task(...)
 end
 
