@@ -40,7 +40,7 @@ universalcontrols = {
 				anim.KeyframeReached:Once(function(k)
 					anim:AdjustSpeed(0)
 					local thisStage = self.M1Stage
-					task.wait(0.1)
+					task.wait(0.05)
 					self.cooldown = false
 					local start	 = os.clock()
 					local conn: RBXScriptConnection
