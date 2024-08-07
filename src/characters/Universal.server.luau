@@ -55,12 +55,15 @@ function up(mdl)
 	local lv = combat.physics:applyVelocity(mdl.HumanoidRootPart, Vector3.new(0, 50, 0))
 	task.wait(0.5)
 	lv.VectorVelocity = Vector3.new()
+	-- lv:Destroy()
+	-- task,wait
+	task.wait(5)
 	lv:Destroy()
 end
 
 uppercutBridge:Connect(function(player, content)
-	local state = variableModule:var({ player.Name, "state" })
-	if state:get() == "air" then
+	local uppercut = variableModule:var({ player.Name, "uppercut" })
+	if uppercut:get() == true then
 		return
 	end
 	combat.util:charactersInArea(
@@ -68,8 +71,8 @@ uppercutBridge:Connect(function(player, content)
 		"Box",
 		{ player.Character },
 		function(Character)
-			if state:get() ~= "air" then
-				state:set("air")
+			if uppercut:get() ~= true then
+				uppercut:set(true)
 				up(player.Character)
 				print("go up player")
 			end
