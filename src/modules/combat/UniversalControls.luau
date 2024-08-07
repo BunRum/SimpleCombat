@@ -31,6 +31,10 @@ universalcontrols = {
 			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			self.cooldown = true
 			self.M1Stage += 1
+			local thisStage = self.M1Stage
+			if thisStage + 1 > self.maxStages then
+				M1Cooldown()
+			end
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
 			-- print(anim.Length, anim.Length * 0.7)
@@ -41,7 +45,6 @@ universalcontrols = {
 			self.cooldown = false
 			anim.Ended:Once(function()
 				anim:AdjustSpeed(0)
-				local thisStage = self.M1Stage
 				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
 
 				-- 	M1Cooldown()
