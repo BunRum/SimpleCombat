@@ -31,7 +31,7 @@ dashBridge:Connect(function(player, content)
 end)
 
 uppercutBridge:Connect(function(player, content)
-	local inAir = false
+	local inAir = variableModule:get({player.Name, "inAir"})
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
 		"Box",
