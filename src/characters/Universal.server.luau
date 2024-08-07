@@ -31,7 +31,7 @@ dashBridge:Connect(function(player, content)
 end)
 
 uppercutBridge:Connect(function(player, content)
-	local inAir = variableModule:get({player.Name, "inAir"}) or false
+	local inAir = variableModule:get({player.Name, "uppercut"}) or false
     if inAir == true then return end
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
@@ -40,14 +40,13 @@ uppercutBridge:Connect(function(player, content)
 		function(Character)
 			if inAir == false then
 				task.spawn(function()
-                    variableModule:set({player.Name, "inAir"}, true)
+                    variableModule:set({player.Name, "uppercut"}, true)
 					local lv: LinearVelocity =
 						combat.physics:applyVelocity(player.Character.HumanoidRootPart, Vector3.new(0, 50, 0))
 					task.wait(0.5)
 					lv.VectorVelocity = Vector3.new()
 				end)
 			end
-            -- variableModule:set({player.Name, "inAir"})
 			local lv: LinearVelocity = combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
 			task.wait(0.5)
 			lv.VectorVelocity = Vector3.new()
