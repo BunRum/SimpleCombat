@@ -43,6 +43,7 @@ universalcontrols = {
 				local thisStage = self.M1Stage
 				task.delay(0.5, function()
 					if thisStage == self.M1Stage then
+						anim:Stop()
 						M1Cooldown()
 					end
 				end)
