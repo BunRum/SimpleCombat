@@ -38,6 +38,7 @@ universalcontrols = {
 				M1Cooldown()
 			else
 				anim.KeyframeReached:Once(function(k)
+					print(k)
 					if k == "pause" then
 						anim:AdjustSpeed(0)
 					else
