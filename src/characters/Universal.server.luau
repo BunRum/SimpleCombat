@@ -32,6 +32,19 @@ m1Bridge:Connect(function(player)
 	)
 	if M1Stage() + 1 > maxM1Stage then
 		variableModule:set({ player.Name, "M1Stage" }, 0)
+    else
+        conn = RunService.Heartbeat:Connect(function()
+            print((os.clock() - start) > 0.5, self.M1Stage)
+            if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
+                if (os.clock() - start) > 0.5 then
+                    anim:AdjustSpeed(1)
+                    task.spawn(M1Cooldown)
+                elseif self.M1Stage ~= thisStage then
+                    anim:Stop(0)
+                end
+                conn:Disconnect()
+            end
+        end)
 	end
 end)
 
