@@ -50,7 +50,9 @@ universalcontrols = {
 					local start = os.clock()
 					local conn: RBXScriptConnection
 					conn = RunService.Heartbeat:Connect(function()
-						
+						if (os.clock() - start) >= 0.5 then
+							
+						end
 						if (os.clock() - start) >= 0.5 and thisStage == self.M1Stage then
 							anim:Stop(0.5)
 							M1Cooldown()
