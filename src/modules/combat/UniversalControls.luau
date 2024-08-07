@@ -31,8 +31,7 @@ universalcontrols = {
 			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			self.cooldown = true
 			self.M1Stage += 1
-			local thisStage = self.M1Stage
-			if thisStage + 1 > self.maxStages then
+			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 			end
 			self.bridge:Fire()
