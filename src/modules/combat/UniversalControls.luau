@@ -35,10 +35,6 @@ universalcontrols = {
 
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`)
-			-- print(anim.Length, anim.Length * 0.7)
-			-- task.delay(anim.Length * 0.85, function()
-			-- 	if self.cooldown == true then return end
-			-- 	self.cooldown = false
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 			else
@@ -54,6 +50,7 @@ universalcontrols = {
 						if (os.clock() - start) > 0.5 then
 							if thisStage == self.M1Stage then
 								print("missed opportunity")
+								anim:Stop(0.5)
 								M1Cooldown()
 								conn:Disconnect()
 							else
@@ -61,7 +58,7 @@ universalcontrols = {
 							end
 						else
 							if thisStage < self.M1Stage then
-								-- anim:Stop(0)
+								anim:Stop(0)	
 								conn:Disconnect()
 							end
 						end
