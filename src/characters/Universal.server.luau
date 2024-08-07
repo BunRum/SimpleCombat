@@ -52,8 +52,8 @@ dashBridge:Connect(function(player, content)
 end)
 
 uppercutBridge:Connect(function(player, content)
-	local inAir = variableModule:get({ player.Name, "uppercut" }) or false
-	if inAir == true then
+	local inAir = variableModule:var({ player.Name, "uppercut" })
+	if inAir:get() == true then
 		return
 	end
 	combat.util:charactersInArea(
