@@ -34,7 +34,8 @@ universalcontrols = {
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1, 5, 1)
 			-- print(anim.Length, anim.Length * 0.7)
-			task.wait(anim.Length * 0.7)
+			anim.
+			-- task.wait(anim.Length * 0.7)
 			self.cooldown = false
 			anim:AdjustSpeed(0)
 			print("slow anim")
