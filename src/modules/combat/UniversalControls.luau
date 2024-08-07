@@ -31,8 +31,8 @@ universalcontrols = {
 			local localPlayer: types.playerm = tableModule:waitfor(variables, { "local", "plr" })
 			self.cooldown = true
 			self.M1Stage += 1
-			local anim = localPlayer:Play(`punch {self.M1Stage}`)
 			self.bridge:Fire()
+			local anim = localPlayer:Play(`punch {self.M1Stage}`)
 			task.wait(anim.Length * 0.98)
 			print("slow anim")
 			anim:AdjustSpeed(0)
