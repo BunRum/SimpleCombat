@@ -36,7 +36,7 @@ universalcontrols = {
 			-- print(anim.Length, anim.Length * 0.7)
 			task.delay(anim.Length * 0.85, function()
 				if not self.cooldown then
-				
+					self.cooldown = false
 				end
 			end)
 			anim.Ended:Once(function()
