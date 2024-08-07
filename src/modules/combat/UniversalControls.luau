@@ -42,40 +42,23 @@ universalcontrols = {
 						anim:AdjustSpeed(0)
 					else
 						self.cooldown = false
+						local thisStage = self.M1Stage
+						-- task.wait(0.05)
+						local start = os.clock()
+						local conn: RBXScriptConnection
+						conn = RunService.Heartbeat:Connect(function()
+							print((os.clock() - start) > 0.5, self.M1Stage)
+							if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
+								if (os.clock() - start) > 0.5 then
+									anim:Stop(0.5)
+								end
+								if self.M1Stage ~= thisStage then
+									anim:Stop(0)
+								end
+								conn:Disconnect()
+							end
+						end)
 					end
-					local thisStage = self.M1Stage
-					-- task.wait(0.05)
-					local start = os.clock()
-					local conn: RBXScriptConnection
-					conn = RunService.Heartbeat:Connect(function()
-						print((os.clock() - start) > 0.5, self.M1Stage)
-						if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
-							if (os.clock() - start) > 0.5 then
-								anim:Stop(0.5)
-							end
-							if self.M1Stage ~= thisStage then
-								anim:Stop(0)
-							end
-							conn:Disconnect()
-						end
-
-						-- if (os.clock() - start) > 0.5 then
-						-- 	if thisStage == self.M1Stage then
-						-- 		print("missed opportunity")
-						-- 		anim:Stop(0.5)
-						-- 		M1Cooldown()
-						-- 		conn:Disconnect()
-						-- 	else
-						-- 		anim:Stop(0)
-						-- 		conn:Disconnect()
-						-- 	end
-						-- else
-						-- 	if thisStage < self.M1Stage then
-						-- 		anim:Stop(0)
-						-- 		conn:Disconnect()
-						-- 	end
-						-- end
-					end)
 				end)
 			end
 		end,
