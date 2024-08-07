@@ -48,6 +48,8 @@ universalcontrols = {
 						if thisStage == self.M1Stage then
 							anim:Stop(0.5)
 							M1Cooldown()
+						else
+							
 						end
 					end)
 				end
