@@ -39,7 +39,7 @@ universalcontrols = {
 			-- 	if self.cooldown == true then return end
 			-- 	self.cooldown = false
 			anim.KeyframeReached:Once(function(k) 
-				print(k)
+				-- print(k)
 			end)
 			-- anim.KeyframeReached:Once(function(keyframeName)
 				
