@@ -18,7 +18,9 @@ m1Bridge:Connect(function(player)
 	combat.util:charactersInArea(player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),"Box",{ player.Character },function(Character)
 		Character.Humanoid:TakeDamage(5)
 	end,{visualizeHitbox = false,size = Vector3.new(5, 5, 5),})
-    if M1Stage:get() + 1 > maxM1Stage
+    if M1Stage:get() + 1 > maxM1Stage then
+        M1Stage:set(0)
+    end
 
 end)
 
