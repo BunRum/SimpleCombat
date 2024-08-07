@@ -39,7 +39,6 @@ universalcontrols = {
 			end)
 			anim.Ended:Once(function()
 				anim:AdjustSpeed(0)
-				print("slow anim")
 				local thisStage = self.M1Stage
 				-- if stage (5) plus 1 (6) is greater than maxStages (5)
 				if thisStage + 1 > self.maxStages then
