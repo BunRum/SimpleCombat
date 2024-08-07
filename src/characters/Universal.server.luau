@@ -30,7 +30,7 @@ m1Bridge:Connect(function(player)
 		{ visualizeHitbox = false, size = Vector3.new(5, 5, 5) }
 	)
 
-	function M1Cooldown()
+	local function M1Cooldown()
 		M1Stage:set(0)
 		cooldown:set(true)
 		task.wait(4)
