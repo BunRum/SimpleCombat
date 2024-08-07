@@ -18,7 +18,7 @@
 
 ## Combat Rules
 - When you are doing any move (M1, Special Attack, Uppercut, Blocking, or Dashing/Dodge)
-    - [ ] You are stunned
+    - [ ] You cannot do any move, only when the move has finished you can
 - [x] Cannot do Uppercuts while in the air
 - [x] when doing M1's you will be slowed down
 
