@@ -50,20 +50,18 @@ universalcontrols = {
 					local start	 = os.clock()
 					local conn: RBXScriptConnection
 					conn = RunService.Heartbeat:Connect(function()
-						print(os.clock() - start)
-						if (os.clock() - start) >= 0.5 then
+						print((os.clock() - start) > 0.5)
+						if (os.clock() - start) > 0.5 then
 							if thisStage == self.M1Stage then
-								-- anim:Stop(0.5)
-								M1Cooldown()
-								print("yee")
-								conn:Disconnect()
 								print("missed opportunity")
+								M1Cooldown()
+								conn:Disconnect()
 							else
 								conn:Disconnect()
 							end
 						else
 							if thisStage < self.M1Stage then
-								anim:Stop(0)
+								-- anim:Stop(0)
 								conn:Disconnect()
 							end
 						end
