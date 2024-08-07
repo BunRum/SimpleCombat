@@ -34,20 +34,19 @@ universalcontrols = {
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.1)
 			self.bridge:Fire()
 			anim.Ended:Connect(function()
-				
+				self.cooldown = false
+				local thisStage = self.M1Stage
+				-- if stage (5) plus 1 (6) is greater than maxStages (5)
+				if thisStage + 1 > self.maxStages then
+					M1Cooldown()
+				else
+					task.delay(0.5, function()
+						if thisStage == self.M1Stage then
+							M1Cooldown()
+						end
+					end)
+				end
 			end)
-			self.cooldown = false
-			local thisStage = self.M1Stage
-			-- if stage (5) plus 1 (6) is greater than maxStages (5)
-			if thisStage + 1 > self.maxStages then
-				M1Cooldown()
-			else
-				task.delay(0.5, function()
-					if thisStage == self.M1Stage then
-						M1Cooldown()
-					end
-				end)
-			end
 		end,
 		cooldown = false,
 		M1Stage = 0,
