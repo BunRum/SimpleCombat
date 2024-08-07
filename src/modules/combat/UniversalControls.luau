@@ -33,7 +33,7 @@ universalcontrols = {
 			self.M1Stage += 1
 			local anim = localPlayer:Play(`punch {self.M1Stage}`)
 			self.bridge:Fire()
-			task.wait(anim.Length)
+			task.wait(anim.Length * 0.99)
 			anim:AdjustSpeed(0)
 			self.cooldown = false
 			local thisStage = self.M1Stage
