@@ -9,7 +9,6 @@ local m1Bridge: types.sbridge = variableModule:set({ "bridges", "m1" }, BridgeNe
 local dashBridge: types.sbridge = variableModule:set({ "bridges", "dash" }, BridgeNet2.ReferenceBridge("dash"))
 local uppercutBridge: types.sbridge =
 	variableModule:set({ "bridges", "uppercut" }, BridgeNet2.ReferenceBridge("uppercut"))
-local maxM1Combo = 4
 
 m1Bridge:Connect(function(player)
 	combat.util:charactersInArea(
