@@ -41,15 +41,14 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 	obj.Name = args.name or args.className
 	obj.Parent = args.Parent or workspace
 	-- obj.
-	if args.lifetime then
-		-- object.n+= 1
-		-- local mynumber = object.n
+	if args.lifetime ~= nil then
 		task.delay(args.lifetime, function()
 			if objects[id].modified == true then
 				objects[id].modified = false
 				return
 			end
 			obj:Destroy()
+			print("delete")
 		end)
 	end
 
