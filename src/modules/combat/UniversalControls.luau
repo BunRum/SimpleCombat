@@ -34,8 +34,8 @@ universalcontrols = {
 			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`)
 			task.wait(anim.Length * 0.98)
-			print("slow anim")
 			anim:AdjustSpeed(0)
+			print("slow anim")
 			self.cooldown = false
 			local thisStage = self.M1Stage
 			-- if stage (5) plus 1 (6) is greater than maxStages (5)
