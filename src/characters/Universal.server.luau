@@ -32,6 +32,7 @@ end)
 
 uppercutBridge:Connect(function(player, content)
 	local inAir = variableModule:get({player.Name, "inAir"}) or false
+    if inAir == true then return end
 	combat.util:charactersInArea(
 		player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))),
 		"Box",
