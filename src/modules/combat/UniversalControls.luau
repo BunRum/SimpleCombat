@@ -48,7 +48,9 @@ universalcontrols = {
 					M1Cooldown()
 				else
 					task.wait(0.2)
-
+					if thisStage == self.M1Stage then
+						M1Cooldown()
+					end
 				end
 				-- 	M1Cooldown()
 				-- else
