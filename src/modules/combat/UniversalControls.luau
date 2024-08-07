@@ -50,7 +50,8 @@ universalcontrols = {
 							if self.M1Stage ~= thisStage or (os.clock() - start) > 0.5 then
 								if (os.clock() - start) > 0.5 then
 									anim:AdjustSpeed(1)
-									self.M1Stage = 0
+									-- self.M1Stage = 0
+									M1Cooldown()
 									-- M1Cooldown()
 								elseif self.M1Stage ~= thisStage  then
 									anim:Stop(0)
