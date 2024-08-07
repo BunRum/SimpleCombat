@@ -4,7 +4,7 @@
 - [x] Implement basic dashing mechanics based on MoveDirection relative to Player
 
 ## Combat System
-- [ ] Basic M1 Attacks
+- [x] Basic M1 Attacks
 - [ ] UpperCut
 - [ ] Stun
 - [ ] Dodge
