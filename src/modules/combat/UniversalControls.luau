@@ -10,7 +10,6 @@ local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local physics = require(ReplicatedStorage.Modules.combat.physics)
 local types = require(ReplicatedStorage.Modules.types)
-local combat = require(ReplicatedStorage.Modules.combat)
 
 local universalcontrols = {}
 
@@ -109,7 +108,7 @@ universalcontrols = {
 			local localPlayer: types.playerm = variableModule:waitfor({ "local", "plr" })
 			local Character = localPlayer.Player.Character
 			self.bridge:Fire()
-			local lv = combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
+			local lv = physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
 			task.wait(0.5)
 			lv.VectorVelocity = Vector3.new()
             lv:Destroy()
