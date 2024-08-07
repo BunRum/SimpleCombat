@@ -23,6 +23,9 @@ m1Bridge:Connect(function(player)
 		{ player.Character },
 		function(Character)
 			Character.Humanoid:TakeDamage(5)
+			if M1Stage:get() == maxM1Stage then
+				combat.physics:applyVelocity(Character.HumanoidRootPart, )
+			end
 		end,
 		{ visualizeHitbox = false, size = Vector3.new(5, 5, 5) }
 	)
@@ -83,7 +86,7 @@ uppercutBridge:Connect(function(player, content)
 				up(player.Character)
 				print("go up player")
 			end
-			
+			variableModule:set({Character.Name, "state", "air"})
 			up(Character)
 		end,
 		{
