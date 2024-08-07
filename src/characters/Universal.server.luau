@@ -7,7 +7,7 @@ local combat = require(ReplicatedStorage.Modules.combat)
 
 local m1Bridge: types.sbridge  = variableModule:set({"bridges", "m1"}, BridgeNet2.ReferenceBridge("m1"))
 local dashBridge: types.sbridge = variableModule:set({"bridges", "dash"}, BridgeNet2.ReferenceBridge("dash"))
-local uppercutBridge: types.sbridge = variableModule:set({{"bridges", "uppercut"}, BridgeNet2.ReferenceBridge("uppercut")})
+local uppercutBridge: types.sbridge = variableModule:set({"bridges", "uppercut"}, BridgeNet2.ReferenceBridge("uppercut"))
 local maxM1Combo = 4
 
 m1Bridge:Connect(function(player)
@@ -27,9 +27,11 @@ end)
 uppercutBridge:Connect(function(player, content)
     combat.util:charactersInArea(player.Character.HumanoidRootPart.CFrame:ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))), "Box", {player.Character}, function(Character) 
         -- Character.Humanoid:TakeDamage(5)
-        combat.physics:applyVelocity(Character.HumanoidRootPart, )
+        local lv : LinearVelocity = combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 50, 0))
+        task.wait(0.5)
+        lv.VectorVelocity = Vector3.new()
     end, {
-        visualizeHitbox = false,
+        visualizeHitbox = true,
         size = Vector3.new(5, 5, 5)
     })
 end)
