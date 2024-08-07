@@ -58,14 +58,6 @@ universalcontrols = {
 					end)
 				end)
 			end
-			-- anim.KeyframeReached:Once(function(keyframeName)
-
-			-- end)
-			-- end)
-			-- self.cooldown = false
-			anim.Ended:Once(function()
-				-- -- if stage (5) plus 1 (6) is greater than maxStages (5)
-			end)
 		end,
 		cooldown = false,
 		M1Stage = 0,
