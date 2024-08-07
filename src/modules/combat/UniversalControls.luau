@@ -46,12 +46,13 @@ universalcontrols = {
 					anim:AdjustSpeed(0)
 					local thisStage = self.M1Stage
 					local start = os.clock()
-					RunService.Heartbeat:Connect(function()
+					local conn = RunService.Heartbeat:Connect(function()
 						if (os.clock() - start) >= 0.5 and thisStage == self.M1Stage then
 							anim:Stop(0.5)
 							M1Cooldown()
-						elseif thisStage < self.M1Stage then
-							
+							conn:
+						else if (os.clock() - start) < 0.5 and thisStage < self.M1Stage then
+							anim:Stop(0)
 						end
 					end)
 				end)
