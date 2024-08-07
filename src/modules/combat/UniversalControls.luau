@@ -33,9 +33,7 @@ universalcontrols = {
 			self.cooldown = true
 			self.M1Stage += 1
 
-			task.delay(0.1,function()
-				self.bridge:Fire()
-			end)
+			self.bridge:Fire()
 			local anim = localPlayer:Play(`punch {self.M1Stage}`, 0.001, 5, 1)
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
@@ -57,7 +55,7 @@ universalcontrols = {
 									-- self.cooldown = true
 									-- M1Cooldown()
 									-- M1Cooldown()
-								elseif self.M1Stage ~= thisStage  then
+								elseif self.M1Stage ~= thisStage then
 									anim:Stop(0)
 								end
 								conn:Disconnect()
@@ -114,7 +112,7 @@ universalcontrols = {
 			self.bridge:Fire()
 		end,
 		cooldown = false,
-	}
+	},
 }
 
 return universalcontrols
