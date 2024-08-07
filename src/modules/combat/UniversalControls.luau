@@ -107,6 +107,9 @@ universalcontrols = {
 		end,
 		cooldown = false,
 	},
+	[Enum.UserInputType.MouseButton2] = {
+		bridge = BridgeNet2.ReferenceBridge("uppercut")
+	}
 }
 
 return universalcontrols
