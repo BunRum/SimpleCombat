@@ -53,11 +53,13 @@ universalcontrols = {
 								if (os.clock() - start) > 0.5 then
 									anim:AdjustSpeed(1)
 									self.M1Stage = 0
+
 									-- task.spawn(M1Cooldown)
 								elseif self.M1Stage ~= thisStage then
 									anim:Stop(0)
 								end
 								conn:Disconnect()
+								localPlayer.Player.Character.Humanoid.WalkSpeed = 16
 							end
 						end)
 					end
