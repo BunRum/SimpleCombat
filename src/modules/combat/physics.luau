@@ -1,6 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local TweenService = game:GetService("TweenService")
 local object = require(ReplicatedStorage.Modules.object)
+local util = require(script.Parent.util)
 local physics = {}
 
 function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
@@ -35,8 +36,9 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
 end
 
 function physics:sendFlying(char)
-    physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0,-25, 50))
-    
+    -- physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0,-25, 50))
+    util:castRay()
+
 end
 
 return physics

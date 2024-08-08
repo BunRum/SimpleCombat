@@ -81,14 +81,26 @@ function util:charactersInArea(
 	end
 end
 
-function util:castRay(exclude)
+function util:castRay(origin, direction)
 	-- workspace:ray
-	local params = RaycastParams.new()
-	params.IgnoreWater = true
-	params.FilterType = Enum.RaycastFilterType.Exclude
-	params.FilterDescendantsInstances = exclude
-	local direction = origin + direction * length
-	local raycastResult = workspace:Raycast(origin, direction, params)
+	-- local params = RaycastParams.new()
+	-- params.IgnoreWater = true
+	-- params.FilterType = Enum.RaycastFilterType.Exclude
+	-- params.FilterDescendantsInstances = exclude
+	-- local direction = origin + direction * length
+	-- local raycastResult = workspace:Raycast(origin, direction, params)
+
+	object:addToQueue(function()
+		local p: Part = object.new({
+			className = "Part",
+			Parent = workspace,
+		})
+		p.Anchored = true
+		p.CanCollide = false
+		local m = (origin - direction).Magnitude
+		p.Size = Vector3.new(0.01, 0.01, m)
+		p.CFrame = CFrame.lookAt(origin, direction) * CFrame.new(0, 0, -m / 2)
+	end)
 end
 
 return util
