@@ -43,13 +43,9 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 	-- obj.
 	print(args)
 	if args.lifetime ~= nil then
+		print("has life time")
 		task.delay(args.lifetime, function()
-			if objects[id].modified == true then
-				-- objects[id].modified = false
-				return
-			end
 			obj:Destroy()
-			print("delete")
 		end)
 	end
 
