@@ -90,20 +90,18 @@ function util:castRay(origin, direction, p)
 	-- local direction = origin + direction * length
 	-- local raycastResult = workspace:Raycast(origin, direction, params)
 
-	object:addToQueue(function()
-		local p: Part = if p
-			then p
-			else object.new({
-				className = "Part",
-				Parent = workspace,
-			})
-		p.Anchored = true
-		p.CanCollide = false
+	local p: Part = if p
+		then p
+		else object.new({
+			className = "Part",
+			Parent = workspace,
+		})
+	p.Anchored = true
+	p.CanCollide = false
 
-		local m = (origin - direction).Magnitude
-		p.Size = Vector3.new(0.05, 0.05, m)
-		p.CFrame = CFrame.lookAt(origin, direction) * CFrame.new(0, 0, -m / 2)
-	end)
+	local m = (origin - direction).Magnitude
+	p.Size = Vector3.new(0.05, 0.05, m)
+	p.CFrame = CFrame.lookAt(origin, direction) * CFrame.new(0, 0, -m / 2)
 end
 
 return util
