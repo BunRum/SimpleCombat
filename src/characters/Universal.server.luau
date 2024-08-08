@@ -104,7 +104,7 @@ uppercutBridge:Connect(function(player, content)
 				player.Character.Humanoid.WalkSpeed = 5
 				print("go up player")
 			end
-			variableModule:set({Character.Name, "state", "air"})
+			variableModule:set({Character.Name, "state"}, "air")
 			up(Character)
 
 		end,
