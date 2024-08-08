@@ -14,7 +14,7 @@ local uppercutBridge: types.sbridge =
 
 local maxM1Stage = 5
 
-local 
+
 
 m1Bridge:Connect(function(player)
 	local M1Stage = variableModule:var({ player.Name, "M1Stage" })
