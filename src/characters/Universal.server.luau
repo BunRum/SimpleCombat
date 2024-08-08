@@ -73,6 +73,7 @@ function up(mdl)
 		lv:Destroy()
 		task.wait(0.5)
 		variableModule:var({ mdl.Name, "uppercut" }):set(false)
+		mdl.Humanoid.WalkSpeed = 16
 	end)
 end
 
