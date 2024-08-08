@@ -72,7 +72,7 @@ function up(mdl)
 		task.wait(4)
 		lv:Destroy()
 		task.wait(0.5)
-		variableModule:var({ mdl.Name, "uppercut" })
+		variableModule:var({ mdl.Name, "uppercut" }):set(false)
 	end)
 end
 

@@ -41,7 +41,9 @@ universalcontrols = {
 			if self.M1Stage + 1 > self.maxStages then
 				M1Cooldown()
 				task.wait(0.5)
-				localPlayer.Player.Character.Humanoid.WalkSpeed = 16
+				if uppercut:get() == false or nil then
+					localPlayer.Player.Character.Humanoid.WalkSpeed = 16
+				end
 			else
 				anim.KeyframeReached:Connect(function(k)
 					if k == "cd" then
@@ -55,8 +57,9 @@ universalcontrols = {
 								if (os.clock() - start) > self.interval then
 									anim:Stop(0.5)
 									self.M1Stage = 0
-									if uppercut:get() == true
-									localPlayer.Player.Character.Humanoid.WalkSpeed = 16
+									if uppercut:get() == false or nil then
+										localPlayer.Player.Character.Humanoid.WalkSpeed = 16
+									end
 								elseif self.M1Stage ~= thisStage then
 									anim:Stop(0)
 								end
