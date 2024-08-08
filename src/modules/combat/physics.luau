@@ -33,4 +33,10 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
     -- return tween
     -- return lv
 end
+
+function physics:sendFlying(char)
+    physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0,-25, 50))
+    
+end
+
 return physics

@@ -19,8 +19,8 @@ function util:cardialConvert(dir)
 	return Vector3.new(newX, 0, newZ)
 end
 
-function charhits(partsinbound: {BasePart}, callback: () -> ())
-    local hits = {} -- so we dont repeat the damage again since character have multiple parts
+function charhits(partsinbound: { BasePart }, callback: () -> ())
+	local hits = {} -- so we dont repeat the damage again since character have multiple parts
 	for _, part in partsinbound do
 		local ancestorModel = part:FindFirstAncestorOfClass("Model")
 		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
@@ -36,41 +36,59 @@ function util:charactersInArea(
 	areaType: "Box" | "Circle",
 	exclude: { Instance },
 	callback: (character: types.Character) -> (),
-	settings: { visualizeHitbox: boolean, times: number, timesInterval: number, radius: number, size: Vector3 }
+	settings: {
+		visualizeHitbox: boolean,
+		times: number,
+		timesInterval: number,
+		radius: number,
+		size: Vector3,
+	}
 )
 	settings = settings or {}
 	settings.times = settings.times or 1
 	settings.timesInterval = settings.timesInterval or 0
 
-    local op = OverlapParams.new()
+	local op = OverlapParams.new()
 	op.FilterType = Enum.RaycastFilterType.Exclude
 	op.FilterDescendantsInstances = exclude
 
 	for i = 1, settings.times, 1 do
-        if settings.visualizeHitbox then
-            local part: Part = object.new({
-                className = "Part",
-				lifetime = 0.1
-            })
-            part.Shape = if areaType == "Circle" then Enum.PartType.Ball else Enum.PartType.Block
-            part.Size = if areaType == "Circle" then Vector3.new(settings.radius*2, settings.radius*2, settings.radius*2) else settings.size
-            if typeof(position) == "Vector3" then 
-                part.Position = position
-            else
-                part.CFrame = position
-            end
-            part.CanCollide = false
-            part.Transparency = 0.9
-            part.Color = Color3.new(1, 0.505882, 0.505882)
-            part.Anchored = true
-        end
+		if settings.visualizeHitbox then
+			local part: Part = object.new({
+				className = "Part",
+				lifetime = 0.1,
+			})
+			part.Shape = if areaType == "Circle" then Enum.PartType.Ball else Enum.PartType.Block
+			part.Size = if areaType == "Circle"
+				then Vector3.new(settings.radius * 2, settings.radius * 2, settings.radius * 2)
+				else settings.size
+			if typeof(position) == "Vector3" then
+				part.Position = position
+			else
+				part.CFrame = position
+			end
+			part.CanCollide = false
+			part.Transparency = 0.9
+			part.Color = Color3.new(1, 0.505882, 0.505882)
+			part.Anchored = true
+		end
 		if areaType == "Circle" then
-            charhits(workspace:GetPartBoundsInRadius(position, settings.radius, op), callback)
+			charhits(workspace:GetPartBoundsInRadius(position, settings.radius, op), callback)
 		else
-            charhits(workspace:GetPartBoundsInBox(position, settings.size, op), callback)
+			charhits(workspace:GetPartBoundsInBox(position, settings.size, op), callback)
 		end
 		task.wait(settings.timesInterval or 0)
 	end
+end
+
+function util:castRay(exclude)
+	-- workspace:ray
+	local params = RaycastParams.new()
+	params.IgnoreWater = true
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.FilterDescendantsInstances = exclude
+	local direction = origin + direction * length
+	local raycastResult = workspace:Raycast(origin, direction, params)
 end
 
 return util
