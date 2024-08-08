@@ -6,6 +6,5 @@ function statemachine:getState()
 end
 
 
-RunService
 
 return statemachine
