@@ -73,7 +73,8 @@ p.Anchored = true
 p.CanCollide = false
 p.Material = Enum.Material.Neon
 p.Color = Color3.new(0.992156, 0.482352, 0.482352)
-RunService.Heartbeat:Connect(function(deltaTime)
+task.wait(5)
+RunService.PostSimulation:Connect(function(deltaTime)
 	local char = plr.Player.Character
 
 	local origin = char.HumanoidRootPart.Position
