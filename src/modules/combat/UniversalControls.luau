@@ -32,6 +32,7 @@ universalcontrols = {
 				return
 			end
 			local localPlayer: types.playerm = variableModule:waitfor({ "local", "plr" })
+			local uppercut = variableModule:var({ "local", "uppercut" })
 			localPlayer.Player.Character.Humanoid.WalkSpeed = 5
 			self.cooldown = true
 			self.M1Stage += 1
@@ -54,6 +55,7 @@ universalcontrols = {
 								if (os.clock() - start) > self.interval then
 									anim:Stop(0.5)
 									self.M1Stage = 0
+									if uppercut:get() == true
 									localPlayer.Player.Character.Humanoid.WalkSpeed = 16
 								elseif self.M1Stage ~= thisStage then
 									anim:Stop(0)
