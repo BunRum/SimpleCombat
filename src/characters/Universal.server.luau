@@ -68,8 +68,9 @@ function up(mdl)
 		lv.VelocityConstraintMode = Enum.VelocityConstraintMode.Vector
 		lv.MaxAxesForce = Vector3.new(0, 999999995904, 0)
 		lv.VectorVelocity = Vector3.new(0, 0, 0)
-		-- task.wait(5)
-		-- lv:Destroy()
+		mdl.Humanoid.WalkSpeed = 0
+		task.wait(4)
+		lv:Destroy()
 	end)
 end
 
@@ -86,10 +87,12 @@ uppercutBridge:Connect(function(player, content)
 			if uppercut:get() ~= true then
 				uppercut:set(true)
 				up(player.Character)
+				player.Character.Humanoid.WalkSpeed = 5
 				print("go up player")
 			end
 			variableModule:set({Character.Name, "state", "air"})
 			up(Character)
+
 		end,
 		{
 			visualizeHitbox = true,
