@@ -81,7 +81,7 @@ function util:charactersInArea(
 	end
 end
 
-function util:castRay(origin, direction)
+function util:castRay(origin, direction, p)
 	-- workspace:ray
 	-- local params = RaycastParams.new()
 	-- params.IgnoreWater = true
@@ -91,10 +91,12 @@ function util:castRay(origin, direction)
 	-- local raycastResult = workspace:Raycast(origin, direction, params)
 
 	object:addToQueue(function()
-		local p: Part = object.new({
-			className = "Part",
-			Parent = workspace,
-		})
+		local p: Part = if p
+			then p
+			else object.new({
+				className = "Part",
+				Parent = workspace,
+			})
 		p.Anchored = true
 		p.CanCollide = false
 
