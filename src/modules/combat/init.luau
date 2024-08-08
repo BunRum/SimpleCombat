@@ -24,6 +24,7 @@ local characters: types.character = {
 
 combatModule.util = require(script.util)
 combatModule.physics = require(script.physics)
+combatModule.stateMachine = require(script.stateMachine)
 
 function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
