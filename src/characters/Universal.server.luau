@@ -63,10 +63,10 @@ function up(mdl)
 	task.spawn(function()
 		local lv = combat.physics:applyVelocity(mdl.HumanoidRootPart, Vector3.new(0, 50, 0))
 		task.wait(0.5)
-		lv.VectorVelocity = Vector3.new()
+		lv.VectorVelocity = Vector3.new(0, 0, 0)
 		lv.ForceLimitsEnabled = true
 		lv.ForceLimitMode = Enum.ForceLimitMode.PerAxis
-		lv.MaxAxesForce = Vector3.new(0, math.huge, 0)
+		lv.MaxAxesForce = Vector3.new(math.huge, math.huge, math.huge)
 		-- lv:Destroy()
 		-- task,wait
 		task.wait(5)
