@@ -37,7 +37,7 @@ end
 
 function physics:sendFlying(char)
     -- physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0,-25, 50))
-    util:castRay()
+    -- util:castRay(char.)
 
 end
 

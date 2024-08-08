@@ -7,6 +7,7 @@ local tableModule = require(ReplicatedStorage.Modules.tableModule)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local types = require(ReplicatedStorage.Modules.types)
 local util = require(ReplicatedStorage.Modules.util)
+local object = require(ReplicatedStorage.Modules.object)
 local plr: types.playerm = variableModule:waitfor({ "local", "plr" })
 -- plr.Player:GetMouse().
 local CharacterTBL: combatModule.character = tableModule:waitfor(variables, { "local", "character" })
@@ -63,4 +64,20 @@ UserInputService.InputBegan:Connect(function(input: InputObject)
 	-- 	end)
 
 	-- end
+end)
+local p: Part = object.new({
+	className = "Part",
+	Parent = workspace,
+})
+p.Anchored = true
+p.CanCollide = false
+RunService.Heartbeat:Connect(function(deltaTime)
+	local char = plr.Player.Character
+
+	local origin = char.HumanoidRootPart.Position
+	local direction = char:GetPivot():PointToWorldSpace(Vector3.new(0, 0, 5))
+
+	local m = (origin - direction).Magnitude
+	p.Size = Vector3.new(0.01, 0.01, m)
+	p.CFrame = CFrame.lookAt(origin, direction) * CFrame.new(0, 0, -m / 2)
 end)

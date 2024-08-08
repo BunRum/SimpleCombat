@@ -25,6 +25,8 @@ m1Bridge:Connect(function(player)
 		"Box",
 		{ player.Character },
 		function(Character)
+			-- util
+			-- combat.util:castRay(Character.HumanoidRootPart.Position,)
 			local charState = variableModule:var({Character.Name, "state"})
 			Character.Humanoid:TakeDamage(5)
 			local animTrack = animationPlayer.track(Character, combat.animations.onHit[math.random(1, 3)])
