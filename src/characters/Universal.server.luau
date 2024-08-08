@@ -26,7 +26,7 @@ m1Bridge:Connect(function(player)
 		{ player.Character },
 		function(Character)
 			Character.Humanoid:TakeDamage(5)
-			local animTrack = animationPlayer.track(Character, "")
+			local animTrack = animationPlayer.track(Character, combat.animations.onHit[math.random(1, 3)])
 			animTrack:Play()
 			if M1Stage:get() == maxM1Stage then
 				combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 0, 50), 0.25)

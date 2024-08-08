@@ -22,9 +22,17 @@ local characters: types.character = {
     }
 }
 
+combatModule.animations = {
+    onHit = {
+        "LeftHit",
+        "MiddleHit",
+        "RightHit"
+    }
+}
+-- local Universal
+
 combatModule.util = require(script.util)
 combatModule.physics = require(script.physics)
-combatModule.stateMachine = require(script.stateMachine)
 
 function combatModule:getUniversal(): typeof(universalcontrols)
     return universalcontrols
