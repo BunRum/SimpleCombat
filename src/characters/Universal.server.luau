@@ -25,11 +25,17 @@ m1Bridge:Connect(function(player)
 		"Box",
 		{ player.Character },
 		function(Character)
+			local charState = variableModule:var({Character.Name, "state"})
 			Character.Humanoid:TakeDamage(5)
 			local animTrack = animationPlayer.track(Character, combat.animations.onHit[math.random(1, 3)])
 			animTrack:Play()
 			if M1Stage:get() == maxM1Stage then
-				combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 0, 50), 0.25)
+				local lv = combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, if charState:get() == "air" then -25 else 0, 50))
+				if charState:get() ~= "air" then
+					task.delay(0.25, function()
+						lv:Destroy()
+					end)
+				end
 			end
 		end,
 		{ visualizeHitbox = false, size = Vector3.new(5, 5, 5) }
