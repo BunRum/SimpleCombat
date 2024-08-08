@@ -66,7 +66,7 @@ function up(mdl)
 		lv.VectorVelocity = Vector3.new(0, 0, 0)
 		lv.ForceLimitsEnabled = true
 		lv.ForceLimitMode = Enum.ForceLimitMode.PerAxis
-		lv.MaxAxesForce = Vector3.new(math.huge, math.huge, math.huge)
+		lv.MaxAxesForce = Vector3.new(0, math.huge, 0)
 		-- lv:Destroy()
 		-- task,wait
 		task.wait(5)
