@@ -5,6 +5,7 @@ local types = require(ReplicatedStorage.Modules.types)
 local log = require(ReplicatedStorage.Modules.log)
 local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local combat = require(ReplicatedStorage.Modules.combat)
+local animationPlayer = require(ReplicatedStorage.Modules.animationPlayer)
 
 local m1Bridge: types.sbridge = variableModule:set({ "bridges", "m1" }, BridgeNet2.ReferenceBridge("m1"))
 local dashBridge: types.sbridge = variableModule:set({ "bridges", "dash" }, BridgeNet2.ReferenceBridge("dash"))
@@ -12,6 +13,8 @@ local uppercutBridge: types.sbridge =
 	variableModule:set({ "bridges", "uppercut" }, BridgeNet2.ReferenceBridge("uppercut"))
 
 local maxM1Stage = 5
+
+local 
 
 m1Bridge:Connect(function(player)
 	local M1Stage = variableModule:var({ player.Name, "M1Stage" })
@@ -23,6 +26,8 @@ m1Bridge:Connect(function(player)
 		{ player.Character },
 		function(Character)
 			Character.Humanoid:TakeDamage(5)
+			local animTrack = animationPlayer.track(Character, "")
+			animTrack:Play()
 			if M1Stage:get() == maxM1Stage then
 				combat.physics:applyVelocity(Character.HumanoidRootPart, Vector3.new(0, 0, 50), 0.25)
 			end
