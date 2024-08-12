@@ -1,4 +1,5 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local RunService = game:GetService("RunService")
 local TweenService = game:GetService("TweenService")
 local object = require(ReplicatedStorage.Modules.object)
 local util = require(script.Parent.util)
@@ -11,7 +12,10 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
         find = true,
         Parent = obj
     })
-    print(lifetime)
+    -- print(lifetime)
+    if obj:FindFirstChildOfClass("LinearVelocity") then
+        obj:FindFirstChildOfClass("LinearVelocity"):Destroy()
+    end
     local lv: LinearVelocity = object.new( {
         className = "LinearVelocity",
         Parent = obj,
@@ -36,8 +40,27 @@ function physics:applyVelocity(obj: BasePart, target: Vector3, lifetime: number)
 end
 
 function physics:sendFlying(char)
-    -- physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0,-25, 50))
-    -- util:castRay(char.)
+    local lv = physics:applyVelocity(char.HumanoidRootPart, Vector3.new(0,-25, 50))
+    -- util:castRay(char.
+    local p: Part = object.new({
+        className = "Part",
+        Parent = char,
+    })
+    p.Anchored = true
+    p.CanCollide = false
+    p.Material = Enum.Material.Neon
+    p.Color = Color3.new(0.992156, 0.482352, 0.482352)
+    local conn: RBXScriptConnection
+    conn = RunService.PostSimulation:Connect(function()
+        local origin = char.HumanoidRootPart.Position
+        local direction = char.HumanoidRootPart.CFrame:PointToWorldSpace(Vector3.new(0, -5, 0))
+        local result = util:castRay(origin, direction, {char}, p)
+        print(result)
+        if result then
+            lv:Destroy()
+            conn:Disconnect()
+        end
+    end)
 
 end
 

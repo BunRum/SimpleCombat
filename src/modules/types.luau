@@ -9,12 +9,10 @@ export type sbridge = bridgenettypes.ServerBridge
 export type cbridge = bridgenettypes.ClientBridge
 export type weapon = {
     bridge: bridge,
-    moves: { [Enum.KeyCode]: {
-        name: string,
-        animation: AnimationTrack,
-        cooldown: boolean
-    } }
+    moves: { [Enum.KeyCode]: weaponMove } | { [Enum.UserInputType]: weaponMove }
 }
+export type weaponMove =  () -> ()
+
 export type Character = typeof(playerModule.Player.Character)
 export type playerm = typeof(playerModule)
 

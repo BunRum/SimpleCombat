@@ -16,12 +16,11 @@ local maps = variableModule:set({ "maps" }, {
 		totalVotes = 0,
 	},
 })
--- bit32
+-- bit3
 local voteBridge: variableModule.sbridge = variableModule:set({"bridges", "vote"}, BridgeNet2.ReferenceBridge("vote"))
 local notifyBridge: variableModule.sbridge = variableModule:set({ "bridges", "notify" }, BridgeNet2.ReferenceBridge("notify"))
 
 print(variableModule.newvar)
-
 voteBridge:Connect(function(player, map, donotify)
 	-- print(`{player.Name} chose {map}`)
 	local voted = variableModule:get("maps", "voted")

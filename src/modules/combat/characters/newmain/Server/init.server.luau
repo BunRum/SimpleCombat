@@ -4,9 +4,7 @@ local BridgeNet2 = require(ReplicatedStorage.Packages.BridgeNet2)
 local effects = require(ReplicatedStorage.Modules.effects)
 local combat = require(ReplicatedStorage.Modules.combat)
 local newmain = BridgeNet2.ServerBridge("newmain")
-local types = require(ReplicatedStorage.Modules.types)
-local playerModule = require(ReplicatedStorage.Modules.player)
--- script.
+
 newmain:Connect(function(player: Player, move: string)
 	if move == "One" then
 		effects:sendAll({
@@ -14,7 +12,7 @@ newmain:Connect(function(player: Player, move: string)
 			looped = false,
 		})
 		combat.util:charactersInArea(player.Character:GetPivot():ToWorldSpace(CFrame.new(Vector3.new(0, 0, -5))), "Box", {player.Character}, function(Character) 
-			Character.Humanoid:TakeDamage(50)
+			combat.util:damage(Character, 5)
 		end, {
 			visualizeHitbox = true,
 			times = 10,

@@ -9,6 +9,6 @@ local variables = require(ReplicatedStorage.Modules.variables)
 
 
 Players.PlayerAdded:Connect(function(player)
-    variableModule:set({player.Name, "character"}, combatModule:getCharacter("newmain"))
+    variableModule:set({player.Name, "character"}, "newmain")
     variableModule:set({player.Name, "stunned"}, false)
 end) 

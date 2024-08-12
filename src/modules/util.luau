@@ -11,6 +11,7 @@ function util:clearAll(instance: Instance)
 	end
 end
 
+
 function util:pack(...)
 	local packedTable = table.pack(...)
 	local parsedPack = {}
@@ -23,6 +24,7 @@ function util:pack(...)
 end
 
 function util:when(func: () -> any, value: any, callback: () -> ())
+	local conn: RBXScriptConnection
 	conn = RunService.Heartbeat:Connect(function()
 		if func() == value then
 			callback()

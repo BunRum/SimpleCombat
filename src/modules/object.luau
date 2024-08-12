@@ -40,10 +40,8 @@ function object.new(args: { name: string, className: string, Parent: Instance, f
 	-- CollectionService
 	obj.Name = args.name or args.className
 	obj.Parent = args.Parent or workspace
-	-- obj.
-	print(args)
 	if args.lifetime ~= nil then
-		print("has life time")
+		-- print("has life time")
 		task.delay(args.lifetime, function()
 			obj:Destroy()
 		end)

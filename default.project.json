@@ -16,25 +16,12 @@
 		"ServerScriptService": {
 			"$path": "src/server"
 		},
-		"ServerStorage": {
-			"Weapons": {
-				"$className": "Folder",
-				"$path": "src/characters"
-			}
-		},
 		"StarterPlayer": {
 			"StarterCharacterScripts": {
-				"ClientCharacter": {
-					"$path": "src/client/character"
-				}
+				"$path": "src/client/character"
 			},
 			"StarterPlayerScripts": {
-				"ClientPlayer": {
-					"$path": "src/client/player"
-				},
-				"Replicator": {
-					"$path": "src/client/replicator.client.luau"
-				}
+				"$path": "src/client/player"
 			}
 		},
 		"Workspace": {

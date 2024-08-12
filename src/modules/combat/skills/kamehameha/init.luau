@@ -1,0 +1,5 @@
+local kamehameha = {}
+
+
+
+return kamehameha

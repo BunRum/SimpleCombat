@@ -1,6 +1,7 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local types = require(ReplicatedStorage.Modules.types)
 local object = require(ReplicatedStorage.Modules.object)
+local variableModule = require(ReplicatedStorage.Modules.variableModule)
 local util = {}
 -- types
 
@@ -24,8 +25,8 @@ function charhits(partsinbound: { BasePart }, callback: () -> ())
 	for _, part in partsinbound do
 		local ancestorModel = part:FindFirstAncestorOfClass("Model")
 		local ancestorHumanoid = ancestorModel and ancestorModel:FindFirstChildOfClass("Humanoid")
-		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel.Name) == nil then
-			table.insert(hits, ancestorModel.Name)
+		if ancestorModel and ancestorHumanoid and table.find(hits, ancestorModel) == nil then
+			table.insert(hits, ancestorModel)
 			callback(ancestorModel)
 		end
 	end
@@ -81,27 +82,45 @@ function util:charactersInArea(
 	end
 end
 
-function util:castRay(origin, direction, p)
+function util:castRay(origin, direction, exclude: table, p: Part)
 	-- workspace:ray
-	-- local params = RaycastParams.new()
-	-- params.IgnoreWater = true
-	-- params.FilterType = Enum.RaycastFilterType.Exclude
-	-- params.FilterDescendantsInstances = exclude
-	-- local direction = origin + direction * length
-	-- local raycastResult = workspace:Raycast(origin, direction, params)
 
-	local p: Part = if p
-		then p
-		else object.new({
+	if typeof(exclude) == "Instance" then
+		p = exclude
+		exclude = nil
+	end
+
+	p = p or object.new({
 			className = "Part",
 			Parent = workspace,
 		})
 	p.Anchored = true
 	p.CanCollide = false
 
+	exclude = exclude or {}
+
+	local params = RaycastParams.new()
+	params.IgnoreWater = true
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.RespectCanCollide = true
+	table.insert(exclude, p)
+	params.FilterDescendantsInstances = exclude
+	-- local direction = origin + direction * length
+	local raycastResult = workspace:Raycast(origin, direction, params)
+
 	local m = (origin - direction).Magnitude
 	p.Size = Vector3.new(0.05, 0.05, m)
 	p.CFrame = CFrame.lookAt(origin, direction) * CFrame.new(0, 0, -m / 2)
+
+	return raycastResult
+end
+
+function util:damage(char: Model, dmg: number)
+	if variableModule:get({char.Name, "isBlocking"}) == true then
+		return
+	end
+	local humanoid: Humanoid = char.Humanoid
+	humanoid:TakeDamage(dmg)
 end
 
 return util
