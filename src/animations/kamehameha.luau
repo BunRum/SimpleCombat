@@ -21,7 +21,7 @@ return {
 			class = "ParticleEmitter",
 			parent = "Attachment",
 		},
-		["flameround"] = {
+		["sHIMMERouter"] = {
 			class = "ParticleEmitter",
 			parent = "Attachment",
 		},
@@ -33,11 +33,11 @@ return {
 			class = "Part",
 			parent = nil,
 		},
-		["beamlight?"] = {
+		["rINGS1"] = {
 			class = "ParticleEmitter",
 			parent = "Attachment",
 		},
-		["sHIMMERouter"] = {
+		["beamlight?"] = {
 			class = "ParticleEmitter",
 			parent = "Attachment",
 		},
@@ -45,7 +45,7 @@ return {
 			class = "Attachment",
 			parent = "Kamehamehaball",
 		},
-		["rINGS1"] = {
+		["flameround"] = {
 			class = "ParticleEmitter",
 			parent = "Attachment",
 		},
@@ -69,7 +69,7 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(0.75, 0.8999999761581421)},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(30, 40)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(10.289999961853027, 13.720000267028809)},
 			},
 			["Brightness"] = {
 				{ease = "OutLinear", time = 0, value = 4},
@@ -78,11 +78,7 @@ return {
 				{ease = "OutLinear", time = 0, value = Enum.ParticleFlipbookLayout.Grid4x4},
 			},
 			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.20000000298023224, 1.5, 1), NumberSequenceKeypoint.new(1, 0, 0)})},
-			},
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.20000000298023224, 0.5144999623298645, 0.34299999475479126), NumberSequenceKeypoint.new(1, 0, 0)})},
 			},
 			["FlipbookMode"] = {
 				{ease = "OutLinear", time = 0, value = Enum.ParticleFlipbookMode.OneShot},
@@ -112,61 +108,44 @@ return {
 				{ease = "OutLinear", time = 0, value = "rbxassetid://11197917329"},
 			},
 		},
-		["sHIMMERouter"] = {
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
-			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(1, 10, 0)})},
-			},
-			["LightInfluence"] = {
-				{ease = "OutLinear", time = 0, value = 1},
-			},
+		["rINGS"] = {
 			["Color"] = {
 				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
 			},
 			["LockedToPart"] = {
 				{ease = "OutLinear", time = 0, value = true},
 			},
-			["ZOffset"] = {
-				{ease = "OutLinear", time = 0, value = -1},
-			},
-			["TimeScale"] = {
-				{ease = "OutLinear", time = 0, value = 0.6},
+			["Rate"] = {
+				{ease = "OutLinear", time = 0, value = 100},
 			},
 			["Rotation"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(360, 360)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
 			},
 			["Transparency"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.5367372035980225, 1, 0), NumberSequenceKeypoint.new(0.6062899827957153, 0.8856667280197144, 0), NumberSequenceKeypoint.new(0.704289972782135, 0.909000039100647, 0), NumberSequenceKeypoint.new(0.9227895140647888, 0.9937499761581421, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.47828999161720276, 1, 0), NumberSequenceKeypoint.new(0.5262899994850159, 0.9223333597183228, 0), NumberSequenceKeypoint.new(0.8122899532318115, 0.6756666898727417, 0), NumberSequenceKeypoint.new(1, 0.9856666922569275, 0), NumberSequenceKeypoint.new(1, 0.9856666922569275, 0)})},
 			},
-			["LightEmission"] = {
-				{ease = "OutLinear", time = 0, value = 1},
+			["Size"] = {
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.2960416078567505, 0), NumberSequenceKeypoint.new(1, 1.1763198375701904, 0)})},
 			},
 			["Lifetime"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.5, 0.6000000238418579)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.5, 0.5)},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.10000000149011612, 0.10000000149011612)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0, 0)},
 			},
-			["Brightness"] = {
-				{ease = "OutLinear", time = 0, value = 0.665},
+			["LightInfluence"] = {
+				{ease = "OutLinear", time = 0, value = 1},
 			},
-			["Rate"] = {
-				{ease = "OutLinear", time = 0, value = 4},
+			["SpreadAngle"] = {
+				{ease = "OutLinear", time = 0, value = Vector2.new(360, 360)},
 			},
 			["Texture"] = {
-				{ease = "OutLinear", time = 0, value = "rbxassetid://11198241185"},
+				{ease = "OutLinear", time = 0, value = "rbxassetid://15976435822"},
 			},
 		},
 		["lines2outerspec"] = {
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
 			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.483551561832428, 0.9571031332015991), NumberSequenceKeypoint.new(0.550000011920929, 1.0384069681167603, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.165858194231987, 0.328286349773407), NumberSequenceKeypoint.new(0.550000011920929, 0.35617363452911377, 0), NumberSequenceKeypoint.new(1, 0.34299999475479126, 0)})},
 			},
 			["ShapeInOut"] = {
 				{ease = "OutLinear", time = 0, value = Enum.ParticleEmitterShapeInOut.InAndOut},
@@ -199,7 +178,7 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(0.20000000298023224, 0.699999988079071)},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(12, 12)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(4.115999698638916, 4.115999698638916)},
 			},
 			["Brightness"] = {
 				{ease = "OutLinear", time = 0, value = 10},
@@ -212,30 +191,8 @@ return {
 			},
 		},
 		["flameround1"] = {
-			["Color"] = {
-				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
-			},
-			["Drag"] = {
-				{ease = "OutLinear", time = 0, value = 7},
-			},
-			["LightInfluence"] = {
-				{ease = "OutLinear", time = 0, value = 1},
-			},
-			["Lifetime"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.75, 0.8999999761581421)},
-			},
-			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.10000000149011612, 0.10000000149011612)},
-			},
-			["Brightness"] = {
-				{ease = "OutLinear", time = 0, value = 10},
-			},
-			["Texture"] = {
-				{ease = "OutLinear", time = 0, value = "rbxassetid://15988248410"},
-			},
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
+			["Size"] = {
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.20000000298023224, 0.5144999623298645, 0.34299999475479126), NumberSequenceKeypoint.new(1, 1.72101891040802, 0)})},
 			},
 			["FlipbookMode"] = {
 				{ease = "OutLinear", time = 0, value = Enum.ParticleFlipbookMode.OneShot},
@@ -243,14 +200,23 @@ return {
 			["RotSpeed"] = {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
 			},
-			["LockedToPart"] = {
-				{ease = "OutLinear", time = 0, value = true},
+			["Rotation"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
+			},
+			["Color"] = {
+				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
+			},
+			["Drag"] = {
+				{ease = "OutLinear", time = 0, value = 7},
 			},
 			["Rate"] = {
 				{ease = "OutLinear", time = 0, value = 100},
 			},
-			["Rotation"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
+			["LockedToPart"] = {
+				{ease = "OutLinear", time = 0, value = true},
+			},
+			["LightInfluence"] = {
+				{ease = "OutLinear", time = 0, value = 1},
 			},
 			["Transparency"] = {
 				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.8042899966239929, 0.952333390712738, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
@@ -258,77 +224,73 @@ return {
 			["LightEmission"] = {
 				{ease = "OutLinear", time = 0, value = 1},
 			},
-			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.20000000298023224, 1.5, 1), NumberSequenceKeypoint.new(1, 5.017547607421875, 0)})},
+			["Lifetime"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.75, 0.8999999761581421)},
+			},
+			["Speed"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.034299999475479126, 0.034299999475479126)},
+			},
+			["Brightness"] = {
+				{ease = "OutLinear", time = 0, value = 10},
 			},
 			["SpreadAngle"] = {
 				{ease = "OutLinear", time = 0, value = Vector2.new(-360, 360)},
 			},
-		},
-		["Attachment"] = {
-			["Visible"] = {
-				{ease = "OutLinear", time = 0, value = false},
+			["Texture"] = {
+				{ease = "OutLinear", time = 0, value = "rbxassetid://15988248410"},
 			},
 		},
 		["lines2outerspec1"] = {
+			["Size"] = {
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.165858194231987, 0.328286349773407), NumberSequenceKeypoint.new(0.550000011920929, 0.35617363452911377, 0), NumberSequenceKeypoint.new(1, 0.34299999475479126, 0)})},
+			},
+			["ShapeInOut"] = {
+				{ease = "OutLinear", time = 0, value = Enum.ParticleEmitterShapeInOut.InAndOut},
+			},
+			["SpreadAngle"] = {
+				{ease = "OutLinear", time = 0, value = Vector2.new(360, 360)},
+			},
+			["Orientation"] = {
+				{ease = "OutLinear", time = 0, value = Enum.ParticleOrientation.VelocityParallel},
+			},
 			["Color"] = {
 				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
 			},
+			["LockedToPart"] = {
+				{ease = "OutLinear", time = 0, value = true},
+			},
 			["ZOffset"] = {
 				{ease = "OutLinear", time = 0, value = -5},
+			},
+			["Lifetime"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.20000000298023224, 5)},
+			},
+			["Rotation"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(90, 90)},
+			},
+			["Transparency"] = {
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.9723333716392517, 0), NumberSequenceKeypoint.new(0.4502899646759033, 0.9823333621025085, 0), NumberSequenceKeypoint.new(0.7265759706497192, 0.8526666164398193, 0), NumberSequenceKeypoint.new(1, 0.9856666922569275, 0)})},
+			},
+			["ShapePartial"] = {
+				{ease = "OutLinear", time = 0, value = 0},
 			},
 			["Squash"] = {
 				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 5, 0), NumberSequenceKeypoint.new(1, 5, 0)})},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(12, 12)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(4.115999698638916, 4.115999698638916)},
 			},
 			["Brightness"] = {
 				{ease = "OutLinear", time = 0, value = 10},
 			},
-			["Texture"] = {
-				{ease = "OutLinear", time = 0, value = "rbxassetid://16072462608"},
-			},
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
-			["LockedToPart"] = {
-				{ease = "OutLinear", time = 0, value = true},
-			},
 			["Rate"] = {
 				{ease = "OutLinear", time = 0, value = 100},
 			},
-			["Rotation"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(90, 90)},
-			},
-			["ShapePartial"] = {
-				{ease = "OutLinear", time = 0, value = 0},
-			},
-			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.483551561832428, 0.9571031332015991), NumberSequenceKeypoint.new(0.550000011920929, 1.0384069681167603, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
-			},
-			["ShapeInOut"] = {
-				{ease = "OutLinear", time = 0, value = Enum.ParticleEmitterShapeInOut.InAndOut},
-			},
-			["Orientation"] = {
-				{ease = "OutLinear", time = 0, value = Enum.ParticleOrientation.VelocityParallel},
-			},
-			["SpreadAngle"] = {
-				{ease = "OutLinear", time = 0, value = Vector2.new(360, 360)},
-			},
-			["Lifetime"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.20000000298023224, 5)},
-			},
-			["Transparency"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.9723333716392517, 0), NumberSequenceKeypoint.new(0.4502899646759033, 0.9823333621025085, 0), NumberSequenceKeypoint.new(0.7265759706497192, 0.8526666164398193, 0), NumberSequenceKeypoint.new(1, 0.9856666922569275, 0)})},
+			["Texture"] = {
+				{ease = "OutLinear", time = 0, value = "rbxassetid://16072462608"},
 			},
 		},
 		["sHIMMERinner"] = {
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
 			["Color"] = {
 				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
 			},
@@ -345,7 +307,7 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.8962900042533875, 0.02566670812666416, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
 			},
 			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 4.154076099395752, 0), NumberSequenceKeypoint.new(1, 7.0875983238220215, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1.424848198890686, 0), NumberSequenceKeypoint.new(1, 2.4310462474823, 0)})},
 			},
 			["Lifetime"] = {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(0.20000000298023224, 0.30000001192092896)},
@@ -357,21 +319,27 @@ return {
 				{ease = "OutLinear", time = 0, value = 0.665},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.10000000149011612, 0.10000000149011612)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.034299999475479126, 0.034299999475479126)},
 			},
 			["Texture"] = {
 				{ease = "OutLinear", time = 0, value = "rbxassetid://15976604780"},
 			},
 		},
 		["Kamehamehaball"] = {
-			["BottomSurface"] = {
-				{ease = "OutLinear", time = 0, value = Enum.SurfaceType.Smooth},
+			["CanQuery"] = {
+				{ease = "OutLinear", time = 0, value = false},
+			},
+			["CanCollide"] = {
+				{ease = "OutLinear", time = 0, value = false},
 			},
 			["Color"] = {
 				{ease = "OutLinear", time = 0, value = Color3.fromRGB(110, 153, 202)},
 			},
 			["CFrame"] = {
-				{ease = "OutLinear", time = 0, value = CFrame.new(-0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)},
+				{ease = "OutLinear", time = 0, value = CFrame.new(0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1)},
+			},
+			["CanTouch"] = {
+				{ease = "OutLinear", time = 0, value = false},
 			},
 			["Transparency"] = {
 				{ease = "OutLinear", time = 0, value = 1},
@@ -381,6 +349,9 @@ return {
 			},
 			["Shape"] = {
 				{ease = "OutLinear", time = 0, value = Enum.PartType.Ball},
+			},
+			["BottomSurface"] = {
+				{ease = "OutLinear", time = 0, value = Enum.SurfaceType.Smooth},
 			},
 			["Material"] = {
 				{ease = "OutLinear", time = 0, value = Enum.Material.Neon},
@@ -392,61 +363,48 @@ return {
 				{ease = "OutLinear", time = 0, value = Enum.SurfaceType.Smooth},
 			},
 		},
-		["flameround"] = {
-			["Color"] = {
-				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
-			},
-			["Drag"] = {
-				{ease = "OutLinear", time = 0, value = 7},
+		["sHIMMERouter"] = {
+			["Size"] = {
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(1, 3.430000066757202, 0)})},
 			},
 			["LightInfluence"] = {
 				{ease = "OutLinear", time = 0, value = 1},
 			},
-			["Lifetime"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.75, 0.8999999761581421)},
-			},
-			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(14, 14)},
-			},
-			["Brightness"] = {
-				{ease = "OutLinear", time = 0, value = 10},
-			},
-			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.20000000298023224, 1.5, 1), NumberSequenceKeypoint.new(1, 0, 0)})},
-			},
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
-			["FlipbookMode"] = {
-				{ease = "OutLinear", time = 0, value = Enum.ParticleFlipbookMode.OneShot},
-			},
-			["RotSpeed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
+			["Color"] = {
+				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
 			},
 			["LockedToPart"] = {
 				{ease = "OutLinear", time = 0, value = true},
 			},
-			["Rate"] = {
-				{ease = "OutLinear", time = 0, value = 100},
+			["ZOffset"] = {
+				{ease = "OutLinear", time = 0, value = -1},
+			},
+			["TimeScale"] = {
+				{ease = "OutLinear", time = 0, value = 0.6},
 			},
 			["Rotation"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(360, 360)},
 			},
 			["Transparency"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.909000039100647, 0), NumberSequenceKeypoint.new(0.8022899627685547, 0.8423333764076233, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.5367372035980225, 1, 0), NumberSequenceKeypoint.new(0.6062899827957153, 0.8856667280197144, 0), NumberSequenceKeypoint.new(0.704289972782135, 0.909000039100647, 0), NumberSequenceKeypoint.new(0.9227895140647888, 0.9937499761581421, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
 			},
 			["LightEmission"] = {
 				{ease = "OutLinear", time = 0, value = 1},
 			},
-			["SpreadAngle"] = {
-				{ease = "OutLinear", time = 0, value = Vector2.new(-360, 360)},
+			["Lifetime"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.5, 0.6000000238418579)},
+			},
+			["Speed"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.034299999475479126, 0.034299999475479126)},
+			},
+			["Brightness"] = {
+				{ease = "OutLinear", time = 0, value = 0.665},
+			},
+			["Rate"] = {
+				{ease = "OutLinear", time = 0, value = 4},
 			},
 			["Texture"] = {
-				{ease = "OutLinear", time = 0, value = "rbxassetid://15988217005"},
-			},
-			["VelocityInheritance"] = {
-				{ease = "OutLinear", time = 0, value = 1},
+				{ease = "OutLinear", time = 0, value = "rbxassetid://11198241185"},
 			},
 		},
 		["beamlight?"] = {
@@ -466,14 +424,10 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(0.20000000298023224, 0.5)},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(1, 1)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.34299999475479126, 0.34299999475479126)},
 			},
 			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.31880447268486023, 0, 0), NumberSequenceKeypoint.new(0.33457598090171814, 6.487840175628662, 0.6465043425559998), NumberSequenceKeypoint.new(0.8045759797096252, 3.4764416217803955, 0), NumberSequenceKeypoint.new(1, 0, 0)})},
-			},
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.31880447268486023, 0, 0), NumberSequenceKeypoint.new(0.33457598090171814, 2.2253291606903076, 0.22175098955631256), NumberSequenceKeypoint.new(0.8045759797096252, 1.1924195289611816, 0), NumberSequenceKeypoint.new(1, 0, 0)})},
 			},
 			["RotSpeed"] = {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(360, 360)},
@@ -507,10 +461,6 @@ return {
 			},
 		},
 		["rINGS1"] = {
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
 			["Color"] = {
 				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
 			},
@@ -524,10 +474,10 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
 			},
 			["Transparency"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.1262899786233902, 1, 0), NumberSequenceKeypoint.new(0.6142899990081787, 1, 0), NumberSequenceKeypoint.new(1, 0.9956666827201843, 0), NumberSequenceKeypoint.new(1, 0, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.1262899786233902, 1, 0), NumberSequenceKeypoint.new(0.6142899990081787, 1, 0), NumberSequenceKeypoint.new(1, 0, 0), NumberSequenceKeypoint.new(1, 0, 0)})},
 			},
 			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 3.297214984893799, 0), NumberSequenceKeypoint.new(1, 0.5856667160987854, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1.1309447288513184, 0), NumberSequenceKeypoint.new(1, 0.200883686542511, 0)})},
 			},
 			["Lifetime"] = {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(0.5, 0.5)},
@@ -545,13 +495,33 @@ return {
 				{ease = "OutLinear", time = 0, value = "rbxassetid://15976650019"},
 			},
 		},
-		["rINGS"] = {
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
+		["flameround"] = {
 			["Color"] = {
 				{ease = "OutLinear", time = 0, value = ColorSequence.new({ColorSequenceKeypoint.new(0, Color3.new(0.419608, 0.682353, 1)), ColorSequenceKeypoint.new(1, Color3.new(0.419608, 0.682353, 1))})},
+			},
+			["Drag"] = {
+				{ease = "OutLinear", time = 0, value = 7},
+			},
+			["LightInfluence"] = {
+				{ease = "OutLinear", time = 0, value = 1},
+			},
+			["Lifetime"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.75, 0.8999999761581421)},
+			},
+			["Speed"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(4.802000045776367, 4.802000045776367)},
+			},
+			["Brightness"] = {
+				{ease = "OutLinear", time = 0, value = 10},
+			},
+			["Size"] = {
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0, 0), NumberSequenceKeypoint.new(0.20000000298023224, 0.5144999623298645, 0.34299999475479126), NumberSequenceKeypoint.new(1, 0, 0)})},
+			},
+			["FlipbookMode"] = {
+				{ease = "OutLinear", time = 0, value = Enum.ParticleFlipbookMode.OneShot},
+			},
+			["RotSpeed"] = {
+				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
 			},
 			["LockedToPart"] = {
 				{ease = "OutLinear", time = 0, value = true},
@@ -563,34 +533,24 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(-360, 360)},
 			},
 			["Transparency"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 1, 0), NumberSequenceKeypoint.new(0.47828999161720276, 1, 0), NumberSequenceKeypoint.new(0.5262899994850159, 0.9223333597183228, 0), NumberSequenceKeypoint.new(0.8122899532318115, 0.6756666898727417, 0), NumberSequenceKeypoint.new(1, 0.9723333716392517, 0), NumberSequenceKeypoint.new(1, 0.9856666922569275, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.909000039100647, 0), NumberSequenceKeypoint.new(0.8022899627685547, 0.8423333764076233, 0), NumberSequenceKeypoint.new(1, 1, 0)})},
 			},
-			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.8630949854850769, 0), NumberSequenceKeypoint.new(1, 3.4295036792755127, 0)})},
-			},
-			["Lifetime"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0.5, 0.5)},
-			},
-			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(0, 0)},
-			},
-			["LightInfluence"] = {
+			["LightEmission"] = {
 				{ease = "OutLinear", time = 0, value = 1},
 			},
 			["SpreadAngle"] = {
-				{ease = "OutLinear", time = 0, value = Vector2.new(360, 360)},
+				{ease = "OutLinear", time = 0, value = Vector2.new(-360, 360)},
 			},
 			["Texture"] = {
-				{ease = "OutLinear", time = 0, value = "rbxassetid://15976435822"},
+				{ease = "OutLinear", time = 0, value = "rbxassetid://15988217005"},
+			},
+			["VelocityInheritance"] = {
+				{ease = "OutLinear", time = 0, value = 1},
 			},
 		},
 		["ringsinner"] = {
-			["Enabled"] = {
-				{ease = "OutLinear", time = 0, value = true},
-				{ease = "OutLinear", time = 0.25, value = true},
-			},
 			["Size"] = {
-				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 2.792846918106079, 0), NumberSequenceKeypoint.new(1, 2.7341971397399902, 0)})},
+				{ease = "OutLinear", time = 0, value = NumberSequence.new({NumberSequenceKeypoint.new(0, 0.9579464793205261, 0), NumberSequenceKeypoint.new(1, 0.9378296136856079, 0)})},
 			},
 			["LightInfluence"] = {
 				{ease = "OutLinear", time = 0, value = 1},
@@ -620,7 +580,7 @@ return {
 				{ease = "OutLinear", time = 0, value = NumberRange.new(0.25, 0.25)},
 			},
 			["Speed"] = {
-				{ease = "OutLinear", time = 0, value = NumberRange.new(1, 1)},
+				{ease = "OutLinear", time = 0, value = NumberRange.new(0.34299999475479126, 0.34299999475479126)},
 			},
 			["Texture"] = {
 				{ease = "OutLinear", time = 0, value = "rbxassetid://15976469018"},

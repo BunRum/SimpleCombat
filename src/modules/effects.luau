@@ -19,6 +19,15 @@ end
 -- }
 
 -- ]]
+
+function effects:Play(anim: string)
+    local anim = visulie.new(anim)
+
+    anim:Play(false)
+
+    return anim
+end
+
 function effects:attach()
     replicator:Connect(function(content)
         -- print(content)

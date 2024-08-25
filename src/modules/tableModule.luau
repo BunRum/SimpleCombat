@@ -123,12 +123,14 @@ function tbl:get(tbl: table, arguments: { string })
 	returnedValue = playerChecker(returnedValue)
 	-- log(returnedValue)
 
-	-- if Players:FindFirstChild(arguments[1]) and arguments[#arguments] == "character" then
-	-- 	local plr: Player = Players:FindFirstChild(arguments[1])
+	if Players:FindFirstChild(arguments[1]) and arguments[#arguments] == "cf" then
+		-- return
+		local plr: Player = Players:FindFirstChild(arguments[1])
+		return plr.Character.HumanoidRootPart.CFrame
 	-- 	for index, move in pairs(returnedValue.moves) do
 	-- 		returnedValue.moves[index].animation = animationPlayer.track(plr.Character, move.animation)
 	-- 	end
-	-- end
+	end
 
 	return returnedValue
 end

@@ -17,7 +17,7 @@ local maxM1Stage = 5
 
 m1Bridge:Connect(function(player)
 	local M1Stage = variableModule:var({ player.Name, "M1Stage" })
-	local cooldown = variableModule:var({ player.Name, "M1Cooldown" })
+	-- local cooldown = variableModule:var({ player.Name, "M1Cooldown" })
 	M1Stage:set("+=", 1)
 
 	local plrLookVector = player.Character.HumanoidRootPart.CFrame.LookVector
@@ -55,29 +55,29 @@ m1Bridge:Connect(function(player)
 		{ visualizeHitbox = true, size = Vector3.new(5, 5, 5) }
 	)
 
-	local function M1Cooldown()
-		M1Stage:set(0)
-		cooldown:set(true)
-		task.wait(2)
-		cooldown:set(false)
-	end
+	-- local function M1Cooldown()
+	-- 	M1Stage:set(0)
+	-- 	cooldown:set(true)
+	-- 	task.wait(2)
+	-- 	cooldown:set(false)
+	-- end
 
-	if M1Stage:get() + 1 > maxM1Stage then
-		M1Cooldown()
-	else
-		local thisStage = M1Stage:get()
-		local start = os.clock()
-		local conn
-		conn = RunService.Heartbeat:Connect(function()
-			-- print((os.clock() - start) > 0.5, M1Stage:get())
-			if M1Stage:get() ~= thisStage or (os.clock() - start) > 0.5 then
-				if (os.clock() - start) > 0.5 then
-					task.spawn(M1Cooldown)
-				end
-				conn:Disconnect()
-			end
-		end)
-	end
+	-- if M1Stage:get() + 1 > maxM1Stage then
+	-- 	M1Cooldown()
+	-- else
+	-- 	local thisStage = M1Stage:get()
+	-- 	local start = os.clock()
+	-- 	local conn
+	-- 	conn = RunService.Heartbeat:Connect(function()
+	-- 		-- print((os.clock() - start) > 0.5, M1Stage:get())
+	-- 		if M1Stage:get() ~= thisStage or (os.clock() - start) > 0.5 then
+	-- 			if (os.clock() - start) > 0.5 then
+	-- 				task.spawn(M1Cooldown)
+	-- 			end
+	-- 			conn:Disconnect()
+	-- 		end
+	-- 	end)
+	-- end
 end)
 
 dashBridge:Connect(function(player, content)
